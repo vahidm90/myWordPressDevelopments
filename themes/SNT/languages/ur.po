@@ -1,0 +1,1807 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: SNT-en\n"
+"POT-Creation-Date: 2017-12-17 11:11+0330\n"
+"PO-Revision-Date: 2017-12-17 11:11+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ur\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_ex:1,2c;_x:1,2c;_n:1,2;_e;_nx:1,2,4c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .idea\n"
+"X-Poedit-SearchPathExcluded-1: languages\n"
+"X-Poedit-SearchPathExcluded-2: History\n"
+
+#: comments.php:8
+msgctxt "Comment heading"
+msgid "Discussion"
+msgstr "مباحثہ"
+
+#: comments.php:12
+msgctxt "Comment message"
+msgid "Sorry! No more comments here!"
+msgstr "آپ کا مطلوبہ صفحہ موجود نہیں ہے!"
+
+#: comments.php:17
+msgctxt "Comment message"
+msgid "Be the first one to comment!"
+msgstr "سب سے پہلے آپ تبصرہ پہلے کریں!"
+
+#: date.php:9
+msgctxt "Date archive title"
+msgid "Daily Archive:"
+msgstr "ڈیلی آرکائیو:"
+
+#: date.php:14
+msgctxt "Date archive title"
+msgid "Monthly Archive:"
+msgstr "ماہانہ محفوظ شدہ دستاویزات:"
+
+#: date.php:19
+msgctxt "Date archive title"
+msgid "Yearly Archive:"
+msgstr "سالانہ آرکائیو:"
+
+#: footer.php:4
+msgctxt "Footer text"
+msgid "You can freely redistribute, copy, etc. the content."
+msgstr "مواد کی اشاعت کے لیے کوئی پابندی نہیں ہے-"
+
+#: footer.php:5
+#, php-format
+msgctxt "Footer text; 1: Site name"
+msgid "We would appreciate mentioning %1$s as the source."
+msgstr " اگر %1$s کو اپنے مآخذ کے طور پر تعارف کریں آپ کی بڑی مہربانی ہوگی-"
+
+#: header-archive.php:14
+#, php-format
+msgctxt "Description meta; 1: Site name"
+msgid "%1$s Archives"
+msgstr "%1$s آرکائیوز:"
+
+#: header-archive.php:15
+#, php-format
+msgctxt "Description meta; 2: Taxonomy label"
+msgid "%2$s Archive"
+msgstr "%2$s آرکائیو:"
+
+#: header-date.php:8
+#, php-format
+msgctxt "Description meta; 1: Site name, 2: em dash"
+msgid "%1$s Archives %2$s Date archive"
+msgstr "%1$s آرکائیوز%2$s وقت کی دستاویزات"
+
+#: header-date.php:24
+#, php-format
+msgctxt "Description meta; 1: Time preposition, 2: Time period"
+msgid "Articles/News published %1$s %2$s"
+msgstr "مقالے/اشاعت شدہ خبریں %1$s %2$s"
+
+#: header-front-page.php:6
+#, php-format
+msgctxt "Description meta; 1: Other regions"
+msgid "Accurate News, In-Depth Analysis from Muslim World%1$s"
+msgstr ""
+
+#: inc/backend/custom-meta.php:12
+msgctxt "Title for default terms meta-box "
+msgid "Default Terms"
+msgstr "پہلے سے طے شدہ شرائط"
+
+#: inc/backend/custom-meta.php:15
+msgctxt "Title for description meta-box "
+msgid "Description"
+msgstr "تفصیل"
+
+#: inc/backend/custom-meta.php:18
+msgctxt "Title for excerpt meta-box "
+msgid "Excerpt"
+msgstr "اقتباس"
+
+#: inc/backend/custom-meta.php:21
+msgctxt "Title for recent posts meta-box "
+msgid "Recent Posts"
+msgstr "حالیہ مراسلات"
+
+#: inc/backend/custom-meta.php:24
+msgctxt "Title for related meta-box "
+msgid "Related Posts"
+msgstr "متعلقہ مراسلات"
+
+#: inc/backend/custom-meta.php:27
+msgctxt "Title for source meta-box "
+msgid "Source"
+msgstr "ماخذ"
+
+#: inc/backend/custom-meta.php:30
+msgctxt "Title for Top meta-box "
+msgid "Display as Top"
+msgstr "سب سے اوپر دکھائیں"
+
+#: inc/backend/custom-meta.php:61
+#, php-format
+msgctxt "Taxonomy drop-down option; 1: Taxonomy archive label"
+msgid "Select %1$s..."
+msgstr " منتخب کریں %1$s ..."
+
+#: inc/backend/custom-meta.php:130
+msgctxt "Title for Taxonomy/Meta Defaults menu item"
+msgid "Taxonomy/Meta Defaults"
+msgstr "پہلے سے طے شدہ درجہ بندی شرائط اور میٹا ڈیٹا کی قدر"
+
+#: inc/backend/custom-meta.php:131
+#, php-format
+msgctxt "Default Terms meta-box hint; 1: Menu title"
+msgid "You can change these settings in \"%1$s\"."
+msgstr "یہاں سے \"%1$s\" آپ ان ترتیبات کو تبدیل کر سکتے ہیں"
+
+#: inc/backend/custom-meta.php:132
+msgctxt "Default Terms meta-box text"
+msgid "No default terms set!"
+msgstr "پہلے سے طے شدہ شرائط مقرر نہیں ہیں!"
+
+#: inc/backend/custom-meta.php:161
+msgctxt "Description meta-box text"
+msgid "Enter description (Used by search engines):"
+msgstr "تفصیل درج کریں (تلاش کے انجن سے استعمال کیا جاتا ہے ): "
+
+#: inc/backend/custom-meta.php:162
+msgctxt "Description meta-box placeholder"
+msgid "Description... (155 characters max)"
+msgstr "تفصیل ... ( 155 حروف زیادہ سے زیادہ نہ ہوں)"
+
+#: inc/backend/custom-meta.php:178
+msgctxt "Excerpt meta-box text"
+msgid "Enter post excerpt (Summary of the post):"
+msgstr " پوسٹ اقتباس درج کریں (پوسٹ کا خلاصہ):"
+
+#: inc/backend/custom-meta.php:179
+msgctxt "Excerpt meta-box placeholder"
+msgid "Summary..."
+msgstr "خلاصہ ..."
+
+#: inc/backend/custom-meta.php:208
+msgctxt "Recent Posts table column"
+msgid "ID"
+msgstr "شناخت"
+
+#: inc/backend/custom-meta.php:209
+msgctxt "Recent Posts table column"
+msgid "Title"
+msgstr "عنوان"
+
+#: inc/backend/custom-meta.php:210
+msgctxt "Recent Posts table column"
+msgid "Date"
+msgstr "تاریخ"
+
+#: inc/backend/custom-meta.php:257
+msgctxt "No Recent Posts"
+msgid "You have no posts yet!"
+msgstr ""
+
+#: inc/backend/custom-meta.php:273
+msgctxt "Related Posts meta-box text"
+msgid "Enter related post's ID:"
+msgstr " متعلقہ پوسٹ کی شناخت درج کریں"
+
+#: inc/backend/custom-meta.php:274
+msgctxt "Related meta-box placeholder"
+msgid "Post ID"
+msgstr "پوسٹ کی شناخت"
+
+#: inc/backend/custom-meta.php:296
+msgctxt "Related Posts meta-box text"
+msgid "No related posts assigned!"
+msgstr " کوئی متعلقہ تحریر مقرر نہیں"
+
+#: inc/backend/custom-meta.php:313 inc/backend/style-script.php:36
+msgctxt "Source meta-box text"
+msgid "Name only"
+msgstr ""
+
+#: inc/backend/custom-meta.php:314 inc/backend/style-script.php:37
+msgctxt "Source meta-box text"
+msgid "Name & URL"
+msgstr ""
+
+#: inc/backend/custom-meta.php:315 inc/backend/style-script.php:38
+msgctxt "Source meta-box placeholder"
+msgid "Site Name"
+msgstr ""
+
+#: inc/backend/custom-meta.php:316 inc/backend/style-script.php:39
+msgctxt "Source meta-box placeholder"
+msgid "Page URL"
+msgstr ""
+
+#: inc/backend/custom-meta.php:319
+msgctxt "Source meta-box button"
+msgid "Add more"
+msgstr ""
+
+#: inc/backend/custom-meta.php:323
+msgctxt "Source meta-box text"
+msgid "Enter source name (and optionally its address):"
+msgstr ""
+
+#: inc/backend/custom-meta.php:413
+msgctxt "Option in Top meta-box"
+msgid "Regions Top"
+msgstr "علاقے کی اہم ترین"
+
+#: inc/backend/custom-meta.php:414
+msgctxt "Option in Top meta-box"
+msgid "Topics Top"
+msgstr "اہم عناوین"
+
+#: inc/backend/custom-meta.php:415
+msgctxt "Option in Top meta-box"
+msgid "Non-top"
+msgstr "غیر اہم"
+
+#: inc/backend/custom-meta.php:418
+msgctxt "Top meta-box text"
+msgid "(On front page) Display as:"
+msgstr "(پہلے صفحے پر) مقرر کریں:"
+
+#: inc/backend/default-tax-meta.php:6
+msgctxt "Taxonomy/Meta Defaults page title"
+msgid "Default Taxonomy Terms and Meta-data Values"
+msgstr "پہلے سے طے شدہ تشہیر شرائط اور میٹا ڈیٹا کی قدر"
+
+#: inc/backend/default-tax-meta.php:7
+msgctxt "Taxonomy/Meta Defaults menu title"
+msgid "Taxonomy/Meta Defaults"
+msgstr "درجہ بندی/میٹا ڈیفالٹس"
+
+#: inc/backend/default-tax-meta.php:20
+msgctxt "Text on form submit button in Taxonomy/Meta Defaults screen"
+msgid "Save"
+msgstr "محفوظ کریں"
+
+#: inc/backend/default-tax-meta.php:22
+msgctxt "Reset button text in Taxonomy/Meta Defaults screen"
+msgid "Clear All"
+msgstr "سبھی کو صاف کریں"
+
+#: inc/backend/default-tax-meta.php:42
+msgctxt "Settings section title"
+msgid "Options for default taxonomy terms and meta-data values"
+msgstr "پہلے سے طے شدہ تشہیر شرائط اور میٹا ڈیٹا کی قدر کے لئے اختیارات"
+
+#: inc/backend/default-tax-meta.php:43
+#, php-format
+msgctxt "Settings field title; 1: Taxonomy archive label/description"
+msgid "Default %1$s"
+msgstr ""
+
+#: inc/backend/default-tax-meta.php:45
+#, php-format
+msgctxt "Setting description; 1: Taxonomy archive label/description"
+msgid "%1$s assigned automatically to singularly created/edited posts"
+msgstr "%1$s خود کار طریقے سے الگ لڑی میں پڑویا گیا ہے/ ترمیم شدہ پوسٹس"
+
+#: inc/backend/default-tax-meta.php:97
+msgctxt "Setting description"
+msgid "Default Top meta"
+msgstr " پہلے سے طے شدہ اہم میٹا "
+
+#: inc/backend/default-tax-meta.php:123
+msgctxt "Settings section description"
+msgid "These will be assigned to posts singularly created/edited."
+msgstr "یہ خود کار طریقے سے تخلیق / ترمیم شده مواد پر تفویض کیا جائے گا"
+
+#: inc/backend/default-tax-meta.php:143
+#, php-format
+msgctxt "Settings hint; 1: Taxonomy description"
+msgid "No Default %1$s Set!"
+msgstr "پہلے سے طے شدہ شرائط مقرر نہیں %1$s کیا گیا!"
+
+#: inc/backend/default-tax-meta.php:169
+#, php-format
+msgctxt "Setting option; 1: Taxonomy archive label"
+msgid "Select default %1$s..."
+msgstr " منتخب کریں %1$s ..."
+
+#: inc/backend/default-tax-meta.php:202
+msgctxt "Setting option"
+msgid "Select Default Top Value..."
+msgstr " پہلے سے طے شدہ اہم چیزوں کو منتخب کریں ..."
+
+#: inc/backend/default-tax-meta.php:203
+msgctxt "Top meta-data option in Taxonomy/Meta Defaults screen"
+msgid "Region"
+msgstr "علاقہ"
+
+#: inc/backend/default-tax-meta.php:204
+msgctxt "Top meta-data option in Taxonomy/Meta Defaults screen"
+msgid "Topic"
+msgstr "عنوان"
+
+#: inc/backend/default-tax-meta.php:205
+msgctxt "Top meta-data option in Taxonomy/Meta Defaults screen"
+msgid "Nowhere"
+msgstr "کہیں نہیں"
+
+#: inc/backend/pages-table.php:8
+msgctxt "Pages table column header"
+msgid "Title"
+msgstr "عنوان"
+
+#: inc/backend/pages-table.php:9
+msgctxt "Pages table column header"
+msgid "Slug"
+msgstr "Slug"
+
+#: inc/backend/pages-table.php:10
+msgctxt "Pages table column header"
+msgid "Template"
+msgstr "سانچے"
+
+#: inc/backend/pages-table.php:78
+msgctxt "Page parent filter option"
+msgid "All Parents"
+msgstr ""
+
+#: inc/backend/pages-table.php:95
+msgctxt "Page template filter option"
+msgid "All Templates"
+msgstr ""
+
+#: inc/backend/posts-table.php:8
+msgctxt "Posts table column header"
+msgid "ID"
+msgstr "شناخت"
+
+#: inc/backend/posts-table.php:9
+msgctxt "Posts table column header"
+msgid "Title"
+msgstr "عنوان"
+
+#: inc/backend/posts-table.php:18
+msgctxt "Posts table column header"
+msgid "Top in"
+msgstr "اوپر میں"
+
+#: inc/backend/posts-table.php:20
+msgctxt "Posts table column header"
+msgid "Date"
+msgstr "تاریخ"
+
+#: inc/backend/posts-table.php:167
+#, php-format
+msgctxt "Filter option; 1: Taxonomy label"
+msgid "All %1$s"
+msgstr "سبھی %1$s"
+
+#: inc/backend/posts-table.php:193
+msgctxt "Option for Top meta-data filter in posts table"
+msgid "All Top Values"
+msgstr "سبھی اہم عناوین"
+
+#: inc/backend/posts-table.php:194
+msgctxt "Option for Top meta-data filter in posts table"
+msgid "Region Tops"
+msgstr "علاقے کے اہم عناوین"
+
+#: inc/backend/posts-table.php:195
+msgctxt "Option for Top meta-data filter in posts table"
+msgid "Topic Tops"
+msgstr " اہم عناوین"
+
+#: inc/backend/posts-table.php:196
+msgctxt "Option for Top meta-data filter in posts table"
+msgid "Non-tops"
+msgstr " غیر اہم"
+
+#: inc/backend/posts-table.php:216
+msgctxt "Post thumbnail filter option"
+msgid "All Posts"
+msgstr "سبھی مراسلات"
+
+#: inc/backend/posts-table.php:217
+msgctxt "Post thumbnail filter option"
+msgid "With Thumbnails"
+msgstr "تصویر کے ساتھ"
+
+#: inc/backend/posts-table.php:218
+msgctxt "Post thumbnail filter option"
+msgid "Without Thumbnails"
+msgstr "بغیر تصویر"
+
+#: inc/backend/posts-table.php:291
+msgctxt "Option for Top meta-data quick edit form"
+msgid "Not specified"
+msgstr " غیر متعین"
+
+#: inc/backend/posts-table.php:292
+msgctxt "Option for Top meta-data quick edit form"
+msgid "Regions"
+msgstr "علاقے"
+
+#: inc/backend/posts-table.php:293
+msgctxt "Option for Top meta-data quick edit form"
+msgid "Topics"
+msgstr "عناوین"
+
+#: inc/backend/posts-table.php:294
+msgctxt "Option for Top meta-data quick edit form"
+msgid "Nowhere"
+msgstr "کہیں نہیں"
+
+#: inc/backend/posts-table.php:299 inc/backend/posts-table.php:332
+msgctxt "Text in Top meta-data quick edit form"
+msgid "Top in"
+msgstr "اوپر میں"
+
+#: inc/backend/posts-table.php:325
+msgctxt "Option for Top meta-data bulk edit form"
+msgid "No Changes"
+msgstr " کوئی تبدیلی نہیں"
+
+#: inc/backend/posts-table.php:326
+msgctxt "Option for Top meta-data bulk edit form"
+msgid "Regions"
+msgstr "علاقے"
+
+#: inc/backend/posts-table.php:327
+msgctxt "Option for Top meta-data bulk edit form"
+msgid "Topics"
+msgstr "عناوین"
+
+#: inc/backend/posts-table.php:328
+msgctxt "Option for Top meta-data bulk edit form"
+msgid "Nowhere"
+msgstr "کہیں نہیں"
+
+#: inc/backend/posts-table.php:364
+msgctxt "No taxonomy terms assigned"
+msgid "Not Specified"
+msgstr " غیر متعین"
+
+#: inc/backend/posts-table.php:404
+msgctxt "Unset taxonomy terms"
+msgid "Remove All Terms"
+msgstr "تمام شرائط کو ہٹا دیں"
+
+#: inc/backend/posts-table.php:406
+msgctxt "No changes in taxonomy terms"
+msgid "No Changes"
+msgstr " کوئی تبدیلی نہیں"
+
+#: inc/backend/style-script.php:33
+#, php-format
+msgctxt "Related Post meta-box text; 1: Entered ID"
+msgid "No ID match for %1$d"
+msgstr "کوئی شناخت %1$d کے لیے متعارف نہیں"
+
+#: inc/backend/style-script.php:34
+#, php-format
+msgctxt "Source meta-box message; 1:Page URL"
+msgid "No title found in \"%1$s\""
+msgstr ""
+
+#: inc/backend/style-script.php:35
+msgctxt "Related Post meta-box text"
+msgid "Current post's ID!"
+msgstr "موجودہ پوسٹ کی شناخت!"
+
+#: inc/backend/style-script.php:40
+msgctxt "Source meta-box message"
+msgid "Source URL check successful!"
+msgstr ""
+
+#: inc/backend/style-script.php:41
+msgctxt "Source meta-box message"
+msgid "Page title:"
+msgstr ""
+
+#: inc/backend/style-script.php:42
+msgctxt "Source meta-box message"
+msgid "Source URL check failed!"
+msgstr ""
+
+#: inc/class/class-snt-walker-comment.php:108
+msgid "Pingback:"
+msgstr "پینگ بک:"
+
+#: inc/class/class-snt-walker-comment.php:108
+msgid "Edit"
+msgstr "ترمیم کریں"
+
+#: inc/class/class-snt-walker-comment.php:127
+#, php-format
+msgctxt "Comment link title; 1: Post title"
+msgid "User comment for article `%1$s`"
+msgstr "آرٹیکل `%1$s` کے لئے صارف کا تبصرہ"
+
+#: inc/class/class-snt-walker-comment.php:129
+msgctxt "Comment message"
+msgid "Your comment will be published upon approval."
+msgstr "آپ کا تبصرہ منظوری کے بعد شائع کیا جائے گا-"
+
+#: inc/class/class-snt-walker-comment.php:130
+msgctxt "Comment Edit"
+msgid "Edit"
+msgstr "ترمیم"
+
+#: inc/class/class-snt-walker-comment.php:141
+#: inc/frontend/templates/single-post/article.php:15
+#, php-format
+msgctxt "Time; 1: Date, 2: Time"
+msgid "%1$s at %2$s"
+msgstr "%1$s برائے %2$s"
+
+#: inc/frontend/func/comment-func.php:177
+msgctxt "Comment form title"
+msgid "Your Remark"
+msgstr "آپ کا تبصرہ"
+
+#: inc/frontend/func/comment-func.php:181
+#, php-format
+msgctxt "Comment form title; 1: Replied comment's author"
+msgid "Reply to %1$s"
+msgstr " %1$s کا جواب"
+
+#: inc/frontend/func/comment-func.php:183
+#, php-format
+msgctxt "Comment form message; 1: User identity, 2: Log-out link"
+msgid "Leave a comment as %1$s"
+msgstr "آرٹیکل %1$s کے لئے صارف کا تبصرہ"
+
+#: inc/frontend/func/comment-func.php:185
+#, php-format
+msgctxt "Comment form message; 1: HTML"
+msgid "Following %1$s tags are allowed"
+msgstr ""
+"دیے ہوئے %1$s ٹیگز کی اجازت ہے \n"
+" "
+
+#: inc/frontend/func/comment-func.php:191
+#, php-format
+msgctxt "Comment form message; 1: * (Required mark)"
+msgid "Fields marked by %1$s are mandatory"
+msgstr "%1$s کی طرف سے نشان زدہ فیلڈز لازمی ہیں"
+
+#: inc/frontend/func/comment-func.php:197
+msgctxt "Comment form placeholder"
+msgid "Comment"
+msgstr "تبصرہ"
+
+#: inc/frontend/func/comment-func.php:198
+msgctxt "Comment form placeholder"
+msgid "Name"
+msgstr "نام"
+
+#: inc/frontend/func/comment-func.php:199
+msgctxt "Comment form placeholder"
+msgid "Email"
+msgstr "ای میل"
+
+#: inc/frontend/func/comment-func.php:200
+msgctxt "Comment form placeholder"
+msgid "Phone Number"
+msgstr "فون نمبر"
+
+#: inc/frontend/func/comment-func.php:201
+msgctxt "Comment form placeholder"
+msgid "Website"
+msgstr "ویب سائٹ"
+
+#: inc/frontend/func/comment-func.php:212
+msgctxt "Comment button text"
+msgid "Publish"
+msgstr "شائع کریں"
+
+#: inc/frontend/func/comment-func.php:227
+msgctxt "Comment form message"
+msgid ""
+"Your information (email address, phone number, and URL) will not be "
+"accessible by public."
+msgstr "آپ کی معلومات (ای میل ایڈریس، فون نمبر) تک عوام کی طرف رسائی نہیں ہوگا"
+
+#: inc/frontend/func/custom-functions.php:16
+msgctxt "Document title"
+msgid "Glossary"
+msgstr "لغت"
+
+#: inc/frontend/func/custom-functions.php:33
+msgctxt "Document title"
+msgid "Date Archives"
+msgstr "تاریخ آرکائیو"
+
+#: inc/frontend/func/custom-functions.php:39
+#, php-format
+msgctxt "Document title; 1: Taxonomy singular name"
+msgid "%1$s Archives"
+msgstr "%1$s آرکائیوز:"
+
+#: inc/frontend/func/custom-functions.php:223
+msgctxt "Publish time"
+msgid "Yesterday"
+msgstr "کل"
+
+#: inc/frontend/func/custom-functions.php:227
+#, php-format
+msgctxt "Publish time; 1: Hours passed"
+msgid "An hour ago"
+msgid_plural "%1$s hours ago"
+msgstr[0] "ایک گھنٹا پہلا"
+msgstr[1] "%1$s گھنٹے پہلے"
+
+#: inc/frontend/func/custom-functions.php:232
+#, php-format
+msgctxt "Publish time; 1: Minutes passed"
+msgid "A minute ago"
+msgid_plural "%1$s minutes ago"
+msgstr[0] "ایک منٹ پہلا"
+msgstr[1] "%1$s منٹ پہلے"
+
+#: inc/frontend/func/custom-functions.php:236
+msgctxt "Publish time"
+msgid "Less than a minute ago"
+msgstr "کچھ لمحے پہلے"
+
+#: inc/frontend/func/custom-functions.php:421
+msgctxt "Navigation text"
+msgid "Home"
+msgstr "پہلا صفحہ"
+
+#: inc/frontend/func/custom-functions.php:430
+msgctxt "Breadcrumbs text"
+msgid "Archives"
+msgstr "آرکائیو"
+
+#: inc/frontend/func/custom-functions.php:490
+#, php-format
+msgctxt "Pagination; 1: Current page, 2: Total pages"
+msgid "Page %1$d of %2$d"
+msgstr "%1$d صفحہ %2$d سے"
+
+#: inc/frontend/func/custom-functions.php:491
+#, php-format
+msgctxt "Pagination; %3$d- 4: Interval"
+msgid "Items %3$d-%4$d"
+msgstr "آئیٹمز %3$d-%4$d"
+
+#: inc/frontend/func/custom-functions.php:492
+msgctxt "Pagination"
+msgid "Previous"
+msgstr "پچھلا"
+
+#: inc/frontend/func/custom-functions.php:493
+msgctxt "Pagination"
+msgid "Next"
+msgstr "اگلا"
+
+#: inc/frontend/func/custom-functions.php:503
+msgctxt "Pagination"
+msgid "Last item"
+msgstr "آخری آئٹم"
+
+#: inc/frontend/func/custom-functions.php:504
+#, php-format
+msgctxt "Pagination; 5: Item count"
+msgid "(Total Items: %5$d)"
+msgstr "(کل: %5$ d)"
+
+#: inc/frontend/func/load-js-css.php:15
+msgctxt "Roll Title"
+msgid "Latest"
+msgstr "نئی خبریں"
+
+#: inc/frontend/func/load-js-css.php:18
+msgctxt "Roll Title"
+msgid "Breaking"
+msgstr " بریکینگ"
+
+#: inc/frontend/templates/archive/side-date.php:13
+#, php-format
+msgctxt "Date archive side item; 1: Month"
+msgid "More %1$s Archives:"
+msgstr "مزید %1$s آرکائیوز:"
+
+#: inc/frontend/templates/archive/side-date.php:40
+#, php-format
+msgctxt "Date archive side item; 1: Year"
+msgid "More %1$s archives:"
+msgstr "مزید %1$s آرکائیوز:"
+
+#: inc/frontend/templates/archive/side-date.php:41
+#, php-format
+msgctxt "Date archive side item; 1: Month"
+msgid "%1$s archives:"
+msgstr "%1$s آرکائیوز:"
+
+#: inc/frontend/templates/archive/side-date.php:80
+msgctxt "Date archive side item"
+msgid "Other yearly archives:"
+msgstr "دیگر سالانہ آرکائیو:"
+
+#: inc/frontend/templates/archive/side-date.php:81
+#, php-format
+msgctxt "Date archive side item; 1: Year"
+msgid "%1$s archives:"
+msgstr "%1$s آرکائیوز:"
+
+#: inc/frontend/templates/archive/side-date.php:119
+msgctxt "Date archive side header"
+msgid "See Also"
+msgstr "یہ بھی دیکھیں"
+
+#: inc/frontend/templates/bar-top.php:5
+msgctxt "Text for top bar navigation menu"
+msgid "Browse"
+msgstr "سبھی"
+
+#: inc/frontend/templates/bar-top.php:30
+msgctxt "Menu title"
+msgid "Language"
+msgstr "زبان"
+
+#: inc/frontend/templates/front-page/grp-lead.php:8
+msgctxt "Front-page group title"
+msgid "Recent stories"
+msgstr "حالیہ مراسلات"
+
+#: inc/frontend/templates/front-page/grp-regs.php:9
+msgctxt "Front-page region title"
+msgid "South Asia"
+msgstr "جنوبی ایشیا"
+
+#: inc/frontend/templates/front-page/grp-regs.php:13
+msgctxt "Front-page region title"
+msgid "Asia-Pacific"
+msgstr "ایشیا بحر الکاہل"
+
+#: inc/frontend/templates/front-page/grp-regs.php:17
+msgctxt "Front-page region title"
+msgid "Middle-east"
+msgstr "مشرق وسطی"
+
+#: inc/frontend/templates/front-page/grp-regs.php:21
+msgctxt "Front-page region title"
+msgid "World"
+msgstr "پوری دنیا سے"
+
+#: inc/frontend/templates/front-page/grp-topics.php:17
+msgctxt "Front-page topic title"
+msgid "Other Topics"
+msgstr "دوسرے عناوین"
+
+#: inc/frontend/templates/pages/archives.php:9
+msgctxt "Description meta, Archives page header"
+msgid "Archives"
+msgstr "آرکائیو"
+
+#: inc/frontend/templates/pages/archives.php:14
+msgctxt "Archives page header"
+msgid "Categories"
+msgstr "اقسام"
+
+#: inc/frontend/templates/pages/archives.php:30
+msgctxt "Archives page header"
+msgid "Tags"
+msgstr "دوسرے ٹیگ"
+
+#: inc/frontend/templates/pages/archives.php:43
+msgctxt "Archives page header"
+msgid "Dates"
+msgstr "تاریخوں"
+
+#: inc/frontend/templates/pages/archives.php:62
+#: inc/frontend/templates/pages/taxonomy-hierarchical.php:84
+#: inc/frontend/templates/pages/taxonomy-non-hierarchical.php:83
+msgctxt "Description meta"
+msgid "Glossary"
+msgstr "لغت"
+
+#: inc/frontend/templates/pages/taxonomy-hierarchical.php:22
+#, php-format
+msgctxt "Description meta; 1: Taxonomy description"
+msgid "List of available %1$s with their most recent items"
+msgstr "فہرست %1$s اور حالیہ مراسلوں کے دستیاب آئیٹمز"
+
+#: inc/frontend/templates/pages/taxonomy-non-hierarchical.php:7
+msgctxt "Column name"
+msgid "Count"
+msgstr "تعداد"
+
+#: inc/frontend/templates/pages/taxonomy-non-hierarchical.php:8
+msgctxt "Page heading"
+msgid "Tabular Display"
+msgstr "سب سے اوپر دکھائیں"
+
+#: inc/frontend/templates/pages/taxonomy-non-hierarchical.php:9
+msgctxt "Page heading"
+msgid "Cloud Display"
+msgstr "کلاؤڈ ڈسپلے"
+
+#: inc/frontend/templates/pages/taxonomy-non-hierarchical.php:11
+#, php-format
+msgctxt "Terms table description; 1: Taxonomy description, 2: Starting letter"
+msgid "List of tagged %1$s that start with `%2$s`"
+msgstr "ٹیگ کردہ %1$s کی فہرست جو `%2$s` کے ساتھ شروع ہوتی ہے"
+
+#: inc/frontend/templates/pages/taxonomy-non-hierarchical.php:36
+#, php-format
+msgctxt "Description meta; 1: Taxonomy description"
+msgid ""
+"List of %1$s tagged and the number of news stories and articles associated "
+"with each"
+msgstr ""
+"ٹیگ کردہ %1$s کی فہرست اور ہر ایک سے منسلک نیوز کہانیوں اور مضامین کی تعداد"
+
+#: inc/frontend/templates/single-post/article-related.php:8
+#, php-format
+msgctxt "Related posts heading; 1: Term name"
+msgid "Related %1$s"
+msgstr "متعلقہ%1$s"
+
+#: inc/frontend/templates/single-post/article-related.php:9
+msgctxt "Related posts link title"
+msgid "Related stories"
+msgstr "متعلقہ مراسلات"
+
+#: inc/frontend/templates/single-post/article-related.php:85
+msgctxt "Related posts title"
+msgid "Read more"
+msgstr "مزید پڑھئیں"
+
+#: inc/frontend/templates/single-post/side.php:13
+#, php-format
+msgctxt "Side heading; 1: Region"
+msgid "Recommended %1$s Stories"
+msgstr "متعلقہ %1$s مراسلات"
+
+#: inc/frontend/templates/single-post/side.php:16
+#, php-format
+msgctxt "Side heading; 1: Region"
+msgid "Latest %1$s Stories"
+msgstr "متعلقہ %1$s مراسلات"
+
+#: inc/frontend/templates/single-post/side.php:19
+#, php-format
+msgctxt "Side heading; 1: Topic"
+msgid "Latest on %1$s"
+msgstr "%1$s کی آخری خبریں"
+
+#: inc/frontend/templates/single-post/source.php:4
+msgctxt "Source heading"
+msgid "External References"
+msgstr ""
+
+#: inc/frontend/templates/single-post/source.php:5
+msgctxt "Source introduction"
+msgid "For this story, we would like to thank"
+msgstr ""
+
+#: inc/init/custom-tax.php:26
+msgctxt "General taxonomy name"
+msgid "Characters"
+msgstr "شخصیات"
+
+#: inc/init/custom-tax.php:27
+msgctxt "Singular taxonomy name"
+msgid "Character"
+msgstr "شخصیت"
+
+#: inc/init/custom-tax.php:28
+msgctxt "Full list of taxonomy items"
+msgid "All terms"
+msgstr "تمام شرائط"
+
+#: inc/init/custom-tax.php:29
+msgctxt "Edit taxonomy item"
+msgid "Edit item"
+msgstr "آیٹمز کو ترمیم کریں"
+
+#: inc/init/custom-tax.php:30
+msgctxt "View taxonomy item"
+msgid "View item"
+msgstr " آئٹم دیکھیں"
+
+#: inc/init/custom-tax.php:31
+msgctxt "Apply changes to a taxonomy item"
+msgid "Update"
+msgstr "اپ ڈیٹ"
+
+#: inc/init/custom-tax.php:32
+msgctxt "Add new taxonomy item"
+msgid "Add"
+msgstr "اضافہ کریں"
+
+#: inc/init/custom-tax.php:33
+msgctxt "Name for new taxonomy item"
+msgid "Name"
+msgstr "نام"
+
+#: inc/init/custom-tax.php:34
+msgctxt "Taxonomy term's parent"
+msgid "Parent"
+msgstr "جڑیں"
+
+#: inc/init/custom-tax.php:35
+msgctxt "Taxonomy term's parent"
+msgid "Parent:"
+msgstr "جڑیں:"
+
+#: inc/init/custom-tax.php:36
+msgctxt "Search taxonomy items"
+msgid "Search Characters"
+msgstr "تلاش کے لیے حروف"
+
+#: inc/init/custom-tax.php:37
+msgctxt "Most frequent taxonomy items"
+msgid "Most used"
+msgstr "سب سے زیادہ مستعمل"
+
+#: inc/init/custom-tax.php:38
+msgctxt "Taxonomy meta-box hint"
+msgid "Separate items with commas"
+msgstr "کوما سے آیٹمز کوعلیحدہ کریں"
+
+#: inc/init/custom-tax.php:39
+msgctxt "Taxonomy meta-box hint"
+msgid "Add/Remove items"
+msgstr "آیٹمز شامل کریں / ہٹائیں"
+
+#: inc/init/custom-tax.php:40
+msgctxt "Taxonomy meta-box hint"
+msgid "Choose from the most used"
+msgstr "سب سے زیادہ مقبول عناوین سے منتخب کریں"
+
+#: inc/init/custom-tax.php:41
+msgctxt "No taxonomy terms found"
+msgid "Nothing found!"
+msgstr "کچھ نہیں مل سکا!"
+
+#: inc/init/custom-tax.php:42
+msgctxt "No taxonomy terms assigned"
+msgid "Not assigned yet!"
+msgstr "ابھی تک تفویض نہیں!"
+
+#: inc/init/custom-tax.php:43
+msgctxt "Taxonomy terms' list navigation"
+msgid "Terms list navigation"
+msgstr "شرائط کی فہرست نیویگیشن"
+
+#: inc/init/custom-tax.php:44
+msgctxt "Taxonomy terms' list"
+msgid "Terms list"
+msgstr "شرائط کی فہرست"
+
+#: inc/init/custom-tax.php:45
+msgctxt "Taxonomy archive name"
+msgid "Person"
+msgstr "شخصیت"
+
+#: inc/init/custom-tax.php:52
+msgctxt "Taxonomy description"
+msgid "People"
+msgstr "لوگ"
+
+#: inc/init/custom-tax.php:60
+msgctxt "General taxonomy name"
+msgid "States"
+msgstr "ریاستوں"
+
+#: inc/init/custom-tax.php:61
+msgctxt "Singular taxonomy name"
+msgid "State"
+msgstr "ریاست"
+
+#: inc/init/custom-tax.php:62
+msgctxt "Search taxonomy items"
+msgid "Search States"
+msgstr "ریاستون کی تلاش"
+
+#: inc/init/custom-tax.php:63
+msgctxt "Taxonomy archive name"
+msgid "Country/State"
+msgstr "ریاست / ملک"
+
+#: inc/init/custom-tax.php:66
+msgctxt "Taxonomy description"
+msgid "Countries/States"
+msgstr "ریاستیں/ ممالک"
+
+#: inc/init/custom-tax.php:72
+msgctxt "General taxonomy name "
+msgid "Subtopics"
+msgstr "ذیلی موضوعات"
+
+#: inc/init/custom-tax.php:73
+msgctxt "Singular taxonomy name"
+msgid "Subtopic"
+msgstr "ذیلی موضوع"
+
+#: inc/init/custom-tax.php:74
+msgctxt "Search taxonomy items"
+msgid "Search Subtopics"
+msgstr "ذیلی موضوعات کی تلاش"
+
+#: inc/init/custom-tax.php:75
+msgctxt "Taxonomy archive name"
+msgid "Miscellaneous Tag"
+msgstr "متفرق ٹیگ"
+
+#: inc/init/custom-tax.php:78
+msgctxt "Taxonomy description"
+msgid "Miscellaneous Tags"
+msgstr "متفرق ٹیگ"
+
+#: inc/init/custom-tax.php:87
+msgctxt "General taxonomy name"
+msgid "Designations"
+msgstr " مواد کی قسم"
+
+#: inc/init/custom-tax.php:88
+msgctxt "Singular taxonomy name"
+msgid "Designation"
+msgstr " مواد کی قسم"
+
+#: inc/init/custom-tax.php:89
+msgctxt "Search taxonomy items"
+msgid "Search Designations"
+msgstr "مواد کے قسم کی تلاش"
+
+#: inc/init/custom-tax.php:90
+msgctxt "Taxonomy archive name"
+msgid "Content Type"
+msgstr "مواد کی قسم"
+
+#: inc/init/custom-tax.php:97
+msgctxt "Taxonomy description"
+msgid "Content Types"
+msgstr "مواد کی قسم"
+
+#: inc/init/custom-tax.php:104
+msgctxt "General taxonomy name"
+msgid "Placements"
+msgstr "جگہیں"
+
+#: inc/init/custom-tax.php:105
+msgctxt "Singular taxonomy name"
+msgid "Placement"
+msgstr "جگہ"
+
+#: inc/init/custom-tax.php:106
+msgctxt "Search taxonomy items"
+msgid "Search Placements"
+msgstr "جگہوں کی تلاش"
+
+#: inc/init/custom-tax.php:107
+msgctxt "Taxonomy archive name"
+msgid "Front-page Position"
+msgstr "پہلے صفحے پر مقرر کریں"
+
+#: inc/init/custom-tax.php:110
+msgctxt "Taxonomy description"
+msgid "Front-page Positions"
+msgstr "پہلے صفحے پر مقرر کریں"
+
+#: inc/init/custom-tax.php:116
+msgctxt "General taxonomy name"
+msgid "Regions"
+msgstr "علاقے"
+
+#: inc/init/custom-tax.php:117
+msgctxt "Singular taxonomy name"
+msgid "Region"
+msgstr "علاقہ"
+
+#: inc/init/custom-tax.php:118
+msgctxt "Search taxonomy items"
+msgid "Search Regions"
+msgstr "علاقے کی تلاش"
+
+#: inc/init/custom-tax.php:119
+msgctxt "Taxonomy archive name"
+msgid "Region"
+msgstr "علاقہ"
+
+#: inc/init/custom-tax.php:122
+msgctxt "Taxonomy description"
+msgid "Regions"
+msgstr "علاقے"
+
+#: inc/init/custom-tax.php:128
+msgctxt "General taxonomy name"
+msgid "Rolls"
+msgstr "رولز"
+
+#: inc/init/custom-tax.php:129
+msgctxt "Singular taxonomy name"
+msgid "Roll"
+msgstr "رول"
+
+#: inc/init/custom-tax.php:130
+msgctxt "Search taxonomy items"
+msgid "Search Rolls"
+msgstr "رولز کی تلاش"
+
+#: inc/init/custom-tax.php:131
+msgctxt "Taxonomy archive name"
+msgid "Marquee Roll"
+msgstr "رول مارک"
+
+#: inc/init/custom-tax.php:134
+msgctxt "Taxonomy description"
+msgid "Marquee Rolls"
+msgstr "رولز مارک"
+
+#: inc/init/custom-tax.php:140
+msgctxt "General taxonomy name"
+msgid "Topics"
+msgstr "عناوین"
+
+#: inc/init/custom-tax.php:141
+msgctxt "Singular taxonomy name"
+msgid "Topic"
+msgstr "عنوان"
+
+#: inc/init/custom-tax.php:142
+msgctxt "Search taxonomy items"
+msgid "Search Topics"
+msgstr "عناوین کی تلاش"
+
+#: inc/init/custom-tax.php:143
+msgctxt "Taxonomy archive name"
+msgid "Main Topic"
+msgstr "اہم عنوان"
+
+#: inc/init/custom-tax.php:146
+msgctxt "Taxonomy description"
+msgid "Main Topics"
+msgstr "اہم عناوین"
+
+#: inc/init/init.php:14
+msgctxt "Excerpt Text"
+msgid "Continue Reading"
+msgstr "مزید پڑھئیں"
+
+#: inc/init/init.php:32
+msgctxt "Language"
+msgid "Urdu"
+msgstr "اردو"
+
+#: inc/init/init.php:71 inc/init/init.php:115
+msgctxt "Language"
+msgid "English"
+msgstr "انگریزی"
+
+#: inc/init/init.php:155
+msgctxt "comma"
+msgid ","
+msgstr "،"
+
+#: inc/init/init.php:280
+msgctxt "Locale error"
+msgid "Your selected locale is not supported by this theme!"
+msgstr "آپ کی منتخب کردہ جگہ کو یہاں سے حمایت نہیں ہے!"
+
+#: inc/init/init.php:323
+msgctxt "Menu description"
+msgid "Top Bar Navigation"
+msgstr "اوپر بار نیوی گیشن"
+
+#: inc/init/snt-func.php:171
+msgctxt "Default submit button text"
+msgid "Save"
+msgstr "محفوظ کریں"
+
+#: inc/translations.php:2
+msgctxt "Site name"
+msgid "Islam News Agency"
+msgstr ""
+
+#: inc/translations.php:3
+msgctxt "Site description/tag line"
+msgid "Accurate news and in-depth analysis from Muslim world and beyond"
+msgstr ""
+
+#: inc/translations.php:4
+msgctxt "Designation"
+msgid "News"
+msgstr "خبریں"
+
+#: inc/translations.php:5
+msgctxt "Designation"
+msgid "Analysis"
+msgstr "تجزیات"
+
+#: inc/translations.php:6
+msgctxt "Placement"
+msgid "Front-page Lead"
+msgstr "پہلے صفحے سرخی"
+
+#: inc/translations.php:7
+msgctxt "Placement"
+msgid "Front-page Primary Lead"
+msgstr "پہلے صفحے کے اوّل سرخی"
+
+#: inc/translations.php:8
+msgctxt "Placement"
+msgid "Front-page Secondary Lead"
+msgstr "پہلے صفحے کے ثانوی سرخی"
+
+#: inc/translations.php:9
+msgctxt "Placement"
+msgid "Anywhere Else"
+msgstr "کہیں اور"
+
+#: inc/translations.php:10
+msgctxt "Placement"
+msgid "Regular"
+msgstr "معمولی"
+
+#: inc/translations.php:11
+msgctxt "Region & Topic"
+msgid "Group One"
+msgstr "پہلا گروپ"
+
+#: inc/translations.php:12
+msgctxt "Region & Topic"
+msgid "Group Two"
+msgstr "دوسرا گروپ"
+
+#: inc/translations.php:13
+msgctxt "Region"
+msgid "Asia - Pacific"
+msgstr "ایشیا بحر الکاہل"
+
+#: inc/translations.php:14
+msgctxt "Region"
+msgid "Afghanistan"
+msgstr "افغانستان"
+
+#: inc/translations.php:15
+msgctxt "Region"
+msgid "Pakistan"
+msgstr "پاکستان"
+
+#: inc/translations.php:16
+msgctxt "Region"
+msgid "Bangladesh"
+msgstr "بنگلہ دیش"
+
+#: inc/translations.php:17
+msgctxt "Region"
+msgid "China"
+msgstr "چین"
+
+#: inc/translations.php:18
+msgctxt "Region"
+msgid "India"
+msgstr "بھارت"
+
+#: inc/translations.php:19
+msgctxt "Region"
+msgid "Kashmir"
+msgstr "کشمیر"
+
+#: inc/translations.php:20
+msgctxt "Region"
+msgid "Asia Others"
+msgstr "ایشیا کے دوسرے علاقے"
+
+#: inc/translations.php:21
+msgctxt "Region"
+msgid "South/South-east Asia"
+msgstr "جنوب / جنوب مشرقی ایشیا"
+
+#: inc/translations.php:22
+msgctxt "Region"
+msgid "Other Regions"
+msgstr "دوسرے علاقے"
+
+#: inc/translations.php:23
+msgctxt "Region"
+msgid "World"
+msgstr "دنیا بھرسے"
+
+#: inc/translations.php:24
+msgctxt "Region"
+msgid "The Middle-east"
+msgstr "مشرق وسطی"
+
+#: inc/translations.php:25
+msgctxt "Roll"
+msgid "Hot"
+msgstr "بہت اہم"
+
+#: inc/translations.php:26
+msgctxt "Roll"
+msgid "Normal"
+msgstr "عادی"
+
+#: inc/translations.php:27
+msgctxt "Topic"
+msgid "Group Three"
+msgstr "تیسرا گروپ"
+
+#: inc/translations.php:28
+msgctxt "Topic"
+msgid "Politics"
+msgstr "سیاست"
+
+#: inc/translations.php:29
+msgctxt "Topic"
+msgid "Security"
+msgstr "سیکورٹی"
+
+#: inc/translations.php:30
+msgctxt "Topic"
+msgid "Economics"
+msgstr "اقتصادی"
+
+#: inc/translations.php:31
+msgctxt "Topic"
+msgid "Society"
+msgstr "سماجی"
+
+#: inc/translations.php:32
+msgctxt "Topic"
+msgid "Other Topics"
+msgstr "دوسرے عناوین"
+
+#: inc/translations.php:33
+#, php-format
+msgctxt "Page slug; 1: Taxonomy description"
+msgid "%1$s List"
+msgstr "%1$s فہرست"
+
+#: maintenance.php:14
+msgctxt "Message"
+msgid "Site Under Maintenance!"
+msgstr " ویب سائٹ جلد بحال ہوجائے گی!"
+
+#~ msgctxt "Description meta; 1: Other regions"
+#~ msgid "Latest News, Brilliant Analysis from Muslim world%1$s"
+#~ msgstr "تازہ ترین خبریں، مسلم دنیا %1$s سے شاندار تجزیہ"
+
+#~ msgctxt "No Recent Posts"
+#~ msgid "You Have No Published Posts yet!"
+#~ msgstr "آپ نے ابھی تک کوئی مواد شائع نہیں کی ہے!"
+
+#~ msgctxt "Settings field title; 1: Taxonomy archive label"
+#~ msgid "Default %1$s"
+#~ msgstr "پہلے سے طے شدہ %1$s"
+
+#~ msgctxt "Pages table column header"
+#~ msgid "Parent"
+#~ msgstr "جڑیں"
+
+#~ msgctxt "Source meta-box text; 1: Note"
+#~ msgid "Enter source websites' names (%1$s):"
+#~ msgstr "ماخوذہ ویب سائٹس کے نام درج کریں (%1$s):"
+
+#~ msgctxt "Source meta-box text"
+#~ msgid "Don't use addresses"
+#~ msgstr "پتے کا استعمال نہ کریں"
+
+#~ msgctxt "Source meta-box text"
+#~ msgid "Separate items with commas"
+#~ msgstr "کوما سے آیٹمز کوعلیحدہ کریں"
+
+#~ msgctxt "Source meta-box placeholder"
+#~ msgid "Name(s)"
+#~ msgstr "نام"
+
+#~ msgctxt "Archive header; %1$s: Taxonomy, %2$s: Term"
+#~ msgid "All items with their %1$s set as %2$s"
+#~ msgstr "ان کے %1$s کے ساتھ تمام اشیاء%2$s کے طور پر مقرر ہیں"
+
+#~ msgctxt "Archive header; %1$s: Term"
+#~ msgid "All items having the %1$s tag"
+#~ msgstr "%1$s کی ٹیگ والی تمام اشیاء"
+
+#~ msgctxt "Pagination; %1$d: Current page, %2$d: Total page count"
+#~ msgid "Page %1$d of %2$d"
+#~ msgstr "%2$ d کا صفحہ %1$ d"
+
+#~ msgctxt "Pagination; %3$d-%4$d: First-last items' number"
+#~ msgid "Last item "
+#~ msgid_plural "Items %3$d-%4$d "
+#~ msgstr[0] "آخری آئٹم "
+#~ msgstr[1] "آئٹم %3$d - %4$d "
+
+#~ msgctxt "Pagination; %5$d: Item count"
+#~ msgid "(total: %5$d)"
+#~ msgstr "(کل: %5$d)"
+
+#~ msgctxt "Date archive title"
+#~ msgid "Daily Archive: "
+#~ msgstr "ڈیلی آرکائیو: "
+
+#~ msgctxt "Date archive title"
+#~ msgid "Monthly Archive: "
+#~ msgstr "ماہانہ محفوظ شدہ دستاویزات: "
+
+#~ msgctxt "Date archive title"
+#~ msgid "Yearly Archive: "
+#~ msgstr " سالانہ آرکائیو:"
+
+#~ msgctxt "Archive description; %1$s: Period"
+#~ msgid "Items published during %1$s"
+#~ msgstr "%1$ss کے دوران شائع کردہ اشیاء"
+
+#~ msgctxt "Footer text"
+#~ msgid "We would appreciate mentioning %1$s as the source."
+#~ msgstr " اگر %1$s کو اپنے مآخذ کے طور پر تعارف کریں آپ کی بڑی مہربانی ہوگی-"
+
+#~ msgctxt "Description meta"
+#~ msgid "Date Archive"
+#~ msgstr "محفوظ کردہ دستاویزات"
+
+#~ msgctxt "Description meta"
+#~ msgid "Archives"
+#~ msgstr "آرکائیو"
+
+#~ msgctxt "Keywords meta; %1$s: comma"
+#~ msgid "news%1$s analysis%1$s photo%1$s archive%1$s"
+#~ msgstr "خبریں %1$s تجزیات%1$s تصاویر%1$s آرکائیو %1$s"
+
+#~ msgctxt "Description meta"
+#~ msgid "Month Archive"
+#~ msgstr "مہینے بھر کے لیے محفوظ شدہ دستاویزات"
+
+#~ msgctxt "Description meta"
+#~ msgid "Year Archive"
+#~ msgstr "سال بھر کے لیے محفوظ کردہ دستاویزات"
+
+#~ msgctxt "Keywords meta"
+#~ msgid "archive"
+#~ msgstr "آرکائیو"
+
+#~ msgctxt "Description meta"
+#~ msgid "Latest News, Brilliant Analysis."
+#~ msgstr " نئی خبریں، عمدہ تجزیات"
+
+#~ msgctxt "Keywords meta"
+#~ msgid "photo"
+#~ msgstr "تصاویر"
+
+#~ msgctxt "Default Terms meta-box hint; %s: Menu title"
+#~ msgid "You can change these settings in \"%s\"."
+#~ msgstr " یہاں سے \"%s\" آپ ان ترتیبات کو تبدیل کر سکتے ہیں"
+
+#~ msgctxt "No taxonomy terms assigned"
+#~ msgid " Not Specified"
+#~ msgstr " غیر متعین"
+
+#~ msgctxt "No changes in taxonomy terms"
+#~ msgid " No Changes"
+#~ msgstr " کوئی تبدیلی نہیں"
+
+#~ msgctxt "Taxonomy drop-down option; %s: Taxonomy object's singular name"
+#~ msgid " Select %s..."
+#~ msgstr " منتخب کریں%s..."
+
+#~ msgctxt "Settings field title; %s: Taxonomy object's plural name"
+#~ msgid "Default %s "
+#~ msgstr "پہلے سے طے شدہ %s "
+
+#~ msgctxt "Setting description; %s: Taxonomy object's singular name"
+#~ msgid "%s default terms"
+#~ msgstr "%s پہلے سے طے شدہ شرائط"
+
+#~ msgctxt "Settings field title; %s: Taxonomy object's singular name"
+#~ msgid "Default %s "
+#~ msgstr "پہلے سے طے شدہ %s "
+
+#~ msgctxt "Settings section description"
+#~ msgid "These will be assigned to new posts"
+#~ msgstr "ان کو نئی تحاریر میں مقرر کیا جائے گا"
+
+#~ msgctxt "Settings hint; %s: Taxonomy object's plural name"
+#~ msgid "No default %s set!"
+#~ msgstr "پہلے سے طے شدہ شرائط مقرر نہیں  %s کیا گیا!"
+
+#~ msgctxt "Setting option; %s: Taxonomy object's singular name"
+#~ msgid " Select default %s..."
+#~ msgstr " طے شدہ شرائط منتخب کریں%s..."
+
+#~ msgctxt "Setting option"
+#~ msgid " Select Default Top Value..."
+#~ msgstr " پہلے سے طے شدہ اہم چیزوں کو منتخب کریں ..."
+
+#~ msgctxt "Description meta-box text"
+#~ msgid "Enter description (Used by search engines): "
+#~ msgstr "تفصیل درج کریں (تلاش کے انجن سے استعمال کیا جاتا ہے ): "
+
+#~ msgctxt "Description meta-box placeholder; %s: Number"
+#~ msgid "Description... (%s characters max)"
+#~ msgstr "تفصیل ... (%s حروف زیادہ سے زیادہ)"
+
+#~ msgctxt "Excerpt meta-box text"
+#~ msgid "Enter post excerpt (Summary of the post): "
+#~ msgstr " پوسٹ اقتباس درج کریں (پوسٹ کا خلاصہ):"
+
+#~ msgctxt "Related Posts meta-box text"
+#~ msgid "Enter related post's ID: "
+#~ msgstr " متعلقہ پوسٹ کی شناخت درج کریں"
+
+#~ msgctxt "Source meta-box text; %1$s: Note"
+#~ msgid "Enter source websites' names (%1$s):"
+#~ msgstr "ماخوذہ ویب سائٹس کے نام درج کریں (%1$s):"
+
+#~ msgctxt "Option for Top meta-data quick edit form"
+#~ msgid " Not specified"
+#~ msgstr " غیر متعین"
+
+#~ msgctxt "Option for Top meta-data bulk edit form"
+#~ msgid " No Changes"
+#~ msgstr " کوئی تبدیلی نہیں"
+
+#~ msgctxt "Text in Top meta-box"
+#~ msgid "(On front page) Set as:"
+#~ msgstr "(پہلے صفحے پر) مقرر کریں:"
+
+#~ msgctxt "Posts' ID column header in posts table"
+#~ msgid "ID"
+#~ msgstr "شناخت"
+
+#~ msgctxt "Posts' title column header in posts table"
+#~ msgid "Title"
+#~ msgstr "عنوان"
+
+#~ msgctxt "Top meta-data column header in posts table"
+#~ msgid "Top in"
+#~ msgstr "اوپر میں"
+
+#~ msgctxt "Publication date column header in posts table"
+#~ msgid "Date"
+#~ msgstr "تاریخ"
+
+#~ msgctxt "Option for Top meta-data filter in posts table"
+#~ msgid " All Top Values"
+#~ msgstr " سبھی اہم عناوین"
+
+#~ msgctxt "Option for Top meta-data filter in posts table"
+#~ msgid " Region Tops"
+#~ msgstr " علاقے کے اہم عناوین"
+
+#~ msgctxt "Option for Top meta-data filter in posts table"
+#~ msgid " Topic Tops"
+#~ msgstr " اہم عناوین"
+
+#~ msgctxt "Option for Top meta-data filter in posts table"
+#~ msgid " Non-tops"
+#~ msgstr " غیر اہم"
+
+#~ msgctxt "Filter option; %s: Taxonomy object's plural name"
+#~ msgid " All %s"
+#~ msgstr " تمام %s"
+
+#~ msgctxt "Related Post meta-box text; %d: ID"
+#~ msgid "No ID match for %d"
+#~ msgstr "کوئی شناخت %d  کے لیے متعارف نہیں"
+
+#~ msgctxt "Date archive side item; %1$s: Month"
+#~ msgid "More %1$s Archives:"
+#~ msgstr "مزید %1$s آرکائیوز:"
+
+#~ msgctxt "Date archive side item; %1$s: Month"
+#~ msgid "%1$s archive"
+#~ msgstr "%1$s آرکائیو"
+
+#~ msgctxt "Date archive side item; %1$s: Year"
+#~ msgid "%1$s archive"
+#~ msgstr "%1$s آرکائیو"
+
+#~ msgctxt "Date archive side item; %1$s: Year"
+#~ msgid "More %1$s archives:"
+#~ msgstr "مزید %1$s آرکائیوز:"
+
+#~ msgctxt "Date archive side item; %1$s: Month"
+#~ msgid "%1$s archives:"
+#~ msgstr "%1$s آرکائیوز:"
+
+#~ msgctxt "Date archive side item; %1$s: Year"
+#~ msgid "%1$s archives:"
+#~ msgstr "%1$s آرکائیوز:"
+
+#~ msgctxt "Date archive side item; %1$d: Year"
+#~ msgid "%1$d archive"
+#~ msgstr "%1$d آرکائیو"
+
+#~ msgctxt "Date archive side item; %1$d: Year"
+#~ msgid "More %1$d archives:"
+#~ msgstr "مزید %1$d آرکائیوز:"
+
+#~ msgctxt "Date archive side item; %1$d: Year"
+#~ msgid "%1$d archives:"
+#~ msgstr "%1$d آرکائیو:"
+
+#~ msgctxt "Front-page region title; %1$s: comma"
+#~ msgid "India%1$s Oceania"
+#~ msgstr "بهارت%1$s اوقیانوسیہ"
+
+#~ msgctxt "Text for top bar navigation menu"
+#~ msgid "Browse "
+#~ msgstr " براؤز کریں"
+
+#~ msgctxt "Document Title"
+#~ msgid "Archives"
+#~ msgstr "آرکائیو"
+
+#~ msgctxt "Tags heading"
+#~ msgid "Other tags"
+#~ msgstr "دوسرے ٹیگ"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "Characters"
+#~ msgstr "شخصیات"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "People involved"
+#~ msgstr "لوگ شامل ہیں"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "States"
+#~ msgstr "ممالک"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "States/Countries involved"
+#~ msgstr "ریاستیں/ ممالک شامل ہیں"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "Subtopics"
+#~ msgstr "ذیلی موضوعات"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "Collateral topics discussed"
+#~ msgstr "متفقہ موضوعات پر تبادلہ خیال"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "Designation"
+#~ msgstr " مواد کا تعیین"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "Content type"
+#~ msgstr "مواد کی قسم"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "Placement"
+#~ msgstr "جگہ"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "Location on Front page"
+#~ msgstr "پہلے صفحے پر مقرر کریں"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "Geographical location"
+#~ msgstr "جغرافیائی محل وقوع"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "Roll"
+#~ msgstr "رول"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "Roll to display on"
+#~ msgstr "رول اوپر دکهانے کے لیے"
+
+#~ msgctxt "Taxonomy archive name"
+#~ msgid "Topic"
+#~ msgstr "عنوان"
+
+#~ msgctxt "Taxonomy description"
+#~ msgid "Main topic"
+#~ msgstr "اہم عناوین"
+
+#~ msgctxt "Publish time; %1$d: Hours passed"
+#~ msgid "An hour ago"
+#~ msgid_plural "%1$d hours ago"
+#~ msgstr[0] "ایک گھنٹے پہلے"
+#~ msgstr[1] "%1$d گھنٹے پہلے"
+
+#~ msgctxt "Publish time; %1$d: Minutes passed"
+#~ msgid "A minute ago"
+#~ msgid_plural "%1$d minutes ago"
+#~ msgstr[0] "ایک منٹ پہلے"
+#~ msgstr[1] "%1$d منٹ پہلے"
+
+#~ msgctxt "Description meta; %1$s: Taxonomy object's plural name"
+#~ msgid "All %1$s"
+#~ msgstr "سبھی %1$s"
+
+#~ msgctxt "All terms page heading"
+#~ msgid "Table list"
+#~ msgstr "ٹیبل کی فہرست"
+
+#~ msgctxt "All terms page heading"
+#~ msgid "Cloud Presentation"
+#~ msgstr "کلاؤڈ پریزنٹیشن"
+
+#~ msgctxt "Archive header; %1$s: Taxonomy name"
+#~ msgid "%1$s archive:"
+#~ msgstr "%1$s آرکائیو:"
+
+#~ msgctxt "Front-page region title"
+#~ msgid "South-east Asia"
+#~ msgstr "جنوب مشرقی ایشیا"
+
+#~ msgctxt "Pagination; %1$d: Current page, %2$d: Page count"
+#~ msgid "Page %1$d of %2$d"
+#~ msgstr "%1$d صفحہ %2$d سے"
+
+#~ msgctxt "Empty query error"
+#~ msgid "No posts!"
+#~ msgstr "دکھانے کے لیے کوئی مراسلہ نہیں ہے"
+
+#~ msgctxt "Date archive side header"
+#~ msgid "Other daily archives"
+#~ msgstr "دن بھر کے دوسرے آرکائیو"
+
+#~ msgctxt "Date archive side header"
+#~ msgid "The monthly archive"
+#~ msgstr "مہینے بھر کے لیے محفوظ شدہ دستاویزات"
+
+#~ msgctxt "Date archive side header"
+#~ msgid "The yearly archive"
+#~ msgstr "سال بھر کے لیے محفوظ کردہ دستاویزات"
+
+#~ msgctxt "Column name"
+#~ msgid "Count (News / Opinion)"
+#~ msgstr "تعداد (خبریں/ تجزیات)"
+
+#~ msgctxt "All terms page heading"
+#~ msgid "Terms cloud"
+#~ msgstr "شرائط کی حالت"
+
+#~ msgctxt "Default Terms meta-box text; %1$s: \"Only\", %2$s: \"NEW\""
+#~ msgid "%1$s for %2$s posts!"
+#~ msgstr "%1$s برائے %2$s مواد!"
+
+#~ msgctxt "Default Terms meta-box text"
+#~ msgid "Only"
+#~ msgstr "صرف"
+
+#~ msgctxt "Default Terms meta-box text"
+#~ msgid "NEW"
+#~ msgstr "نئی"
+
+#~ msgctxt "Frontpage group title"
+#~ msgid "Afghanistan"
+#~ msgstr "افغانستان"
+
+#~ msgctxt "Frontpage group title"
+#~ msgid "Pakistan"
+#~ msgstr "پاکستان"
+
+#~ msgctxt "Frontpage group title; %1$s: <wbr> tag"
+#~ msgid "South/%1$sSouth-%1$seast Asia"
+#~ msgstr "جنوبی/%1$s جنوبی-%1$s مشرقی ایشیا"
+
+#~ msgctxt "Frontpage group title"
+#~ msgid "Around the World"
+#~ msgstr "دنیا بھرسے"
+
+#~ msgctxt "Insufficient posts error"
+#~ msgid "Insufficient posts!"
+#~ msgstr "نامکمل پوسٹس!"
+
+#~ msgctxt "Document Title"
+#~ msgid "Date Archive"
+#~ msgstr "تاریخ آرکائیو"
+
+#~ msgctxt "Related posts"
+#~ msgid "Related"
+#~ msgstr "متعلقہ مراسلات"
+
+#~ msgctxt "Maintenance message"
+#~ msgid "Site Under Maintenance! We'll be back soon."
+#~ msgstr "ویب سائٹ جلد بحال ہوجائے گی! ہم جلد ہی واپس آ جائیں گے-"
+
+#~ msgctxt "Column name"
+#~ msgid "Items (News / Analysis)"
+#~ msgstr "آیٹمز (خبریں/ تجزیات)"

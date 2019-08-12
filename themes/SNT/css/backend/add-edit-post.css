@@ -1,0 +1,189 @@
+
+/* Commons */
+.hide-txt {display: none;}
+.fail-src, .failed-url, .cur-rel:hover span, .cur-rel:active span, .del-src:hover, .del-src:active {color: #800;}
+
+/* Related posts meta */
+#add-related {-moz-appearance: textfield;}
+.cur-rel span, #add-src span {
+    vertical-align: middle;
+    color: #555;
+}
+#add-related::-webkit-inner-spin-button, #add-related::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+.rel-sug i {
+    font-style: normal;
+    color: #00b;
+}
+.rel-sug {
+    border: 1px solid #ccc;
+    border-top: 0;
+    padding: 3px 5px;
+    cursor: default;
+    margin: 1px;
+}
+.sel, .rel-sug-item:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* Source meta */
+.ok-src {color: #005;}
+#add-src {margin: 5% 0;}
+.ok-src, .fail-src {font-size: 120%;}
+.item-src:nth-child(odd) {background-color:#9a9a9a2e;}
+.item-src:nth-child(even) {background-color: #71717169;}
+#source-meta-box .ttl-page {font-weight: 900;}
+.item-src {
+    position:relative;
+    padding: 2%;
+}
+#source-meta-box input:disabled {
+    background-color: #e2e2e2;
+    font-style: italic;
+}
+.msg-src {
+    left: 20%;
+    bottom: 5%;
+    position: fixed;
+    width: 50em;
+    z-index: 9;
+    background-color: #fff;
+    padding: 1%;
+    border: 1px solid #c1c1c1;
+}
+.msg-src button {
+    right: -1%;
+    display: block;
+    position: absolute;
+    top: -5%;
+    width: 1em;
+    height: 1em;
+    background-color: #fff;
+    border: 0;
+    padding: 0;
+    color: #800;
+    font-size: 150%;
+    border-radius: 23%;
+}
+.del-src {
+    padding: 0;
+    position: absolute;
+    top: 1em;
+    right: 1%;
+    background-color: #0000;
+    border: 0;
+}
+
+/* Others */
+.div-def-nh-tax {margin: 5px 0;}
+#def-terms-meta-box .howto i {font-weight: 500;}
+.tagsdiv .newtag, #add-related, #recent-posts-meta-box table {width: 100%;}
+#table-recent-posts .column-title {
+    text-align: inherit;
+    padding:0 2%;
+}
+.def-nh-tax {
+    background-color: #005;
+    color: #fff;
+    padding: 2px 4px;
+}
+
+/* Only when big enough */
+@media ( min-width: 900px ) and ( min-height: 550px ) {
+    #formatdiv {top: 64px;}
+    #wpadminbar {display: none;}
+    #postimagediv {top: 345px;}
+    #desc, #excerpt {height: 30px;}
+    .misc-pub-section {font-size: 11px;}
+    #post .postbox > h2 {padding: 2px 12px;}
+    .wp-admin > #wpwrap {margin-top: -30px;}
+    #txt-area-desc-meta {display: block;}
+    #wpbody > #wpbody-content {padding-bottom: 5px;}
+    #table-recent-posts thead {background-color: #ccc;}
+    #table-recent-posts tr > * {text-align: center;}
+    #desc, #source, .in-txt-src {width: 100%;}
+    #table-recent-posts tbody tr {box-shadow: inset 0 -1px #ccc;}
+    #screen-meta-links, #excerpt {margin: 0;}
+    #poststuff .postbox-container {width: 22%;}
+    #table-recent-posts .column-date {min-width: 45px;}
+    #screen-meta, .screen-meta-toggle {z-index: 4;}
+    #poststuff #source-meta-box .inside {max-height: 70px;}
+    #table-recent-posts tbody tr:last-child {box-shadow: none;}
+    #poststuff #recent-posts-meta-box .inside {max-height: 500px;}
+    .postbox .inside > p, .postbox .inside > p:last-child {margin: 0 0 !important;}
+    div#major-publishing-actions, div#minor-publishing-actions {padding: 0;}
+    .misc-pub-section:before, .misc-pub-section > #timestamp:before {font-size: 15px !important;}
+    .misc-pub-section.curtime.misc-pub-curtime, div#visibility, .misc-pub-section {padding: 0 10px;}
+    .lnk-recent-posts-mb:link, .lnk-recent-posts-mb:visited, .lnk-recent-posts-mb:hover {text-decoration: none;}
+    .inside p, #desc, #excerpt, .postbox .inside > p, .postbox .inside > p:last-child, .def-nh-tax {line-height: 1;}
+    #submitdiv {
+        bottom: 0;
+        z-index: 2;
+    }
+    #postexcerpt {
+        top: 155px;
+        z-index: 2;
+    }
+    #source-meta-box {
+        top: 240px;
+        z-index: 1;
+    }
+    .postbox {
+        min-width: 150px;
+        width: 97%;
+        margin-bottom: 5px;
+    }
+    #post-body .postbox .handlediv {
+        width: 25px;
+        height: 1px;
+    }
+    #poststuff .postbox .inside {
+        max-height: 140px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+    #poststuff #post-body-content {
+        max-width: 32%;
+        width: 32%;
+        min-width: 32%;
+    }
+    #poststuff #recent-posts-meta-box {
+        position: fixed;
+        top: 0;
+        right: 225px;
+        z-index: 5;
+        width: 50vw;
+        min-width: 550px;
+    }
+    #formatdiv, #postexcerpt, #postimagediv, #desc-meta-box, #submitdiv, #source-meta-box {
+        position: fixed;
+        right: 12px;
+        width: 20%;
+    }
+    #poststuff .inside {
+        margin: 0;
+        padding-bottom: 3px;
+    }
+    #desc-meta-box {
+        top: 65px;
+        z-index: 3;
+    }
+    #save-post, #post-preview, #publish {
+        padding: 0 10px;
+        height: auto;
+        line-height: 2;
+    }
+    #post-preview {
+        float: right;
+        position: absolute;
+        top: 0;
+        right: 20px;
+    }
+    #misc-publishing-actions {
+        max-height: 110px;
+        overflow-y: scroll;
+    }
+}

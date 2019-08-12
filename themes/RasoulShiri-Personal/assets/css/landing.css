@@ -1,0 +1,79 @@
+.landing .tier {
+    position:  relative;
+    background-color: #fff;
+    overflow:  hidden;
+    min-height: 100vh;
+}
+.landing img {
+    max-height: 100vh;
+}
+.landing .tier:not(#home) {
+    border-top: 1px solid #a2a2a2;
+}
+.landing #dynamic-nav a {
+    color: #636363;
+    display: block;
+}
+.landing .vmp-icon-radio-unchecked.active:before{
+    content: "\ea54";
+    text-shadow: 0 0 5px, 1px 1px 2px, -1px -1px 2px;
+}
+body {
+    margin:  0;
+    position: relative;
+}
+.landing #dynamic-nav {
+    position: fixed;
+    right: 0;
+    height: 100vh;
+    font-size: 70%;
+    padding: 0;
+    z-index: 2;
+}
+.tier-img-div {
+    position: fixed;
+    z-index: 0;
+}
+.landing #home::before {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(255, 255, 255, 0.3) 75%, rgba(255, 255, 255, 0.3) 100%);
+    height: 33%;
+    bottom: 0;
+    content: "";
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+.tier-head {
+    /*padding-top: 5%;*/
+    font-size: 170%;
+    margin-bottom: 3%;
+}
+.tier .card-body {
+    margin-top: 5%;
+}
+.tier-item.card {
+    margin-bottom: 1%;
+}
+@media (min-width: 992px) {
+    .tier:nth-child(odd):not(#home):not(#about):not(#contact) .tier-head {
+        text-align: start;
+        padding-left: 5em;
+    }
+    .tier:nth-child(even):not(#home):not(#about):not(#contact) .tier-head {
+        text-align:  end;
+        padding-right: 5em;
+    }
+    .tier-head {
+        font-size: 250%;
+    }
+    .tier-item.card {
+        height: 100%;
+    }
+}
+@media (max-width: 991px) {
+    .tier-head {
+        text-align: center;
+    }
+}

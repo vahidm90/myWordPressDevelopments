@@ -1,0 +1,31 @@
+table {font-size: 140%;}
+.count {min-width: 4em;}
+td, th {padding: 1%;}
+main h1 {font-size: 450%;}
+main h2 {font-size: 250%;}
+#tag-cloud {margin-left: 16px;}
+tbody .count {text-align: center;}
+#tag-cloud .card {font-size: 200%;}
+#tag-cloud .card a {text-decoration: underline;}
+.box-rot, .front, .back {height: 220px;}
+tbody tr:nth-child(odd) {background-color: #66339921;}
+tbody tr:nth-child(even) {background-color: #8a2be221;}
+.letter, #tag-cloud .card {margin-top: 16px;}
+table a:hover, table a:active, .card a:hover, .card a:active {color: #00c;}
+.title {
+    width: 100%;
+    text-align: start;
+}
+.letter {
+    font-size: 240%;
+    font-family: Roboto Slab, SNT-Title-Bold, serif !important;
+    font-weight: 700;
+    display: block;
+    background-color: #8ebce442;
+    color: #1d1c1ccf;
+    padding: 1%;
+}
+thead tr {
+    background-color: #1e4840;
+    color: #fff;
+}

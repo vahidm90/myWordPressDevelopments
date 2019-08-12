@@ -1,0 +1,30 @@
+.carousel-indicators li {
+    cursor:  pointer;
+}
+a:hover, a:visited, a:focus, a:active, a:focus-within, a {
+    color: initial;
+    text-decoration:  none;
+}
+#static-top-bar:not(.fixed-top) {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background-color: #fff;
+}
+#static-top-bar {
+    width: 100%;
+    background-color: #fff;
+    z-index: 3;
+}
+#static-top-bar .navbar-brand {
+    font-family: vmpBigJohn !important;
+}
+#static-top-bar .nav-link {
+    position: relative; 
+}
+
+@media (max-width: 250px) {
+    body {
+        font-size: 75%;
+    }
+}

@@ -1,0 +1,88 @@
+@font-face {
+    font-family: SNT-UR-Title;
+    src: url(fonts/riwaj-regular-1.eot);
+    src: url(fonts/riwaj-regular-1.eot?#iefix) format('embedded-opentype'),
+    url(fonts/riwaj-regular-1.woff2) format('woff2'),
+    url(fonts/riwaj-regular-1.woff) format('woff'),
+    url(fonts/riwaj-regular-1.ttf) format('truetype'),
+    url(fonts/riwaj-regular-1.svg#svgriwaj-regular-1) format('svg');
+    url(fonts/riwaj-regular-1.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: SNT-UR-Name;
+    src: url(fonts/alqalam-nabeel-regular-1.eot);
+    src: url(fonts/alqalam-nabeel-regular-1.eot?#iefix) format('embedded-opentype'),
+    url(fonts/alqalam-nabeel-regular-1.woff2) format('woff2'),
+    url(fonts/alqalam-nabeel-regular-1.woff) format('woff'),
+    url(fonts/alqalam-nabeel-regular-1.ttf) format('truetype'),
+    url(fonts/alqalam-nabeel-regular-1.svg#svgalqalam-nabeel-regular-1) format('svg');
+    url(fonts/alqalam-nabeel-regular-1.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: SNT-UR-Bold;
+    src: url(fonts/zarreen-bold-1.eot);
+    src: url(fonts/zarreen-bold-1.eot?#iefix) format('embedded-opentype'),
+    url(fonts/zarreen-bold-1.woff2) format('woff2'),
+    url(fonts/zarreen-bold-1.woff) format('woff'),
+    url(fonts/zarreen-bold-1.ttf) format('truetype'),
+    url(fonts/zarreen-bold-1.svg#svgzarreen-bold-1) format('svg');
+    url(fonts/zarreen-bold-1.otf) format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: SNT-UR-Regular;
+    src: url(fonts/zarreen-regular-1.eot);
+    src: url(fonts/zarreen-regular-1.eot?#iefix) format('embedded-opentype'),
+    url(fonts/zarreen-regular-1.woff2) format('woff2'),
+    url(fonts/zarreen-regular-1.woff) format('woff'),
+    url(fonts/zarreen-regular-1.ttf) format('truetype'),
+    url(fonts/zarreen-regular-1.svg#svgzarreen-regular-1) format('svg');
+    url(fonts/zarreen-regular-1.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: SNT-UR-Italic;
+    src: url(fonts/zarreen-italic-1.eot);
+    src: url(fonts/zarreen-italic-1.eot?#iefix) format('embedded-opentype'),
+    url(fonts/zarreen-italic-1.woff2) format('woff2'),
+    url(fonts/zarreen-italic-1.woff) format('woff'),
+    url(fonts/zarreen-italic-1.ttf) format('truetype'),
+    url(fonts/zarreen-italic-1.svg#svgzarreen-italic-1) format('svg');
+    url(fonts/zarreen-italic-1.otf) format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: SNT-UR-Light;
+    src: url(fonts/globalscience-regular-1.eot);
+    src: url(fonts/globalscience-regular-1.eot?#iefix) format('embedded-opentype'),
+    url(fonts/globalscience-regular-1.woff2) format('woff2'),
+    url(fonts/globalscience-regular-1.woff) format('woff'),
+    url(fonts/globalscience-regular-1.ttf) format('truetype'),
+    url(fonts/globalscience-regular-1.svg#svgglobalscience-regular-1) format('svg');
+    url(fonts/globalscience-regular-1.otf) format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: Zarreen, SNT-UR-Bold, sans-serif !important;
+    font-weight: 900;
+}
+body {
+    font-family: Zarreen, SNT-UR-Regular, sans-serif !important;
+    font-weight: 100;
+}
+#name-wrap, #name h1 {
+    font-family: AlQalam Nabeel, SNT-UR-Name, sans-serif !important;
+    font-weight: 900;
+}
+main h1 {
+    font-family: Riwaj, SNT-UR-Title, sans-serif !important;
+    font-weight: 100;
+}

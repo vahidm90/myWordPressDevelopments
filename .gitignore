@@ -1,0 +1,27 @@
+# Folders #
+**/bin/**
+**/uploads/**
+
+# Compiled source #
+*.vmcompiled.*
+
+# Binaries #
+*.mo
+*.jpg
+*.JPG
+*.png
+*.PNG
+*.ttf
+*.eot
+*.woff
+*.woff2
+*.otf
+*.svg
+*.gif
+
+# Packages #
+*.tar
+*.zip
+*.7z
+*.rar
+*.gzip

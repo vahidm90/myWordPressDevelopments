@@ -1,0 +1,105 @@
+#static-top-bar .nav-link.active:before {
+    content: " ";
+    position: absolute;
+    border: solid transparent;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    display: block;
+    border-width: 8px;
+    margin-top: -8px;
+}
+#home .tier-text {
+    font-family: vmpBigJohn, sans-serif;
+    margin-top: 1em;
+    font-weight:  800;
+}
+.tier:not(#home) .tier-content {
+    margin-top: 6em;
+}
+#home .tier-content, #about .tier-content, #contact .tier-content{
+    position:  absolute;
+    width: 100%;
+    z-index: 1;
+    margin-top: 2em;
+}
+.nav-tooltip .tooltip-arrow
+{
+    border-color: #636363;
+}
+.nav-tooltip .tooltip-txt {
+    background-color: #636363;
+    color: #fff;
+    font-size: 150%;
+    padding: 9%;
+}
+#home .tier-img-div {
+    background: linear-gradient(#fed501,#fee24e);
+}
+#home-left-img, #home-right-img {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+#home-left-img {
+    top: 30%;
+    left: 0;
+}
+#home-right-img {
+    bottom: 0;
+    right: 0;
+}
+#short-animation .carousel-caption {
+    background-color: #0000003d;
+}
+#short-animation .carousel-inner img {
+    min-height: 60vh;
+}
+#about .tier-text {
+    margin: 5%;
+}
+@media (min-width: 576px) {
+    #home .tier-text {
+        font-size: 120%;
+    }
+
+    #home-left-img, #home-right-img {
+        width: 50%;
+        height: 100%;
+    }
+
+    #home-left-img {
+        top: 0;
+    }
+
+}
+@media (min-width: 992px) {
+    #home .tier-text {
+        font-size: 140%;
+    }
+    #about .tier-text {
+        margin: 5% 20% 0;
+    }
+    #static-top-bar .nav-link.active:before {
+        top: 100%;
+        left: 50%;
+        margin-left: -8px;
+        border-bottom-color: #636363;
+    }
+}
+@media (max-width:991px) {
+    #static-top-bar .nav-link.active:before {
+        left: 0;
+        top: 50%;
+        margin-left: -8px;
+        border-left-color: #636363;
+    }
+}
+@media (max-width:575px) {
+    #short-animation .carousel-caption h3 {
+        font-size: 150%;
+    }
+    .tier:not(#home) .tier-content {
+        margin-top: 9em;
+    }
+}

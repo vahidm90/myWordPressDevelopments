@@ -1,0 +1,56 @@
+h1 {font-size: 210%;}
+h2 {font-size: 190%;}
+h3 {font-size: 170%;}
+h4 {font-size: 150%;}
+h5 {font-size: 130%;}
+h6 {font-size: 110%;}
+body {font-size: 22px;}
+[class *= "col-"] {float: right;}
+.opp-float {float: left;}
+.btn-rot {
+    right: initial;
+    left: 1%;
+}
+.img-bg .exc-post {
+    font-family: Zarreen, SNT-UR-Regular, sans-serif !important;
+    font-weight: 100;
+}
+#menu-bar-top {
+    font-family: Zarreen, SNT-UR-Bold, sans-serif !important;
+    font-weight: 900;
+}
+#foot-gen .txt {
+    font-family: GlobalScience, SNT-UR-Light, sans-serif !important;
+    font-weight: 100;
+}
+#lang-nav-ribbon {
+    right: initial;
+    left: 2em;
+}
+#nav-ribbon .in-search, .btn-search, #form-search button, .pin-roll {
+    right: initial;
+    left: 0;
+}
+#scroll-up {
+    right: initial;
+    left: 1em;
+}
+@media ( max-width: 271px ) {body {font-size: 55%;}}
+@media ( min-width: 272px ) and ( max-width: 319px ) {body {font-size: 60%;}}
+@media ( min-width: 320px ) and ( max-width: 479px ) {body {font-size: 65%;}}
+@media ( min-width: 480px ) and ( max-width: 567px ) {body {font-size: 70%;}}
+@media ( min-width: 568px ) and ( max-width: 666px ) {body {font-size: 75%;}}
+@media ( min-width: 667px ) and ( max-width: 767px ) {body {font-size: 80%;}}
+@media ( min-width: 768px ) and ( max-width: 1023px ) {body {font-size: 90%;}}
+@media ( min-width: 1024px ) and ( max-width: 1279px ) {body {font-size: 100%;}}
+@media ( min-width: 1024px ) {#menu-bar-top .li-d-0 {float: right;}}
+@media ( min-width: 1280px ) {body {font-size: 105%;}}
+@media ( min-width: 1440px ) {body {font-size: 120%;}}
+@media ( min-width: 2000px ) {body {font-size: 145%;}}
+@media ( min-width: 3000px ) {body {font-size: 210%;}}
+@media ( min-width: 4000px ) {
+    body {font-size: 170%;}
+    body * {font-size: 102%;}
+}
+@media ( max-width: 100px ) {body {font-size: 35%;}}
+@media ( max-width: 50px ) {body {font-size: 15%;}}

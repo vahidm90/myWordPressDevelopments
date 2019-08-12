@@ -1,0 +1,47 @@
+
+/* Main head */
+main h1 {
+    color: #1d4940;
+    font-size: 300%;
+}
+
+/* Main content */
+.img-txt {margin-top: 2%;}
+#list .ttl-post {
+    font-family: Roboto, SNT-Medium, sans-serif !important;
+    font-weight: 500;
+    font-size: 150%;
+    margin: 3% 0 0;
+    color: #00b;
+}
+.exc-post {
+    font-family: Roboto, SNT-Light, sans-serif !important;
+    font-weight: 300;
+    text-align: start;
+}
+time {
+    color: #751a18;
+    font-size: 70%;
+}
+
+/* Pagination */
+a.page-no {color: #139;}
+.pagination .txt { padding: 1% 0; }
+a.page-no, span.current {padding: 1%;}
+.current, a.page-no:hover { text-decoration: underline; }
+.pagination .links > :last-child { padding-left: 1em; }
+.pagination .links > :first-child { padding-right: 1em; }
+.pagination {
+    font-family: Roboto, SNT-Light, sans-serif !important;
+    font-weight: 300;
+    text-align: center;
+    margin: 2% 0;
+}
+.pagination .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    box-shadow: 0 0 1px #000;
+}
+
+/* Screen width conditionals */
+@media ( min-width: 480px ) {#list .txt {margin-left: 8px;}}

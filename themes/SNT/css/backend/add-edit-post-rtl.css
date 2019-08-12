@@ -1,0 +1,26 @@
+#source-meta-box .msg-src button {
+    right: initial;
+    left: -1%;
+}#source-meta-box .msg-src {
+    left: initial;
+    right: 20%;
+}
+#source-meta-box .del-src {
+    right: initial;
+    left: 0;
+}
+@media ( min-width: 900px ) and ( min-height: 550px ) {
+    #poststuff #recent-posts-meta-box {
+        right: initial;
+        left: 225px;
+    }
+    #formatdiv, #postexcerpt, #postimagediv, #desc-meta-box, #submitdiv, #source-meta-box {
+        right: initial;
+        left: 12px;
+    }
+    #post-preview {
+        float: left;
+        right: initial;
+        left: 20px;
+    }
+}

@@ -1,0 +1,267 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-08-07 15:59+0430\n"
+"PO-Revision-Date: 2019-08-04 17:10+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;translate_nooped_plural\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .git\n"
+"X-Poedit-SearchPathExcluded-1: languages\n"
+"X-Poedit-SearchPathExcluded-2: *.css\n"
+"X-Poedit-SearchPathExcluded-3: *.js\n"
+
+#: front-page.php:19
+msgctxt "About Circle"
+msgid "Who are we?"
+msgstr ""
+
+#: front-page.php:28
+msgctxt "Products Circle"
+msgid "Our Products"
+msgstr ""
+
+#: front-page.php:37
+msgctxt "Contact Circle"
+msgid "Get in touch!"
+msgstr ""
+
+#: front-page.php:48
+msgctxt "Home page content heading"
+msgid "Our Mission"
+msgstr ""
+
+#: functions.php:14
+msgid "English"
+msgstr ""
+
+#: functions.php:23
+msgid "Persian"
+msgstr ""
+
+#: header-front-page.php:19 template-parts/front-page/slider.php:14
+msgctxt "Image alt text"
+msgid "Logo"
+msgstr ""
+
+#: inc/init.php:31
+msgctxt "Menu location description"
+msgid "Main Navigation"
+msgstr ""
+
+#: inc/init.php:32
+msgctxt "Menu location description"
+msgid "Footer Menu"
+msgstr ""
+
+#: inc/markup.php:153
+msgid "Language"
+msgstr ""
+
+#: page.php:147
+msgid "Browse subcategories"
+msgstr ""
+
+#: template-parts/front-page/slider.php:21
+#: template-parts/front-page/slider.php:41
+msgid "Our Products"
+msgstr ""
+
+#: template-parts/front-page/slider.php:24
+msgctxt "Slider Text"
+msgid "Penetration Bitumen"
+msgstr ""
+
+#: template-parts/front-page/slider.php:25
+msgid "40-50"
+msgstr ""
+
+#: template-parts/front-page/slider.php:26
+msgid "60-70"
+msgstr ""
+
+#: template-parts/front-page/slider.php:27
+msgid "80-100"
+msgstr ""
+
+#: template-parts/front-page/slider.php:31
+msgid "Viscosity"
+msgstr ""
+
+#: template-parts/front-page/slider.php:32
+msgid "VG10"
+msgstr ""
+
+#: template-parts/front-page/slider.php:33
+msgid "VG20"
+msgstr ""
+
+#: template-parts/front-page/slider.php:34
+msgid "VG30"
+msgstr ""
+
+#: template-parts/front-page/slider.php:35
+msgid "VG40"
+msgstr ""
+
+#: template-parts/front-page/slider.php:42
+msgid "Paraffin Wax"
+msgstr ""
+
+#: template-parts/front-page/slider.php:43
+msgid "Slack Wax"
+msgstr ""
+
+#: template-parts/front-page/slider.php:44
+msgid "Base Oil"
+msgstr ""
+
+#: template-parts/front-page/slider.php:45
+msgid "R.P.O"
+msgstr ""
+
+#: template-parts/front-page/slider.php:54
+msgctxt "Slider Title"
+msgid "Where are you?"
+msgstr ""
+
+#: template-parts/front-page/slider.php:58
+msgid "Afghanistan"
+msgstr ""
+
+#: template-parts/front-page/slider.php:59
+msgid "Pakistan"
+msgstr ""
+
+#: template-parts/front-page/slider.php:60
+msgid "Uzbekistan"
+msgstr ""
+
+#: template-parts/front-page/slider.php:61
+msgid "Georgia"
+msgstr ""
+
+#: template-parts/front-page/slider.php:64
+msgid "India"
+msgstr ""
+
+#: template-parts/front-page/slider.php:65
+msgid "Myanmar"
+msgstr ""
+
+#: template-parts/front-page/slider.php:66
+msgid "Bangladesh"
+msgstr ""
+
+#: template-parts/front-page/slider.php:67
+msgid "Kenya"
+msgstr ""
+
+#: template-parts/front-page/slider.php:71
+msgid "World-wide coverage"
+msgstr ""
+
+#: template-parts/front-page/slider.php:75
+#: template-parts/front-page/slider.php:101
+#: template-parts/front-page/slider.php:117
+msgid "Enjoy Your Purchase"
+msgstr ""
+
+#: template-parts/front-page/slider.php:82
+msgid "Your choice matters"
+msgstr ""
+
+#: template-parts/front-page/slider.php:85
+msgid "Fast Delivery"
+msgstr ""
+
+#: template-parts/front-page/slider.php:89
+msgid "Customer Respect"
+msgstr ""
+
+#: template-parts/front-page/slider.php:93
+msgid "Experienced Experts"
+msgstr ""
+
+#: template-parts/front-page/slider.php:97
+msgid "Competitive Prices"
+msgstr ""
+
+#: template-parts/front-page/slider.php:109
+msgid "Quality Goods"
+msgstr ""
+
+#: template-parts/front-page/slider.php:113
+msgid "From Reliable Producers"
+msgstr ""
+
+#: template-parts/front-page/slider.php:125
+msgid "Packagings"
+msgstr ""
+
+#: template-parts/front-page/slider.php:128
+msgid "Bulk"
+msgstr ""
+
+#: template-parts/front-page/slider.php:129
+msgid "Drums"
+msgstr ""
+
+#: template-parts/front-page/slider.php:130
+msgid "Flexitanks"
+msgstr ""
+
+#: template-parts/front-page/slider.php:131
+msgid "Jumbo Bags"
+msgstr ""
+
+#: template-parts/front-page/slider.php:140
+msgid "Land and Sea Routes"
+msgstr ""
+
+#: template-parts/front-page/slider.php:146
+msgid "What is your order?"
+msgstr ""
+
+#: template-parts/front-page/slider.php:147
+msgid "Contact Us"
+msgstr ""
+
+#~ msgid "Who are we?"
+#~ msgstr "آشنایی با شرکت پترونگین جی"
+
+#~ msgid "Get in touch!"
+#~ msgstr "با ما تماس بگیرید!"
+
+#~ msgid "Our Mission"
+#~ msgstr "هدف ما"
+
+#~ msgid "English"
+#~ msgstr "انگلیسی"
+
+#~ msgid "Persian"
+#~ msgstr "فارسی"
+
+#~ msgid "Logo"
+#~ msgstr "نشان"
+
+#~ msgid "Main Navigation"
+#~ msgstr "منوی اصلی"
+
+#~ msgid "Footer Menu"
+#~ msgstr "منوی پاورقی"
+
+#~ msgid "Penetration Bitumen"
+#~ msgstr "قیر نفوذی"
+
+#~ msgid "Where are you?"
+#~ msgstr "کجا هستید؟"

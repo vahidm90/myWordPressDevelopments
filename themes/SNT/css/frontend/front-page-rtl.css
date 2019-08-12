@@ -1,0 +1,83 @@
+.exc-post {
+    font-family: GlobalScience, SNT-UR-Light, sans-serif !important;
+    font-weight: 100;
+}
+.ttl-lp {
+    font-family: Zarreen, SNT-UR-Bold, sans-serif !important;
+    font-weight: 900;
+}
+.ttl-ls {
+    font-family: Zarreen, SNT-UR-Bold, sans-serif !important;
+    font-weight: 900;
+}
+h3{
+    left: initial;
+    right: 1em;
+}
+@media ( min-width: 480px ) {
+    #ol-0, #ol-2, #ol-4, #ana-0, #ana-2, #ana-4, #ana-6, .topic-oth-0, .topic-oth-2 {
+        margin-right: initial;
+        margin-left: 4px;
+    }
+    #ol-1, #ol-3, #ol-5, #ana-1, #ana-3, #ana-5, #ana-7, .topic-oth-1, .topic-oth-3 {
+        margin-left: initial;
+        margin-right: 4px;
+    }
+}
+@media ( min-width: 667px ) {
+    #ls-0 {margin: 0 0 0 4px;}
+    #ls-1 {margin: 0 4px 0 0;}
+    .lead-sec {height: 440px;}
+    #topics .top .exc-post {
+        font-family: Zarreen, SNT-UR-Regular, sans-serif !important;
+        font-weight: 900;
+    }
+    #topics .top .exc-post {
+        margin-left: initial;
+        margin-right: 8px;
+    }
+}
+@media ( min-width: 768px ) {
+    #latest {margin: 4px 4px 4px 0;}
+    .lead-sec {height: 460px;}
+    #oth-lead {margin: 4px 0 4px 4px;}
+}
+@media ( min-width: 1024px ) {
+    .lead-sec {height: 550px;}
+    #img-lp, .txt-lp {height:360px;}
+    .txt-lp {
+        padding-left: initial;
+        padding-right: 8px;
+    }
+    .chk-btn {
+        right: initial;
+        left: 100%;
+    }
+    #ana-1,#ana-2,#ana-3,#ana-5,#ana-6,#ana-7,.topic-oth-1,.topic-oth-2,.topic-oth-3{
+        margin-left: initial;
+        margin-right: 4px;
+    }
+    #ana-0,#ana-1,#ana-2,#ana-4,#ana-5,#ana-6,#regs .img-bg,.topic-oth-0,.topic-oth-1,.topic-oth-2{
+        margin-right:initial;
+        margin-left:4px;
+    }
+}
+@media ( min-width: 1280px ) {
+    #name h1 {font-size: 220%;}
+    .img-ls {height: 23vw;}
+    .lead-sec {height: 45vw;}
+    #img-lp, .txt-lp {height: 30vw;}
+}
+@media ( max-width: 1023px ) {
+    #regs .top .ttl-post {
+        font-family: Zarreen, SNT-UR-Bold, sans-serif !important;
+        font-weight: 900;
+    }
+}
+@media ( min-width: 667px ) and ( max-width: 1023px ) {
+    .txt-lp .exc-post {
+        font-family: Zarreen, SNT-UR-Regular, sans-serif !important;
+        font-weight: 900;
+    }
+}
+@media ( max-width: 271px ) {h3 {right: initial;}}
