@@ -4,9 +4,9 @@
 
 # Compiled source #
 *.vmcompiled.*
+*.mo
 
 # Binaries #
-*.mo
 *.jpg
 *.JPG
 *.png
