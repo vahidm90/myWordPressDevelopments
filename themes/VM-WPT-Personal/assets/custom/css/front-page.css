@@ -1,15 +1,69 @@
+#welcome {
+    overflow: hidden;
+}
+
 .category {
-    width: 75%;
-    background-color: #00000082;
+    width: 90%;
     right: 0;
+    display: none;
+    transition: all 500ms ease;
+}
+
+.category:hover {
+    z-index: 2;
+}
+
+.category.open {
+    z-index:0;
+}
+
+.category:nth-of-type(1) {
+    background-color: #002bff7d;
+}
+
+.category:nth-of-type(2) {
+    background-color: #0e730d7d;
+}
+
+.category:nth-of-type(3) {
+    background-color: #7c106f7d;
+}
+
+.category:nth-of-type(4) {
+    background-color: #ff00007d;
+}
+
+.category:nth-of-type(1) .tab {
+    top: 0;
+}
+
+.category:nth-of-type(2) .tab {
+    top: 20%;
+}
+
+.category:nth-of-type(3) .tab {
+    top: 40%;
+}
+
+.category:nth-of-type(4) .tab {
+    top: 60%;
 }
 
 .category .tab {
-    left: -1.41rem;
+    z-index: 2;
+    left: -1.5em;
     transform: rotate(90deg);
-    top: 10rem;
+    height: 3em;
     transform-origin: 0;
     padding: 0 2rem;
-    background-color: #00000082;
+    background-color: inherit;
     clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+}
+
+.category .tab a {
+    color: #000;
+}
+
+.category .tab a:hover {
+    color: #fff;
 }
