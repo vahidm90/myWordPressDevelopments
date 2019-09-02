@@ -1,0 +1,39 @@
+@font-face {
+    font-family: vm-categories;
+    src: url(../../bin/font/vm-categories.eot);
+    src: url(../../bin/font/vm-categories.eot?#iefix) format('embedded-opentype'),
+    url(../../bin/font/vm-categories.woff2) format('woff2'),
+    url(../../bin/font/vm-categories.woff) format('woff'),
+    url(../../bin/font/vm-categories.ttf)  format('truetype'),
+    url(../../bin/font/vm-categories.svg#svgvm-categories) format('svg');
+    font-display: block;
+}
+
+[class^="vmi-"], [class*=" vmi-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: vm-categories !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.vmi-share:before {
+    content: "\e900";
+}
+.vmi-guide:before {
+    content: "\e901";
+}
+.vmi-idea:before {
+    content: "\e902";
+}
+.vmi-make:before {
+    content: "\e903";
+}
+

@@ -30,7 +30,7 @@ endforeach;
 
 ?>
 <div class="vh-100 vw-100 position-relative" id="welcome">
-    <img src="<?php echo $path; ?>/assets/bin/welcome-img.jpg" class="d-block position-absolute w-100 h-100">
+    <img src="<?php echo $path; ?>/assets/bin/img/welcome-img.jpg" class="d-block position-absolute w-100 h-100">
     <?php echo $html; ?>
 </div>
 <?php get_footer(); ?>
