@@ -13,17 +13,80 @@ $categories = array(
 
 $html = '';
 foreach ( $categories as $cat_id => $cat ) :
-    $children = get_term_children( $cat_id, 'category' );
-	$inside = '';
+	$children = get_term_children( $cat_id, 'category' );
+	$inside   = '';
+
 	if ( is_array( $children ) ) :
-    foreach ($children as $child_id ) :
-        $child = get_category( $child_id );
-    endforeach;
-    endif;
-    $html .= <<<html
-<div class="h-100 position-absolute category">
-    <div class="tab position-absolute"><a href="#"><h2>$cat->name</h2></a></div>
-    <div class="content"></div>
+
+		$col = '';
+		switch ( count( $children ) ) :
+			default:
+				$col = 'col-sm-6 col-xl-4';
+				break;
+			case 2 :
+				$col = 'col-sm-6';
+				break;
+			case 1 :
+				$col = 'col-12';
+				break;
+		endswitch;
+
+		$inside .= '<div class="sub-cat"><div class="container"><div class="row">';
+		foreach ( $children as $child_id ) :
+			$inside .= "<div class='$col'>";
+			$child  = get_category( $child_id );
+			$cat_q  = new WP_Query( array( 'category__in' => $child_id, 'posts_per_page' => 3 ) );
+			if ( $cat_q->have_posts() ) :
+				$inside .= "<h3 class='cat'>$child->name</h3>";
+				while ( $cat_q->have_posts() ):
+					$cat_q->the_post();
+				    $inside .= vm_get_front_page_cat_card();
+				endwhile;
+				wp_reset_postdata();
+			endif;
+			$inside .= '</div>'; // class="$col"
+		endforeach;
+		$inside .= '</div></div></div>'; // class="sub-cat"
+
+	else :
+
+		$cat_q = new WP_Query( array( 'category__in' => $cat_id, 'posts_per_page' => 6 ) );
+		if ( $cat_q->have_posts() ) :
+			$inside .= "<div class='container'><div class='row'>";
+		    $col = '';
+		    switch (1) :
+                default :
+                    $col = 'col-12';
+                    break;
+                case ( 3 < $cat_q->post_count) :
+                    $col = 'col-sm-6 col-xl-3';
+                    break;
+                case ( 2 < $cat_q->post_count) :
+                    $col = 'col-sm-6 col-xl-4';
+                    break;
+                case ( 1 < $cat_q->post_count) :
+                    $col = 'col-sm-6';
+                    break;
+		    endswitch;
+		    while ( $cat_q->have_posts() ):
+                $inside .= "<div class='$col'>";
+				$cat_q->the_post();
+				$inside .= vm_get_front_page_cat_card();
+				$inside .= '</div>'; // class="$col"
+			endwhile;
+			wp_reset_postdata();
+			$inside .= '</div></div>'; // class="container"
+		endif;
+
+	endif;
+	// TODO: create options to set category icons.
+    $icon = strtolower(substr($cat->name, 0, -1));
+	$html .= <<<html
+<div class="h-100 position-absolute category clearfix">
+    <div class="tab position-absolute"><a href="#" class="vmi-$icon text-decoration-none">
+        <p class="position-absolute">$cat->name</p>
+    </a></div>
+    <div class="content w-100"><h2>$cat->name</h2>$inside</div>
 </div>
 html;
 endforeach;

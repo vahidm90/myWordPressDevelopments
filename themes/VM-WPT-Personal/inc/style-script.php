@@ -9,13 +9,15 @@ function vm_css_js () {
 	$dep_css = $dep_js = array();
 	wp_enqueue_style( 'bootstrap', "$path/assets/bootstrap-4.3.1/bootstrap.min.css", array(), '4.3.1' );
 	$dep_css []= 'bootstrap';
-	wp_enqueue_script( 'jquery', "$path/assets/javascript/jquery-3.4.1.min.js", array(), '3.4.1', true);
-	$dep_js []= 'jquery';
+	wp_enqueue_style( 'icons', "$path/assets/custom/css/icons$min.css", array(), '1.0' );
+	$dep_css []= 'icons';
+	wp_enqueue_script( 'jquery-js', "$path/assets/javascript/jquery-3.4.1.min.js", array(), '3.4.1', true);
+	$dep_js []= 'jquery-js';
 
 
 
 	wp_enqueue_style( 'front-page', "$path/assets/custom/css/front-page$min.css", $dep_css, '1.0' );
-	wp_enqueue_script( 'front-page', "$path/assets/custom/js/front-page$min.js", $dep_js, '1.0', true );
+	wp_enqueue_script( 'front-page-js', "$path/assets/custom/js/front-page$min.js", $dep_js, '1.0', true );
 
 }
 

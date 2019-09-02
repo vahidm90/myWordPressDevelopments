@@ -37,3 +37,18 @@ function vm_set_lang( $locale ) {
 }
 
 add_filter( 'locale', 'vm_set_lang' );
+
+function vm_theme_features() {
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'custom-logo' );
+	add_theme_support( 'custom-header' );
+	add_theme_support( 'post-thumbnails', array( 'post', 'page' ) );
+	add_theme_support( 'html5', array( 'caption', 'gallery', 'comment-list', 'comment-form', 'search-form' ) );
+	add_theme_support(
+		'post-formats',
+		array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
+	);
+}
+
+add_action( 'after_setup_theme', 'vm_theme_features' );
