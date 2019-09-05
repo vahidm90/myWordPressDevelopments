@@ -1,0 +1,183 @@
+.anim-slide {
+    background: #225A86 center/cover no-repeat;
+}
+
+.anim-slide:not(#slide-1) {
+    box-shadow: #00000057 inset 0 99em 99em;
+}
+
+.anim-slide img {
+    border-radius: 5px;
+}
+
+.slide-content * {
+    position: relative;
+    overflow: hidden;
+}
+
+.slide-title {
+    text-shadow: #000 0 0 2px;
+}
+
+#slide-1 .slide-content {
+    text-align: center;
+}
+
+#s1-img {
+    max-height: 50%;
+    width: auto;
+}
+
+#slide-2 {
+    background-image: url(../bin/images/grade.jpg);
+}
+
+#s2-title {
+    z-index: 9;
+}
+
+#s2-2 {
+    right: 0;
+}
+
+#slide-3 {
+    background-image: url(../bin/images/Oil_platform.jpg);
+}
+
+#s4-text-img {
+    background: #225A86 center/contain no-repeat;
+}
+
+#s4-2 {
+    right: 0;
+}
+
+#s4-3 {
+    bottom: 25vh;
+}
+
+#slide-5 {
+    background-image: url(../bin/images/lift_truck.JPG);
+}
+
+#slide-6 {
+    background-image: url(../bin/images/petrochemical_plant.jpg);
+}
+
+#slide-7 {
+    background-image: url(../bin/images/ship_at_sea.jpg);
+}
+
+#slide-8 {
+    background-image: url(../bin/images/ship_leaving_port.jpg);
+}
+
+#slide-9 {
+    background-image: url(../bin/images/contact.jpg);
+}
+
+#lvl-2 {
+    background: #000 url(../bin/images/petrochemical_plant.jpg) center/cover no-repeat fixed;
+}
+
+#lvl-2 .circle {
+    border-radius: 50%;
+    transition: all .5s ease;
+    color: transparent;
+    background: #fff center/cover no-repeat;
+}
+
+#lvl-2 a:hover .circle {
+    background: #000000cc;
+    color: #fff;
+    background-image: unset !important;
+}
+
+#lvl-2 .circle p {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+#lvl-2 a {
+    color: #fff;
+}
+
+#lvl-3 {
+    background-color: #000;
+    color: #fff;
+}
+
+@media (min-width: 576px) {
+
+    #s4-1 p, #s4-2 p {
+        position: absolute;
+    }
+
+    #s4-text-img {
+        clip-path: ellipse(40% 45% at 50% 45%);
+    }
+
+    #s4-text-1 {
+        top: 20vh;
+        left: 25vw;
+    }
+
+    #s4-text-2 {
+        top: 30vh;
+        left: 20vw;
+    }
+
+    #s4-text-3 {
+        top: 55vh;
+        left: 25vw;
+    }
+
+    #s4-text-4 {
+        top: 45vh;
+        left: 20vw;
+    }
+
+    #s4-text-5 {
+        right: 20vw;
+        top: 45vh;
+    }
+
+    #s4-text-6 {
+        top: 20vh;
+        right: 25vw;
+    }
+
+    #s4-text-7 {
+        top: 30vh;
+        right: 20vw;
+    }
+
+    #s4-text-8 {
+        top: 55vh;
+        right: 25vw;
+    }
+
+    #s4-3 {
+        top: 10vh;
+        bottom: initial;
+    }
+
+    #lvl-2 .circle {
+        width: 25vw;
+        height: 25vw;
+    }
+}
+
+@media (max-width: 575px) {
+
+    #lvl-2 .circle {
+        width: 60vw;
+        height: 60vw;
+        margin: 10% auto;
+    }
+
+}
