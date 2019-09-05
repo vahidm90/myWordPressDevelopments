@@ -97,15 +97,15 @@ $path = get_template_directory_uri() . '/assets';
 		</li>
 		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-6">
             <div class="slide-content position-relative text-center">
-                <p class="slide-text h6 m-1 m-sm-3 mt-lg-5" id="s6-text-1">
+                <p class="slide-text h4 m-1 m-sm-3 mt-lg-5" id="s6-text-1">
                     <span class="dashicons dashicons-yes" id="s6-text-1-tick"></span>
 		            <?php _e( 'Quality Goods', VMBWPT_TEXT_DOMAIN ); ?>
                 </p>
-                <p class="slide-text h6 m-1 m-sm-3" id="s6-text-2">
+                <p class="slide-text h4 m-1 m-sm-3" id="s6-text-2">
                     <span class="dashicons dashicons-yes" id="s6-text-2-tick"></span>
 		            <?php _e( 'From Reliable Producers', VMBWPT_TEXT_DOMAIN ); ?>
                 </p>
-                <p class="slide-text h6 m-1 m-sm-3" id="s6-text-3">
+                <p class="slide-text h4 m-1 m-sm-3" id="s6-text-3">
                     <span class="dashicons dashicons-yes" id="s6-text-3-tick"></span>
 		            <?php _e( 'Enjoy Your Purchase', VMBWPT_TEXT_DOMAIN ); ?>
                 </p>
@@ -129,8 +129,8 @@ $path = get_template_directory_uri() . '/assets';
 		</li>
 		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-9">
             <div class="slide-content position-relative text-center">
-                <p class="slide-text h6 m-1 m-sm-3 mt-lg-5" id="s9-text-1"><?php _e( 'What is your order?', VMBWPT_TEXT_DOMAIN ); ?></p>
-                <p class="slide-text h6 m-1 m-sm-3" id="s9-text-2"><?php _e( 'Contact Us', VMBWPT_TEXT_DOMAIN ); ?></p>
+                <p class="slide-text h4 m-1 m-sm-3 mt-lg-5" id="s9-text-1"><?php _e( 'What is your order?', VMBWPT_TEXT_DOMAIN ); ?></p>
+                <p class="slide-text h4 m-1 m-sm-3" id="s9-text-2"><?php _e( 'Contact Us', VMBWPT_TEXT_DOMAIN ); ?></p>
             </div>
 		</li>
 		<nav class="anim-arrows">
