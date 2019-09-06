@@ -11,7 +11,13 @@ function vm_css_js () {
 	$dep_css []= 'bootstrap';
 	wp_enqueue_style( 'icons', "$path/assets/custom/css/icons$min.css", array(), '1.0' );
 	$dep_css []= 'icons';
-	wp_enqueue_script( 'jquery-js', "$path/assets/javascript/jquery-3.4.1.min.js", array(), '3.4.1', true);
+	wp_enqueue_style( 'animations', "$path/assets/custom/css/animations$min.css", array(), '1.0' );
+	$dep_css []= 'animations';
+	wp_enqueue_style('dashicons');
+	$dep_css []= 'dashicons';
+	wp_enqueue_script( 'jquery-js', "$path/assets/js/jquery-3.4.1.min.js", array(), '3.4.1', true);
+	$dep_js []= 'jquery-js';
+	wp_enqueue_script( 'generic-js', "$path/assets/custom/js/generic$min.js", array(), '1.0', true);
 	$dep_js []= 'jquery-js';
 
 

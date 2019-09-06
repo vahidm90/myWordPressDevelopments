@@ -36,7 +36,7 @@ $('.anim-slider').animateSlider(
                             {
                                 show: "bounceIn",
                                 hide: "slideOutUp",
-                                delayShow: "delay1-5s"
+                                delayShow: "delay1s"
                             },
                         "#s2-text-1-1":
                             {

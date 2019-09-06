@@ -7,7 +7,7 @@ $path = get_template_directory_uri() . '/assets';
 ?>
 <div class="vh-100 vw-100" id="welcome">
 	<ul class="h-100 w-100 anim-slider text-light">
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-1">
+		<li class="anim-slide p-1" id="slide-1">
 			<div class="slide-content w-100 h-100 position-relative">
 				<img src="<?php echo $path; ?>/bin/images/welcome_img.png"
 				     alt="<?php _ex( 'Logo', 'Image alt text', VMBWPT_TEXT_DOMAIN ); ?>" id="s1-img">
@@ -15,35 +15,39 @@ $path = get_template_directory_uri() . '/assets';
 				<p class="d-none d-sm-block h6 slide-text" id="s1-text"><?php bloginfo( 'description' ); ?></p>
 			</div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-2">
-            <h2 class="slide-title d-block mt-0 p-3 w-100 mt-lg-5" id="s2-title">
-                <?php _e( 'Our Products', VMBWPT_TEXT_DOMAIN ); ?>
-            </h2>
-			<div class="slide-content h-100 pt-5 w-50" id="s2-1">
-				<p class="slide-text h4 mt-2" id="s2-text-1-1"><?php _ex( 'Penetration Bitumen', 'Slider Text', VMBWPT_TEXT_DOMAIN ); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-1-2"><?php _e( '40-50', VMBWPT_TEXT_DOMAIN); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-1-3"><?php _e( '60-70', VMBWPT_TEXT_DOMAIN); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-1-4"><?php _e( '80-100', VMBWPT_TEXT_DOMAIN); ?></p>
-            </div>
-			<div class="slide-content h-100 pt-5 w-50" id="s2-2">
-				<p class="slide-text h4 mt-2" id="s2-text-2-1"><?php _e( 'Viscosity', VMBWPT_TEXT_DOMAIN ); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-2"><?php _e( 'VG10', VMBWPT_TEXT_DOMAIN); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-3"><?php _e( 'VG20', VMBWPT_TEXT_DOMAIN); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-4"><?php _e( 'VG30', VMBWPT_TEXT_DOMAIN); ?></p>
-				<p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-5"><?php _e( 'VG40', VMBWPT_TEXT_DOMAIN); ?></p>
+		<li class="anim-slide p-1" id="slide-2">
+            <div class="slide-content w-100 h-100">
+                <h2 class="slide-title m-0 position-absolute w-100" id="s2-title">
+		            <?php _e( 'Our Products', VMBWPT_TEXT_DOMAIN ); ?>
+                </h2>
+                <div class="position-absolute w-100" id="s2-text">
+                    <div class="position-absolute h-100 w-50" id="s2-1">
+                        <p class="slide-text h4 mt-2" id="s2-text-1-1"><?php _ex( 'Penetration Bitumen', 'Slider Text', VMBWPT_TEXT_DOMAIN ); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-1-2"><?php _e( '40-50', VMBWPT_TEXT_DOMAIN); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-1-3"><?php _e( '60-70', VMBWPT_TEXT_DOMAIN); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-1-4"><?php _e( '80-100', VMBWPT_TEXT_DOMAIN); ?></p>
+                    </div>
+                    <div class="position-absolute h-100 w-50" id="s2-2">
+                        <p class="slide-text h4 mt-2" id="s2-text-2-1"><?php _e( 'Viscosity', VMBWPT_TEXT_DOMAIN ); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-2"><?php _e( 'VG10', VMBWPT_TEXT_DOMAIN); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-3"><?php _e( 'VG20', VMBWPT_TEXT_DOMAIN); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-4"><?php _e( 'VG30', VMBWPT_TEXT_DOMAIN); ?></p>
+                        <p class="slide-text d-sm-inline-block h6 m-3" id="s2-text-2-5"><?php _e( 'VG40', VMBWPT_TEXT_DOMAIN); ?></p>
+                    </div>
+                </div>
             </div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-3">
+		<li class="anim-slide p-1" id="slide-3">
             <div class="slide-content w-100 text-center position-static">
-                <h2 class="slide-title mt-0 p-3 mt-lg-5" id="s3-title"><?php _e( 'Our Products', VMBWPT_TEXT_DOMAIN ); ?></h2>
+                <h2 class="slide-title p-3" id="s3-title"><?php _e( 'Our Products', VMBWPT_TEXT_DOMAIN ); ?></h2>
                 <p class="slide-text h6 my-1 m-sm-4 p-1 p-sm-3 d-sm-inline-block" id="s3-text-1"><?php _e('Paraffin Wax', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text h6 my-1 m-sm-4 p-1 p-sm-3 d-sm-inline-block" id="s3-text-2"><?php _e('Slack Wax', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text h6 my-1 m-sm-4 p-1 p-sm-3 d-sm-inline-block" id="s3-text-3"><?php _e('Base Oil', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text h6 my-1 m-sm-4 p-1 p-sm-3 d-sm-inline-block" id="s3-text-4"><?php _e('R.P.O', VMBWPT_TEXT_DOMAIN ); ?></p>
             </div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-4">
-				<h2 class="slide-title mt-2 position-static mt-lg-5" id="s4-title">
+		<li class="anim-slide p-1" id="slide-4">
+				<h2 class="slide-title position-static" id="s4-title">
 					<?php _ex( 'Where are you?', 'Slider Title', VMBWPT_TEXT_DOMAIN ); ?>
 				</h2>
 			<div class="slide-content position-relative h-100 w-100" id="s4-text-img" style="background-image: url(<?php echo $path; ?>/bin/images/export_everywhere.jpg)">
@@ -70,9 +74,9 @@ $path = get_template_directory_uri() . '/assets';
                 </div>
 			</div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-5">
+		<li class="anim-slide p-1" id="slide-5">
             <div class="slide-content h-100 p-4 w-100">
-                <h2 class="slide-title mt-2 mt-lg-5" id="s5-title"><?php _e( 'Your choice matters', VMBWPT_TEXT_DOMAIN ); ?></h2>
+                <h2 class="slide-title" id="s5-title"><?php _e( 'Your choice matters', VMBWPT_TEXT_DOMAIN ); ?></h2>
                 <p class="text-left slide-text h6 m-1 m-sm-3" id="s5-text-1">
                     <span class="dashicons dashicons-yes" id="s5-text-1-tick"></span>
                     <?php _e( 'Fast Delivery', VMBWPT_TEXT_DOMAIN ); ?>
@@ -95,9 +99,9 @@ $path = get_template_directory_uri() . '/assets';
                 </p>
             </div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-6">
+		<li class="anim-slide p-1" id="slide-6">
             <div class="slide-content position-relative text-center">
-                <p class="slide-text h4 m-1 m-sm-3 mt-lg-5" id="s6-text-1">
+                <p class="slide-text h4 m-1 m-sm-3" id="s6-text-1">
                     <span class="dashicons dashicons-yes" id="s6-text-1-tick"></span>
 		            <?php _e( 'Quality Goods', VMBWPT_TEXT_DOMAIN ); ?>
                 </p>
@@ -111,25 +115,25 @@ $path = get_template_directory_uri() . '/assets';
                 </p>
             </div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-7">
+		<li class="anim-slide p-1" id="slide-7">
             <div class="slide-content position-relative">
-                <h2 class="slide-title text-white mt-lg-5" id="s7-title"><?php _e( 'Packagings', VMBWPT_TEXT_DOMAIN ); ?></h2>
+                <h2 class="slide-title text-white" id="s7-title"><?php _e( 'Packagings', VMBWPT_TEXT_DOMAIN ); ?></h2>
             </div>
-            <div class="slide-content position-relative mt-2">
+            <div class="slide-content position-relative mt-3">
                 <p class="slide-text text-light h6 m-1 m-sm-3" id="s7-text-1"><?php _e( 'Bulk', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text text-light h6 m-1 m-sm-3" id="s7-text-2"><?php _e( 'Drums', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text text-light h6 m-1 m-sm-3" id="s7-text-3"><?php _e( 'Flexitanks', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text text-light h6 m-1 m-sm-3" id="s7-text-4"><?php _e( 'Jumbo Bags', VMBWPT_TEXT_DOMAIN ); ?></p>
             </div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-8">
+		<li class="anim-slide p-1" id="slide-8">
             <div class="slide-content position-relative text-center">
-                <h2 class="slide-title mt-lg-5" id="s8-title"><?php _e( 'Land and Sea Routes', VMBWPT_TEXT_DOMAIN ); ?></h2>
+                <h2 class="slide-title" id="s8-title"><?php _e( 'Land and Sea Routes', VMBWPT_TEXT_DOMAIN ); ?></h2>
             </div>
 		</li>
-		<li class="anim-slide p-1 p-sm-3 pt-5 pt-sm-5" id="slide-9">
+		<li class="anim-slide p-1" id="slide-9">
             <div class="slide-content position-relative text-center">
-                <p class="slide-text h4 m-1 m-sm-3 mt-lg-5" id="s9-text-1"><?php _e( 'What is your order?', VMBWPT_TEXT_DOMAIN ); ?></p>
+                <p class="slide-text h4 m-1 m-sm-3" id="s9-text-1"><?php _e( 'What is your order?', VMBWPT_TEXT_DOMAIN ); ?></p>
                 <p class="slide-text h4 m-1 m-sm-3" id="s9-text-2"><?php _e( 'Contact Us', VMBWPT_TEXT_DOMAIN ); ?></p>
             </div>
 		</li>

@@ -32,17 +32,11 @@ $('.anim-slider').animateSlider(
                                 hide: "jello",
                                 delayShow: "delay0-5s"
                             },
-                        ".s2-step-1":
-                            {
-                                show: "flipInX",
-                                hide: "bounceOut",
-                                delayShow: "delay1s"
-                            },
-                        ".s2-step-2":
+                        ".h4":
                             {
                                 show: "bounceIn",
                                 hide: "slideOutUp",
-                                delayShow: "delay1-5s"
+                                delayShow: "delay1s"
                             },
                         "#s2-text-1-1":
                             {
@@ -130,18 +124,6 @@ $('.anim-slider').animateSlider(
                                 hide: "slideOutLeft",
                                 delayShow: "delay2-5s"
                             },
-                        "#s3-img-1":
-                            {
-                                show: "slideInRight",
-                                hide: "slideOutRight",
-                                delayShow: "delay0-5s"
-                            },
-                        "#s3-img-2":
-                            {
-                                show: "slideInLeft",
-                                hide: "slideOutLeft",
-                                delayShow: "delay0-5s"
-                            }
                     },
                 3:
                     {
@@ -265,53 +247,41 @@ $('.anim-slider').animateSlider(
                     },
                 5:
                     {
-                        "#s6-img-1":
-                            {
-                                show: "rotateInUpRight",
-                                hide: "rotateOutUpRight",
-                                delayShow: "delay0-5s"
-                            },
-                        "#s6-img-2":
-                            {
-                                show: "rotateInUpLeft",
-                                hide: "rotateOutUpLeft",
-                                delayShow: "delay1s"
-                            },
                         "#s6-text-1":
                             {
                                 show: "slideInRight",
                                 hide: "slideOutUp",
-                                delayShow: "delay1-5s"
+                                delayShow: "delay0-5s"
                             },
                         "#s6-text-2":
                             {
                                 show: "slideInLeft",
                                 hide: "slideOutDown",
-                                delayShow: "delay1-6s"
+                                delayShow: "delay0-6s"
                             },
                         "#s6-text-3":
                             {
                                 show: "slideInUp",
                                 hide: "slideOutDown",
-                                delayShow: "delay1-7s"
+                                delayShow: "delay0-7s"
                             },
                         "#s6-text-1-tick":
                             {
                                 show: "bounceIn",
                                 hide: "fadeOut",
-                                delayShow: "delay2-6s"
+                                delayShow: "delay1-6s"
                             },
                         "#s6-text-2-tick":
                             {
                                 show: "bounceIn",
                                 hide: "fadeOut",
-                                delayShow: "delay2-7s"
+                                delayShow: "delay1-7s"
                             },
                         "#s6-text-3-tick":
                             {
                                 show: "bounceIn",
                                 hide: "fadeOut",
-                                delayShow: "delay2-8s"
+                                delayShow: "delay1-8s"
                             },
                     },
                 6:
@@ -346,36 +316,6 @@ $('.anim-slider').animateSlider(
                                 hide: "bounceOutDown",
                                 delayShow: "delay1-3s"
                             },
-                        "#s7-img-1":
-                            {
-                                show: "flipInY",
-                                hide: "fadeOut",
-                                delayShow: "delay2s"
-                            },
-                        "#s7-img-2":
-                            {
-                                show: "flipInY",
-                                hide: "fadeOut",
-                                delayShow: "delay2-3s"
-                            },
-                        "#s7-img-3":
-                            {
-                                show: "flipInY",
-                                hide: "fadeOut",
-                                delayShow: "delay2-6s"
-                            },
-                        "#s7-img-4":
-                            {
-                                show: "flipInY",
-                                hide: "fadeOut",
-                                delayShow: "delay2-9s"
-                            },
-                        "#s7-img-5":
-                            {
-                                show: "flipInY",
-                                hide: "fadeOut",
-                                delayShow: "delay3-2s"
-                            },
                     },
                 7:
                     {
@@ -385,44 +325,20 @@ $('.anim-slider').animateSlider(
                                 hide: "fadeOutLeft",
                                 delayShow: "delay0-5s"
                             },
-                        "#s8-img-1":
-                            {
-                                show: "fadeIn",
-                                hide: "hinge",
-                                delayShow: "delay1s"
-                            },
-                        "#s8-img-2":
-                            {
-                                show: "fadeIn",
-                                hide: "hinge",
-                                delayShow: "delay1-5s"
-                            },
                     },
                 8:
                     {
-                        "#s9-img-1":
-                            {
-                                show: "rotateInUpRight",
-                                hide: "rotateOutUpRight",
-                                delayShow: "delay0-5s"
-                            },
-                        "#s9-img-2":
-                            {
-                                show: "rotateInUpLeft",
-                                hide: "rotateOutUpLeft",
-                                delayShow: "delay1s"
-                            },
                         "#s9-text-1":
                             {
                                 show: "bounceInRight",
                                 hide: "fadeOutUpBig",
-                                delayShow: "delay1-5s"
+                                delayShow: "delay0-5s"
                             },
                         "#s9-text-2":
                             {
                                 show: "bounceIn",
                                 hide: "fadeOutDownBig",
-                                delayShow: "delay2s"
+                                delayShow: "delay1s"
                             },
                     }
             }
