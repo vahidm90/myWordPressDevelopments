@@ -11,3 +11,10 @@ function vm_get_front_page_cat_card() {
 	return $html . '<div class="card-body"><p class="post-ttl card-title">' . get_the_title() . '</p></div></div></a>';
 
 }
+
+function vm_get_front_page_cat_collapsible() {
+	$html = '<a href="' . get_the_permalink() . '" class="' . implode( ' ', get_post_class() ) . '">';
+
+	return $html . '<p class="post-ttl">' . get_the_title() . '</p></a>';
+
+}
