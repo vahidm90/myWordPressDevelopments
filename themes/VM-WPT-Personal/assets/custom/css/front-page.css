@@ -37,10 +37,6 @@
     animation: 1s linear 0s infinite alternate vmWiggle;
 }
 
-#categories {
-    min-height: 100vh;
-}
-
 .cat-ball-place {
     width: 15vw;
     height: 15vw;
@@ -135,6 +131,23 @@
     padding: 1em 0 0 1em;
 }
 
+.cat-accordion-head {
+    padding: 0;
+}
+
+.cat-accordion .btn:focus {
+    box-shadow: none;
+}
+
+.cat-accordion .btn[aria-expanded="true"], .cat-accordion-head:hover .btn {
+    color: #fff;
+    background-color: #000000bf;
+}
+
+.cat-accordion-head button {
+    padding: .75rem 1.25rem;
+}
+
 @media (max-width: 575px) {
 
     #scroll-down {
@@ -182,7 +195,4 @@
 }
 
 @media (max-width: 575px) and (max-height: 219px) {
-
-
-
 }
