@@ -38,6 +38,9 @@ function vm_set_lang( $locale ) {
 
 add_filter( 'locale', 'vm_set_lang' );
 
+/**
+ * Activate theme features.
+ */
 function vm_theme_features() {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
@@ -52,3 +55,4 @@ function vm_theme_features() {
 }
 
 add_action( 'after_setup_theme', 'vm_theme_features' );
+

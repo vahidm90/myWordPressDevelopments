@@ -25,10 +25,10 @@ function vm_css_js () {
 	wp_enqueue_script( 'generic-js', "$path/assets/custom/js/generic$min.js", array(), '1.0', true);
 	$dep_js []= 'generic-js';
 
-
-
-	wp_enqueue_style( 'front-page', "$path/assets/custom/css/front-page$min.css", $dep_css, '1.0' );
-	wp_enqueue_script( 'front-page-js', "$path/assets/custom/js/front-page$min.js", $dep_js, '1.0', true );
+	if ( is_front_page() ) :
+		wp_enqueue_style( 'front-page', "$path/assets/custom/css/front-page$min.css", $dep_css, '1.0' );
+		wp_enqueue_script( 'front-page-js', "$path/assets/custom/js/front-page$min.js", $dep_js, '1.0', true );
+	endif;
 
 }
 
