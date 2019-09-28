@@ -39,8 +39,8 @@ html;
 
 				while ( $cat_q->have_posts() ):
 					$cat_q->the_post();
-					$collapse .= vm_get_front_page_cat_collapsible();
-					$inside   .= vm_get_front_page_cat_card();
+					$collapse .= vm_get_front_page_cat_collapsible_markup();
+					$inside   .= vm_get_front_page_cat_card_markup();
 				endwhile;
 				wp_reset_postdata();
 				$inside   .= '</div></div></div></div></div>'; // class="container"
@@ -58,8 +58,8 @@ html;
 html;
 			while ( $cat_q->have_posts() ):
 				$cat_q->the_post();
-				$collapse .= vm_get_front_page_cat_collapsible();
-				$inside   .= vm_get_front_page_cat_card();
+				$collapse .= vm_get_front_page_cat_collapsible_markup();
+				$inside   .= vm_get_front_page_cat_card_markup();
 			endwhile;
 			wp_reset_postdata();
 			$inside .= '</div></div></div></div>'; // class="container"

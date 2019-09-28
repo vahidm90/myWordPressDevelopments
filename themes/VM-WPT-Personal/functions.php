@@ -42,3 +42,5 @@ $vm_lang = '';
 require_once get_template_directory() . '/inc/init.php';
 require_once get_template_directory() . '/inc/style-script.php';
 require_once get_template_directory() . '/inc/markup.php';
+
+require_once get_template_directory() . '/inc/back-end/settings/front-page-tiers.php';
