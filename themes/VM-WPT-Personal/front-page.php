@@ -4,6 +4,7 @@ get_header( 'front-page' );
 
 $s_name = get_bloginfo();
 
+$tiers = vm_get_front_page_tier_markup( (int) get_option('vm_theme_options_front_page_tiers_count') );
 
 ?>
 
@@ -19,24 +20,15 @@ $s_name = get_bloginfo();
         ?>
     </div>
 </nav>
-<div class="w-100 vh-100 position-relative overflow-hidden" id="welcome" data-fp-tier-no="1">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="site-title p-1 px-5">
-                    <a href="<?php echo esc_url(home_url()); ?>" class="text-decoration-none text-white">
-                        <h1><?php bloginfo(); ?></h1>
-                        <p class="lead"><?php bloginfo( 'description' ); ?></p>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <a href="#categories" <?php //TODO: get address to tier 2 dynamically. ?>
-       class="dashicons-before dashicons-arrow-down-alt2 position-absolute d-block text-decoration-none"
-       id="scroll-down"></a>
-</div>
-<div id="categories" data-fp-tier-no="2">
-    <?php get_template_part( '/inc/front-end/template-parts/front-page-tiers/categories'); //TODO: get front-page tier templates dynamically. ?>
-</div>
-<?php get_footer(); ?>
+<?php
+if ( ! empty( $tiers ) ) :
+    foreach ( $tiers as $i => $content ) :
+        echo $content['open'];
+        get_template_part(
+            empty( $content['template'] ) ?
+            '/inc/front-end/template-parts/front-page-tiers/default' : $content['template']
+        );
+        echo $content['close'];
+    endforeach;
+endif;
+get_footer(); ?>

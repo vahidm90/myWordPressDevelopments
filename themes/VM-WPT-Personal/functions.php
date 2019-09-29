@@ -3,7 +3,7 @@
 // Consonants and Globals
 define( 'VM_LIVE_ADDRESS', 'vahidsays.com' );
 define( 'VM_DEV_ADDRESS', 'mywebsite.test' );
-define( 'VM_IS_DEV', ( false === strpos( $_SERVER['SERVER_NAME'], VM_LIVE_ADDRESS ) ? true : false ) );
+define( 'VM_IS_DEV', ( false === strpos( $_SERVER['SERVER_NAME'], VM_DEV_ADDRESS ) ? false : true ) );
 define( 'VM_TEXT_DOMAIN', 'VM-WPT-Personal' );
 define(
 	'VM_LANGUAGES',
@@ -43,4 +43,4 @@ require_once get_template_directory() . '/inc/init.php';
 require_once get_template_directory() . '/inc/style-script.php';
 require_once get_template_directory() . '/inc/markup.php';
 
-require_once get_template_directory() . '/inc/back-end/settings/front-page-tiers.php';
+require_once get_template_directory() . '/inc/back-end/settings/theme-options.php';

@@ -1,6 +1,5 @@
 <?php
 
-//TODO: make the categories dynamic
 $categories = array( get_category( 3 ), get_category( 2 ), get_category( 4 ), get_category( 10 ) );
 
 $content = $accordion = $balls = '';
@@ -66,7 +65,6 @@ html;
 		endif;
 
 	endif;
-	// TODO: create options to set category icons.
 	$icon      = strtolower( substr( $cat->name, 0, - 1 ) );
 	$balls     .= <<<html
 <div class="cat-ball-place my-5 my-sm-0">
