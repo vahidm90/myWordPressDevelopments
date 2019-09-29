@@ -101,6 +101,13 @@ function vm_front_page_tiers_options_classes_markup( $args ) {
 	<?php
 }
 
+/**
+ * Retrieve front-page tiers markup based on dashboard configurations.
+ *
+ * @param int         $count Number of front-page tiers.
+ *
+ * @return array|bool        False if no tiers ( 0 >= $count ), otherwise the markup array.
+ */
 function vm_get_front_page_tier_markup( int $count ) {
 
 	if ( 0 >= $count ) :

@@ -1,3 +1,16 @@
+#splash {
+    z-index: 9;
+    display: flex;
+}
+
+.percentage {
+    transition: content 10ms ease-out;
+}
+
+.percentage:after {
+    content: '%';
+}
+
 #fp-tier-1 {
     background: url(../../bin/img/top-front-page.jpg) center/cover no-repeat fixed;
 }
