@@ -3,22 +3,20 @@
 get_header( 'front-page' );
 
 $site_name = get_bloginfo();
-$split     = preg_replace(
-	array( '/(\w)/', '/\W/' ),
-	array( '\<span class="letter">\1</span>', '' ),
-	str_split( $site_name ),
-	1
-);
-$split     = implode( '', $split );
+$split = str_split( $site_name );
+$count = count( $split ) - 1;
+for( $i = 0 ; $count >= $i ; $i++ ) :
+    $class = ( $count === $i ) ? ' last' : '';
+//    $class .= ( 9 < $i ) ? ' delay-' : ' delay-0-';
+    $split[ $i ] = "<span class='letter$class'>{$split[ $i ]}</span>";
+endfor;
 
 $tiers = vm_get_front_page_tier_markup( (int) get_option( 'vm_theme_options_front_page_tiers_count' ) );
 
 ?>
 <div class="w-100 vh-100 align-items-center justify-content-around bg-dark text-light position-fixed" id="splash">
-    <h1 class="m-0"><?php echo $split; ?></h1>
-    <p class="percentage">0</p>
+    <h1 class="m-0"><?php echo implode( '', $split ); ?></h1>
     <p class="spinner-grow"></p>
-    <input type="hidden" id="progress_width" value="0" />
 </div>
 <nav class="navbar">
     <a href="<?php echo esc_url( home_url() ); ?>" class="navbar-brand"><?php echo $site_name; ?></a>

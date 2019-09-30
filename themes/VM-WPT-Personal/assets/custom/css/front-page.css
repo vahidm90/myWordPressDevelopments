@@ -1,14 +1,12 @@
+@charset "UTF-8";
+
 #splash {
     z-index: 9;
     display: flex;
 }
 
-.percentage {
-    transition: content 10ms ease-out;
-}
-
-.percentage:after {
-    content: '%';
+.letter:not(.animated) {
+    opacity: 0;
 }
 
 #fp-tier-1 {
