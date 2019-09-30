@@ -2,7 +2,21 @@
 
 #splash {
     z-index: 9;
-    display: flex;
+    display: none;
+}
+
+#splash h1, #splash .spinner-grow {
+    position: absolute;
+    top: 50%;
+}
+
+#splash h1 {
+    margin-left: 10vw;
+    transform: translateY(-50%);
+}
+
+#splash .spinner-grow {
+    right: 10vw;
 }
 
 .letter:not(.animated) {

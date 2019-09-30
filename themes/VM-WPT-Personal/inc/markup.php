@@ -101,6 +101,15 @@ function vm_front_page_tiers_options_classes_markup( $args ) {
 	<?php
 }
 
+function vm_front_page_tiers_options_title_markup( $args ) {
+
+	$current = get_option( $args['name'] ) ? get_option( $args['name'] ) : '';
+	?>
+    <input type="text" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
+           id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"/>
+	<?php
+}
+
 /**
  * Retrieve front-page tiers markup based on dashboard configurations.
  *
