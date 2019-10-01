@@ -10,6 +10,7 @@
         </div>
     </div>
 </div>
-<a href="#fp-tier-2"
-   class="dashicons-before dashicons-arrow-down-alt2 position-absolute d-block text-decoration-none"
-   id="scroll-down"></a>
+<nav class="position-absolute" id="scroll-down">
+    <a href="#fp-tier-2" class="dashicons-before dashicons-arrow-down-alt2 d-block text-decoration-none"></a>
+</nav>
+<nav class="d-xl-none" id="fp-nav-items"><?php echo $menu; ?></nav>

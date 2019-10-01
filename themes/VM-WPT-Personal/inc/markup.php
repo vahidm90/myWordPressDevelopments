@@ -1,5 +1,8 @@
 <?php
 
+//TODO: Make HTML tags, classes, etc. dynamic.
+
+
 function vm_get_front_page_cat_card_markup() {
 	$html = '<a href="' . get_the_permalink() . '" class="' . implode( ' ', get_post_class() ) . '"><div class="card">';
 	if ( has_post_thumbnail() ) :
@@ -113,13 +116,19 @@ function vm_front_page_tiers_options_title_markup( $args ) {
 /**
  * Retrieve front-page tiers markup based on dashboard configurations.
  *
- * @param int         $count Number of front-page tiers.
+ * @return array|bool {
+ *      False if no tiers ( 0 >= $count ), otherwise the markup array.
+ *      @type string     $open       Opening HTML tag.
+ *      @type string     $close      Closing HTML tag.
+ *      @type string     $template   Path parameter for WordPress 'get_template_part' function.
+ * }
  *
- * @return array|bool        False if no tiers ( 0 >= $count ), otherwise the markup array.
  */
-function vm_get_front_page_tier_markup( int $count ) {
+function vm_get_front_page_tier_markup() {
 
-	if ( 0 >= $count ) :
+    $count = get_option( 'vm_theme_options_front_page_tiers_count' );
+
+	if ( empty($count) ) :
 		return false;
 	endif;
 
@@ -139,5 +148,34 @@ function vm_get_front_page_tier_markup( int $count ) {
 	endfor;
 
 	return $tiers;
+
+}
+
+
+/**
+ * Retrieve front-page tiers menu markup based on dashboard configurations.
+ *
+ * @return array|bool {
+ *      False if no tiers ( 0 >= $count ), otherwise the markup array.
+ *      @type string    HTML markup for menu entry
+ * }
+ *
+ */
+function vm_get_front_page_tier_menu_markup() {
+
+    $count = get_option( 'vm_theme_options_front_page_tiers_count' );
+
+	if ( empty($count) ) :
+		return false;
+	endif;
+
+	$menu = array();
+	for ( $i = 1; $count >= $i; $i ++ ) :
+		$title              = get_option( "vm_theme_options_front_page_tier_{$i}_title" );
+		$title              = empty( $title ) ? '' : $title;
+		$menu[ $i ]  = "<a href='#fp-tier-$i' class='nav-item nav-link'>$title</a>";
+	endfor;
+
+	return $menu;
 
 }

@@ -3,9 +3,8 @@ $('.letter:not(.last)').on('animationend', function () {
 });
 $('.letter.last').on('animationend', function () {
     setTimeout(function () {
-        $('#splash h1').animate({top:'8px', marginLeft: '16px', fontSize:'20px'}, 1000);
-        $('#splash').fadeOut(2000);
-    }, 1000);
+        $('#splash').fadeOut(1000);
+    }, 500);
 });
 $(document).ready(function () {
     $('#splash').css({display:'block'});

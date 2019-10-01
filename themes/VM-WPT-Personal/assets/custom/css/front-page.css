@@ -23,6 +23,15 @@
     opacity: 0;
 }
 
+#fp-nav {
+    z-index: 8;
+    top: 0;
+}
+
+#fp-nav-items {
+
+}
+
 #fp-tier-1 {
     background: url(../../bin/img/top-front-page.jpg) center/cover no-repeat fixed;
 }
@@ -209,6 +218,12 @@
         font-size: 20vw;
     }
 
+}
+
+@media (min-width: 1200px) {
+    #fp-nav-items {
+
+    }
 }
 
 @media (max-width: 200px) and (min-height: 220px) {
