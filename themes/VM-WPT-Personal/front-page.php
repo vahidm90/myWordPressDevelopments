@@ -2,25 +2,18 @@
 
 get_header( 'front-page' );
 
-$site_name = get_bloginfo();
-$split = str_split( $site_name );
-$count = count( $split ) - 1;
-for( $i = 0 ; $count >= $i ; $i++ ) :
-    $class = ( $count === $i ) ? ' last' : '';
-//    $class .= ( 9 < $i ) ? ' delay-' : ' delay-0-';
-    $split[ $i ] = "<span class='letter d-inline-block fastest$class'>{$split[ $i ]}</span>";
+$site_name  = get_bloginfo();
+$split      = str_split( $site_name );
+$count      = count( $split ) - 1;
+$tiers      = vm_get_front_page_tier_markup();
+
+for ( $i = 0; $count >= $i; $i ++ ) :
+	$split[ $i ] = "<span class='letter d-inline-block fastest'>{$split[ $i ]}</span>";
 endfor;
 
-$tiers = vm_get_front_page_tier_markup();
-$tiers_menu = vm_get_front_page_tier_menu_markup();
-$menu = '';
-
-foreach ( $tiers_menu as $i => $menu_item ) :
-    $menu .= $menu_item;
-endforeach;
-
 ?>
-<div class="w-100 vh-100 bg-dark text-light position-fixed" id="splash">
+<div class="w-100 vh-100 bg-dark text-light position-fixed
+align-items-center justify-content-center justify-content-sm-around flex-sm-row flex-column" id="splash">
     <h1><?php echo implode( '', $split ); ?></h1>
     <p class="spinner-grow"></p>
 </div>

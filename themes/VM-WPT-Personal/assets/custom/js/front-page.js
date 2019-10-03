@@ -1,14 +1,14 @@
-$('.letter:not(.last)').on('animationend', function () {
+$('.letter:not(:last-child)').on('animationend', function () {
     $(this).next().addClass('animated zoomIn')
 });
-$('.letter.last').on('animationend', function () {
+$('.letter:last-child').on('animationend', function () {
     setTimeout(function () {
         $('#splash').fadeOut(1000);
     }, 500);
 });
 $(document).ready(function () {
-    $('#splash').css({display:'block'});
-    $('.letter:first-child').addClass('animated zoomIn')
+    $('.letter:first-child').addClass('animated zoomIn');
+    $('#scroll-down a:before').addClass('animated bounce infinite');
 });
 var bodyScrYpos = 0;
 $('.cat-ball').click(function () {

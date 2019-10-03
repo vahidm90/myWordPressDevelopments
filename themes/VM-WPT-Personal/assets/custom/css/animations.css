@@ -8,6 +8,22 @@
  * Copyright (c) 2019 Daniel Eden
  */
 
+@keyframes vmWiggle {
+
+    0% {
+        transform: translateY(0) scale(3);
+    }
+
+    50% {
+        transform: translateY(50%) scale(3);
+    }
+
+    100% {
+        transform: translateY(0) scale(3);
+    }
+
+}
+
 @-webkit-keyframes bounce {
     from,
     20%,
@@ -4082,7 +4098,7 @@
     animation-duration: 5s;
 }
 
-@media (print), (prefers-reduced-motion: reduce) {
+@media print, (prefers-reduced-motion: reduce) {
     .animated {
         -webkit-animation-duration: 1ms !important;
         animation-duration: 1ms !important;

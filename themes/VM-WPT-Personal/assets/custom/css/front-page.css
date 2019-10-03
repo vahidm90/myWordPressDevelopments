@@ -2,21 +2,7 @@
 
 #splash {
     z-index: 9;
-    display: none;
-}
-
-#splash h1, #splash .spinner-grow {
-    position: absolute;
-    top: 50%;
-}
-
-#splash h1 {
-    margin-left: 10vw;
-    transform: translateY(-50%);
-}
-
-#splash .spinner-grow {
-    right: 10vw;
+    display: flex;
 }
 
 .letter:not(.animated) {
@@ -36,11 +22,11 @@
     background: url(../../bin/img/top-front-page.jpg) center/cover no-repeat fixed;
 }
 
-.site-title, #scroll-down {
-    background-color: #00000050;
+#scroll-down, #fp-nav-items {
+    background-color: #000000;
 }
 
-.site-title, #scroll-down:before {
+.site-title, #scroll-down a:before {
     user-select: none;
     color: #fff;
 }
@@ -53,22 +39,12 @@
 #scroll-down {
     bottom: 0;
     right: 1vw;
-    width: 5vw;
     height: 5vw;
-    padding-bottom: 1vh;
+    width: 10vw;
 }
 
-#scroll-down:before {
-    position: absolute;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4vw;
-    height: 5vw;
-    width: 5vw;
-    line-height: 5vw;
-    animation: 1s linear 0s infinite alternate vmWiggle;
+#scroll-down a:before {
+    animation: 1s ease infinite both vmWiggle;
 }
 
 .cat-ball-place {
@@ -221,9 +197,13 @@
 }
 
 @media (min-width: 1200px) {
-    #fp-nav-items {
 
+    #fp-nav-items {
+        top: 100%;
+        right: 1vw;
+        width: 10vw;
     }
+
 }
 
 @media (max-width: 200px) and (min-height: 220px) {
