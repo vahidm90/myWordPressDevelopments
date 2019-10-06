@@ -115,7 +115,8 @@ function vm_theme_options() {
 
 		$args['field_id'] = "vm-front-page-tiers-options-tier-$i-stripped-classes";
 		$args['field_title'] = _x( 'Excluded common class(es)', 'Tier option field text', VM_TEXT_DOMAIN );
-		$args['option_name'] = "vm_theme_options_front_page_tier_{$i}_stripped-classes";
+		$args['field_markup'] = 'vm_options_tier_stripped_classes_markup';
+		$args['option_name'] = "vm_theme_options_front_page_tier_{$i}_stripped_classes";
 		$args['option_description'] = sprintf(
 			_x(
 				'Front-page tier %d class(es) excluded from common class(es)',
@@ -134,6 +135,7 @@ function vm_theme_options() {
 			_x( 'Front-page tier %d template file', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
 			$i
 		);
+		unset( $args['field_markup'] );
 
 		vm_theme_options_field_setting( $args );
 
