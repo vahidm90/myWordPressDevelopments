@@ -198,7 +198,12 @@
 
 @media (min-width: 1200px) {
 
+    .fp-tier {
+        padding-right: 11vw;
+    }
+
     #fp-nav-items {
+        position: absolute;
         top: 100%;
         right: 1vw;
         width: 10vw;

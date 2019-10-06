@@ -34,18 +34,18 @@ function vm_theme_options_markup() {
 		return;
 	endif;
 
-    ?>
+	?>
     <h1><?php _e( 'Theme options', VM_TEXT_DOMAIN ); ?></h1>
     <form action="options.php" method="POST">
-    <?php
+		<?php
 
-    settings_fields( 'vm_theme_options' );
-    do_settings_sections( 'vm-theme-options' );
-    submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
+		settings_fields( 'vm_theme_options' );
+		do_settings_sections( 'vm-theme-options' );
+		submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
 
-    ?>
+		?>
     </form>
-    <?php
+	<?php
 
 }
 
@@ -60,29 +60,29 @@ function vm_front_page_tiers_options_markup() {
 		return;
 	endif;
 
-    $classes = get_option( 'vm_theme_options_front_page_tiers_common_classes' );
+	$classes = get_option( 'vm_theme_options_front_page_tiers_common_classes' );
 	$cls_arr = empty ( $classes ) ? array() : explode( ' ', $classes );
-	$list = '';
+	$list    = '';
 
 	if ( ! empty( $cls_arr ) ) :
-        foreach ( $cls_arr as $class ) :
-            $list .= "<option value='$class'>$class</option>";
-        endforeach;
-    endif;
+		foreach ( $cls_arr as $class ) :
+			$list .= "<option value='$class'>$class</option>";
+		endforeach;
+	endif;
 
 	?>
     <h1><?php _e( 'Front-page tiers options', VM_TEXT_DOMAIN ); ?></h1>
     <datalist id="common-classes"><?php echo $list; ?></datalist>
     <form action="options.php" method="POST">
-    <?php
+		<?php
 
-    settings_fields( 'vm_front_page_tiers_options' );
-    do_settings_sections( 'vm-front-page-tiers-options' );
-    submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
+		settings_fields( 'vm_front_page_tiers_options' );
+		do_settings_sections( 'vm-front-page-tiers-options' );
+		submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
 
-    ?>
+		?>
     </form>
-    <?php
+	<?php
 
 }
 
@@ -209,32 +209,6 @@ function vm_options_tier_title_markup( $args ) {
 
 
 /**
- * Print front-page tier stripped classes option text field.
- *
- * @param array $args {
- *      Form field values
- *
- * @type string $label_for Used as attribute for input field label to refer to field ID
- * @type string $name Used as input field name
- * @type boolean $enabled checks if option is enabled
- * }
- *
- */
-function vm_options_tier_stripped_classes_markup( $args ) {
-
-	$current = empty( get_option( $args['name'] ) ) ? '' : get_option( $args['name'] );
-	$title = _x( 'Add stripped class', 'Tier option field label', VM_TEXT_DOMAIN );
-
-	?>
-    <input type="text" value="" list="common-classes" title="<?php echo $title; ?>" class="awesomplete" />
-    <input type="hidden" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
-           title="<?php echo $args['label_for']; ?>" id="<?php echo $args['label_for']; ?>" />
-	<?php
-
-}
-
-
-/**
  * Retrieve front-page tiers markup.
  *
  * @return array|bool {
@@ -256,20 +230,32 @@ function vm_get_front_page_tier_markup() {
 	$tiers     = array();
 	$path_rest = '/inc/front-end/template-parts/front-page-tiers/';
 	$path      = get_template_directory() . $path_rest;
-	$classes   = get_option( 'vm_theme_options_front_page_tiers_common_classes' );
-	$class_arr = empty( $classes ) ? array() : explode( ' ', esc_attr__( $classes ) );
+	$com_cls   = get_option( 'vm_theme_options_front_page_tiers_common_classes' );
+	$com_arr   = empty( $com_cls ) ? array() : explode( ' ', esc_attr__( $com_cls ) );
 
 	for ( $i = 1; $count >= $i; $i ++ ) ://TODO: fix markup for classes (excluded).
 
-		$classes    = get_option( "vm_theme_options_front_page_tier_{$i}_classes" );
-		$class_arr  = empty( $classes ) ? $class_arr : array_merge( $class_arr, explode( ' ', esc_attr( $classes ) ) );
-		$ex_classes = get_option( "vm_theme_options_front_page_tier_{$i}_stripped_classes" );
-		$ex_arr     = empty( $ex_classes ) ? array() : explode( ' ', esc_attr( $ex_classes ) );
-		$classes    = ' ' . implode( ' ', array_diff( $class_arr, $ex_arr ) );
-		$temp_file  = get_option( "vm_theme_options_front_page_tier_{$i}_template" );
-		$temp_file  = ( empty( $temp_file ) || ! file_exists( "$path$temp_file" ) ) ? 'default' : $temp_file;
+		$cls = get_option( "vm_theme_options_front_page_tier_{$i}_classes" );
 
-		$tiers[ $i ]['open']     = "<div class='fp-tier$classes' id='fp-tier-$i' data-fp-tier-no='$i'>";
+		if ( empty( $com_arr ) && empty ( $cls ) ) :
+			$cls = '';
+        elseif ( empty( $com_arr ) ) :
+			$cls = ' ' . esc_attr( $cls );
+		else :
+			$cls_arr = empty( $cls ) ? $com_arr : array_merge( $com_arr, explode( ' ', esc_attr( $cls ) ) );
+			$ex_cls  = get_option( "vm_theme_options_front_page_tier_{$i}_stripped_classes" );
+			if ( empty( $ex_cls ) ) :
+				$cls = ' ' . implode( ' ', $cls_arr );
+			else :
+				$ex_arr = explode( ' ', esc_attr( $ex_cls ) );
+				$cls    = ' ' . implode( ' ', array_diff( $cls_arr, $ex_arr ) );
+			endif;
+		endif;
+
+		$temp_file = get_option( "vm_theme_options_front_page_tier_{$i}_template" );
+		$temp_file = ( empty( $temp_file ) || ! file_exists( "$path$temp_file.php" ) ) ? 'default' : $temp_file;
+
+		$tiers[ $i ]['open']     = "<div class='fp-tier$cls' id='fp-tier-$i' data-fp-tier-no='$i'>";
 		$tiers[ $i ]['close']    = '</div>';
 		$tiers[ $i ]['template'] = $path_rest . $temp_file;
 

@@ -58,19 +58,6 @@ function vm_css_js_back_end( $hook ) {
 		default :
 			break;
 
-		case 'appearance_page_vm-front-page-tiers-options' :
-
-			wp_enqueue_style( 'autocomplete', "$path/awesomplete/awesomplete$min.css", array(), '1.1.5' );
-			$dep_css []= 'autocomplete';
-			wp_enqueue_style( 'autocomplete-theme', "$path/awesomplete/awesomplete.theme$min.css", $dep_css, '1.1.5' );
-
-			wp_enqueue_script( 'autocomplete-js', "$path/awesomplete/awesomplete.min.js", array(), '1.1.5', true );
-			wp_enqueue_script( 'jquery' );
-			$dep_js = 'autocomplete-js';
-			wp_enqueue_script( 'fp-tiers-js', "$path/custom/js/options-fp-tiers$min.js", $dep_js, '1.0', true );
-
-			break;
-
 	endswitch;
 }
 
