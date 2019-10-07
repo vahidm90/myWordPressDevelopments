@@ -97,7 +97,7 @@ function vm_theme_options() {
 			),
 			$i
 		);
-		$args['extra_args'] = array( 'enabled' => get_option("vm_theme_options_front_page_tier_{$i}_enable_title") );
+		$args['extra_args'] = array( 'enabled' => get_option( "vm_theme_options_front_page_tier_{$i}_enable_title" ) );
 		unset( $args['option_type'] );
 
 		vm_theme_options_field_setting($args);
