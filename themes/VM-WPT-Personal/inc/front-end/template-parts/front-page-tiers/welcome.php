@@ -6,15 +6,18 @@ $cats       = array( get_category( 4 ), get_category( 2 ) );
 $markup     = '';
 foreach ( $cats as $i => $cat ) :
 	$icon   = strtolower( substr( $cat->name, 0, - 1 ) );
+    $lnk = get_category_link( $cat );
 	$markup .= <<<HTML
 <div class="col-lg-6 col-12">
     <div class="w-100 d-flex justify-content-center">
-        <div class="cat-ball-place">
-            <div class="cat-ball w-100 h-100 position-relative overflow-hidden" data-cat="#$cat->slug">
-                <span class="cat-icon w-100 h-100 position-absolute vmi-$icon"></span>
-                <span class="cat-name position-absolute d-block text-center w-100">$cat->name</span>
+        <a href="$lnk">
+            <div class="cat-ball-place">
+                <div class="cat-ball w-100 h-100 position-relative overflow-hidden" data-i="$i">
+                    <span class="cat-icon w-100 h-100 position-absolute vmi-$icon"></span>
+                    <span class="cat-name position-absolute d-block text-center w-100">$cat->name</span>
+                </div>
             </div>
-        </div>
+        </a>
     </div>
 </div>
 HTML;

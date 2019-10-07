@@ -57,7 +57,6 @@
 .cat-ball {
     cursor: pointer;
     border-radius: 50%;
-    background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
 }
 
 .cat-ball:before, .cat-ball:after, .cat-ball .cat-icon:before {
@@ -84,9 +83,24 @@
     height: 100%;
     top: 20%;
     left: 25%;
-    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(118, 222, 239, 0.8) 14%, rgba(5, 81, 148, 0) 24%);
     transform: translate(-4.5vw, -5vw) skewX(-22deg);
     filter: blur(10px);
+}
+
+.cat-ball[data-i='0'] {
+    background: radial-gradient(circle at 50% 120%, #8bd7e7, #3b88ac 10%, #13547c 80%, #00355e 100%);
+}
+
+.cat-ball[data-i='0']:after {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(118, 222, 239, 0.8) 14%, rgba(5, 81, 148, 0) 24%);
+}
+
+.cat-ball[data-i='1'] {
+    background: radial-gradient(circle at 50% 120%, #fff3be, #dbcf5e 10%, #a49d23 80%, #5e5700 100%);
+}
+
+.cat-ball[data-i='1']:after {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(219, 207, 94, 0.8) 14%, rgba(5, 81, 148, 0) 24%);
 }
 
 .cat-icon, .cat-name {
@@ -99,7 +113,7 @@
     width: 10vw;
     left: 50%;
     top: 50%;
-    color: #c5c7c7d1;
+    color: rgba(233, 235, 235, 0.82);
     font-size: 6vw;
     font-weight: 700;
     line-height: 10vw;
@@ -113,6 +127,10 @@
     color: #fff;
     font-size: 3vw;
     font-weight: 900;
+}
+
+.cat-ball:hover {
+    animation: 2s .3s ease infinite both vmWobble;
 }
 
 .cat-ball:hover .cat-icon:before {

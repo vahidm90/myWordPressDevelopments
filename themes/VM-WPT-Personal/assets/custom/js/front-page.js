@@ -8,7 +8,6 @@ $('.letter:last-child').on('animationend', function () {
 });
 $(document).ready(function () {
     $('.letter:first-child').addClass('animated zoomIn');
-    $('#scroll-down a:before').addClass('animated bounce infinite');
 });
 var bodyScrYpos = 0;
 $('.cat-ball').click(function () {
