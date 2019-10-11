@@ -1,5 +1,13 @@
 @charset "UTF-8";
 
+.body {
+    background-color: #000;
+}
+
+#wrap {
+    background-color: #fff;
+}
+
 @media (max-width: 575px) {
 
     .lead {

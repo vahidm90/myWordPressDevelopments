@@ -2,10 +2,10 @@
 
 get_header( 'front-page' );
 
-$site_name  = get_bloginfo();
-$split      = str_split( $site_name );
-$count      = count( $split ) - 1;
-$tiers      = vm_get_front_page_tier_markup();
+$site_name = get_bloginfo();
+$split     = str_split( $site_name );
+$count     = count( $split ) - 1;
+$tiers     = vm_get_front_page_tier_markup();
 
 for ( $i = 0; $count >= $i; $i ++ ) :
 	$split[ $i ] = "<span class='letter d-inline-block fastest'>{$split[ $i ]}</span>";

@@ -4,22 +4,19 @@
 
 
 function vm_get_front_page_cat_card_markup() {
-	$html = '<a href="' . get_the_permalink() . '" class="' . implode( ' ', get_post_class() ) . '"><div class="card">';
-	if ( has_post_thumbnail() ) :
-		$img  = get_the_post_thumbnail_url();
-		$alt  = get_the_post_thumbnail_caption();
-		$html .= "<img src='$img' alt='$alt' class='card-img-top' />";
-	endif;
 
-	return $html . '<div class="card-body"><p class="post-ttl card-title">' . get_the_title() . '</p></div></div></a>';
+	$html = '<a href="' . get_the_permalink() . '" class="' . implode( ' ', get_post_class( 'text-dark' ) ) . '"><div class="card">';
+
+	return $html . '<div class="card-body"><p class="post-title card-title">' . get_the_title() . '</p></div></div></a>';
 
 }
 
 
 function vm_get_front_page_cat_collapsible_markup() {
+
 	$html = '<a href="' . get_the_permalink() . '" class="' . implode( ' ', get_post_class() ) . '">';
 
-	return $html . '<p class="post-ttl">' . get_the_title() . '</p></a>';
+	return $html . '<p class="post-title">' . get_the_title() . '</p></a>';
 
 }
 
@@ -60,19 +57,8 @@ function vm_front_page_tiers_options_markup() {
 		return;
 	endif;
 
-	$classes = get_option( 'vm_theme_options_front_page_tiers_common_classes' );
-	$cls_arr = empty ( $classes ) ? array() : explode( ' ', $classes );
-	$list    = '';
-
-	if ( ! empty( $cls_arr ) ) :
-		foreach ( $cls_arr as $class ) :
-			$list .= "<option value='$class'>$class</option>";
-		endforeach;
-	endif;
-
 	?>
     <h1><?php _e( 'Front-page tiers options', VM_TEXT_DOMAIN ); ?></h1>
-    <datalist id="common-classes"><?php echo $list; ?></datalist>
     <form action="options.php" method="POST">
 		<?php
 
@@ -88,11 +74,46 @@ function vm_front_page_tiers_options_markup() {
 
 
 /**
+ * Print categories options page
+ *
+ */
+function vm_categories_options_markup() {
+
+	if ( ! current_user_can( 'edit_theme_options' ) ) :
+		return;
+	endif;
+
+	?>
+    <h1><?php _e( 'Categories options', VM_TEXT_DOMAIN ); ?></h1>
+    <form action="options.php" method="POST">
+		<?php
+
+		settings_fields( 'vm_categories_options' );
+		do_settings_sections( 'vm-categories-options' );
+		submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
+
+		?>
+    </form>
+	<?php
+
+}
+
+
+/**
  * Print front-page options section on theme options page
  *
  */
 function vm_theme_options_front_page_section_markup() {
-	echo __( 'Customize the front-page', VM_TEXT_DOMAIN );
+    _e( 'Customize the front-page', VM_TEXT_DOMAIN );
+}
+
+
+/**
+ * Print categories options section on theme options page
+ *
+ */
+function vm_theme_options_categories_section_markup() {
+    _e( 'Modify categories options', VM_TEXT_DOMAIN );
 }
 
 
@@ -109,10 +130,16 @@ function vm_theme_options_front_page_section_markup() {
  *
  */
 function vm_front_page_tiers_options_section_markup( $args ) {
-	preg_match( '/\d+/', $args['id'], $i );
+
+    preg_match( '/\d+/', $args['id'], $tier_id );
+
+    if ( empty( $tier_id ) ) :
+        return;
+	endif;
+
 	printf(
 		_x( 'Customize tier %d', 'Setting section text; %d: Tier number', VM_TEXT_DOMAIN ),
-		(int) $i[0]
+		(int) $tier_id[0]
 	);
 }
 
@@ -127,7 +154,7 @@ function vm_front_page_tiers_options_section_markup( $args ) {
  * }
  *
  */
-function vm_theme_options_front_page_tiers_count_markup( $args ) {
+function vm_front_page_tiers_count_markup( $args ) {
 
 	?>
     <input type="number" value="<?php echo get_option( $args['name'] ); ?>" name="<?php echo $args['name']; ?>"
@@ -195,7 +222,7 @@ function vm_options_text_field_markup( $args ) {
  * }
  *
  */
-function vm_options_tier_title_markup( $args ) {
+function vm_front_page_tier_title_option_markup( $args ) {
 
 	$current = empty( get_option( $args['name'] ) ) ? '' : get_option( $args['name'] );
 
@@ -255,7 +282,7 @@ function vm_get_front_page_tier_markup() {
 		$temp_file = get_option( "vm_theme_options_front_page_tier_{$i}_template" );
 		$temp_file = ( empty( $temp_file ) || ! file_exists( "$path$temp_file.php" ) ) ? 'default' : $temp_file;
 
-		$tiers[ $i ]['open']     = "<div class='fp-tier$cls' id='fp-tier-$i' data-fp-tier-no='$i'>";
+		$tiers[ $i ]['open']     = "<div class='fp-tier$cls' id='fp-tier-$i' data-no='$i'>";
 		$tiers[ $i ]['close']    = '</div>';
 		$tiers[ $i ]['template'] = $path_rest . $temp_file;
 

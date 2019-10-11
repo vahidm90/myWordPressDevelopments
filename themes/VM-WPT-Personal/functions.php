@@ -45,3 +45,4 @@ require_once get_template_directory() . '/inc/routines.php';
 require_once get_template_directory() . '/inc/markup.php';
 
 require_once get_template_directory() . '/inc/back-end/settings/theme-options.php';
+require_once get_template_directory() . '/inc/back-end/custom-term-meta.php';
