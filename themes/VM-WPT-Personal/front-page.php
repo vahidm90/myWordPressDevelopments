@@ -4,12 +4,11 @@ get_header( 'front-page' );
 
 $site_name = get_bloginfo();
 $split     = str_split( $site_name );
-$count     = count( $split ) - 1;
 $tiers     = vm_get_front_page_tier_markup();
 
-for ( $i = 0; $count >= $i; $i ++ ) :
-	$split[ $i ] = "<span class='letter d-inline-block fastest'>{$split[ $i ]}</span>";
-endfor;
+foreach ( $split as &$value ) :
+	$value = "<span class='letter d-inline-block fastest'>$value</span>";
+endforeach;
 
 ?>
 <div class="w-100 vh-100 bg-dark text-light position-fixed
@@ -26,7 +25,7 @@ align-items-center justify-content-center justify-content-sm-around flex-sm-row 
 <div data-spy="scroll" data-target="#fp-nav-items" data-offset="0">
 	<?php
 	if ( ! empty( $tiers ) ) :
-		foreach ( $tiers as $i => $content ) :
+		foreach ( $tiers as $content ) :
 			echo $content['open'];
 			get_template_part(
 				empty( $content['template'] ) ?
