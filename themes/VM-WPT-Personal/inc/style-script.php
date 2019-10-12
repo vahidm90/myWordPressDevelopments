@@ -55,6 +55,12 @@ function vm_css_js_back_end( $hook ) {
 
 	switch ($hook) :
 
+		case 'edit-tags.php' :
+			if ( empty( $_REQUEST['taxonomy'] ) || 'category' !== $_REQUEST['taxonomy'] ) :
+				return;
+			endif;
+			wp_enqueue_media();
+			break;
 		default :
 			break;
 
