@@ -1,4 +1,6 @@
 <?php
+//TODO: add image column to table and quick edit.
+
 
 function vm_add_category_custom_fields( $tax ) {
 
@@ -34,7 +36,7 @@ function vm_edit_category_custom_fields( $term ) {
 
 	$lnk = esc_url( get_upload_iframe_src( 'image' ) );
 	$img = (int) get_term_meta( (int) $term->term_id, 'category_image', true );
-	$img_url = wp_get_attachment_url( $img );
+	$img_url = wp_get_attachment_image_src( $img, 'medium' );
 
 	?>
     <tr class="form-field term-img-wrap">
@@ -43,6 +45,10 @@ function vm_edit_category_custom_fields( $term ) {
             <p class="description<?php echo $img_url ? ' hidden' : ''; ?>">
                 <?php _ex( 'No image set', 'Category image text', VM_TEXT_DOMAIN ); ?>
             </p>
+            <div class="cat-img">
+	            <?php echo $img_url ? "<img src={$img_url[0]} alt='' />" : ''?>
+            </div>
+            <input name="cat_img" type="hidden" value="<?php echo $img; ?>" id="tag-img"/>
             <p class="hide-if-no-js">
                 <a href="<?php echo $lnk; ?>" class="add-cat-img<?php echo $img_url ? ' hidden' : ''; ?>">
 				    <?php _ex( 'Add', 'Add category image', VM_TEXT_DOMAIN ); ?>
@@ -52,10 +58,6 @@ function vm_edit_category_custom_fields( $term ) {
                 </a>
             </p>
         </td>
-        <td class="cat-img">
-            <?php echo $img_url ? "<img src=$img_url alt='' />" : ''?>
-            <input name="cat_img" type="hidden" value="<?php echo $img; ?>" id="tag-img"/>
-        </td>
     </tr>
 <?php
 
@@ -64,7 +66,7 @@ function vm_edit_category_custom_fields( $term ) {
 add_action( 'category_edit_form_fields', 'vm_edit_category_custom_fields' );
 
 
-function vm_add_category_custom_data( $term_id, $tt_id ) {
+function vm_add_category_custom_data( $term_id ) {
 
     if ( empty( $_POST['cat_img'] ) ) :
         return;
@@ -78,11 +80,12 @@ function vm_add_category_custom_data( $term_id, $tt_id ) {
     
 }
 
-add_action( 'create_category', 'vm_add_category_custom_data' );
+add_action( 'created_category', 'vm_add_category_custom_data' );
 
-function vm_edit_category_custom_data( $term_id, $tt_id ) {
 
-    if ( empty( $_POST['cat_img'] || empty( wp_get_attachment_url( (int) $_POST['cat_img'] ) ) ) ) :
+function vm_edit_category_custom_data( $term_id ) {
+
+    if ( empty( $_POST['cat_img'] ) || empty( wp_get_attachment_url( (int) $_POST['cat_img'] ) ) ) :
         delete_term_meta( $term_id, 'category_image' );
         return;
     endif;
@@ -91,4 +94,4 @@ function vm_edit_category_custom_data( $term_id, $tt_id ) {
     
 }
 
-add_action( 'create_category', 'vm_edit_category_custom_data' );
+add_action( 'edited_category', 'vm_edit_category_custom_data' );

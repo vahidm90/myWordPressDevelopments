@@ -5,16 +5,16 @@
 function vm_options_pages() {
 
 	add_theme_page(
-		__( 'Customize', VM_TEXT_DOMAIN ),
-		__( 'General theme options', VM_TEXT_DOMAIN ),
+		__( 'Customize Theme', VM_TEXT_DOMAIN ),
+		__( 'Theme options', VM_TEXT_DOMAIN ),
 		'edit_theme_options',
 		'vm-theme-options',
 		'vm_theme_options_markup'
 	);
 
 	add_theme_page(
-		__( 'Front-page Tiers', VM_TEXT_DOMAIN ),
 		__( 'Customize front-page tiers', VM_TEXT_DOMAIN ),
+		__( 'Front-page Tiers', VM_TEXT_DOMAIN ),
 		'edit_theme_options',
 		'vm-front-page-tiers-options',
 		'vm_front_page_tiers_options_markup'

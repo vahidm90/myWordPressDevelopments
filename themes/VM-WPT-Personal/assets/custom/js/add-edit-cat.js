@@ -43,6 +43,7 @@ jQuery(function ($) {
 
             // Hide the add image link
             addImgLink.addClass('hidden');
+            con.find('.description').addClass('hidden');
 
             // Unhide the remove image link
             delImgLink.removeClass('hidden');

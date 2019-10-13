@@ -60,6 +60,7 @@ function vm_css_js_back_end( $hook ) {
 			if ( empty( $_REQUEST['taxonomy'] ) || 'category' !== $_REQUEST['taxonomy'] ) :
 				return;
 			endif;
+			wp_enqueue_style( 'add-edit-cat', "$path/custom/css/add-edit-cat$min.css", array(), '1.0' );
 			wp_enqueue_media();
 			wp_enqueue_script( 'add-edit-cat-js', "$path/custom/js/add-edit-cat$min.js", array(), '1.0', true );
 			break;
