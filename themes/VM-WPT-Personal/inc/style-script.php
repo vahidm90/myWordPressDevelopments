@@ -56,10 +56,12 @@ function vm_css_js_back_end( $hook ) {
 	switch ($hook) :
 
 		case 'edit-tags.php' :
+		case 'term.php' :
 			if ( empty( $_REQUEST['taxonomy'] ) || 'category' !== $_REQUEST['taxonomy'] ) :
 				return;
 			endif;
 			wp_enqueue_media();
+			wp_enqueue_script( 'add-edit-cat-js', "$path/custom/js/add-edit-cat$min.js", array(), '1.0', true );
 			break;
 		default :
 			break;
