@@ -1,5 +1,24 @@
 
-.term-img-wrap img {
+.term-img-wrap img, .image img {
     max-width: 100%;
+}
+
+.term-img-wrap img {
     max-height: 10em;
+}
+
+.image img {
+    max-height: 2em;
+}
+
+#image {
+    width: 3em;
+}
+
+#posts {
+    width: 5em;
+}
+
+#posts .sorting-indicator {
+    margin-left: 3px;
 }

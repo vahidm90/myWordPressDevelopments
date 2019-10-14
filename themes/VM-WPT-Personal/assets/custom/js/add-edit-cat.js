@@ -3,13 +3,13 @@ jQuery(function ($) {
     // Set all variables to be used in scope
     var frame,
         con = $('.term-img-wrap'),
-        addImgLink = con.find('.add-cat-img'),
-        delImgLink = con.find('.remove-cat-img'),
+        addImgLnk = con.find('.add-cat-img'),
+        delImgLnk = con.find('.remove-cat-img'),
         imgContainer = con.find('.cat-img'),
         imgIdInput = con.find('#tag-img');
 
     // ADD IMAGE LINK
-    addImgLink.on('click', function (e) {
+    addImgLnk.on('click', function (e) {
 
         e.preventDefault();
 
@@ -42,11 +42,11 @@ jQuery(function ($) {
             imgIdInput.val(attachment.id);
 
             // Hide the add image link
-            addImgLink.addClass('hidden');
+            addImgLnk.addClass('hidden');
             con.find('.description').addClass('hidden');
 
             // Unhide the remove image link
-            delImgLink.removeClass('hidden');
+            delImgLnk.removeClass('hidden');
         });
 
         // Finally, open the modal on click
@@ -55,7 +55,7 @@ jQuery(function ($) {
 
 
     // DELETE IMAGE LINK
-    delImgLink.on('click', function (event) {
+    delImgLnk.on('click', function (event) {
 
         event.preventDefault();
 
@@ -63,11 +63,11 @@ jQuery(function ($) {
         imgContainer.html('');
 
         // Un-hide the add image link
-        addImgLink.removeClass('hidden');
+        addImgLnk.removeClass('hidden');
         con.find('.description').removeClass('hidden');
 
         // Hide the delete image link
-        delImgLink.addClass('hidden');
+        delImgLnk.addClass('hidden');
 
         // Delete the image id from the hidden input
         imgIdInput.val('');
