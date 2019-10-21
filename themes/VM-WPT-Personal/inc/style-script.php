@@ -8,7 +8,7 @@ function vm_css_js_front_end () {
 
 	wp_deregister_script( 'jquery' );
 
-	$path = get_template_directory_uri() . '/assets/';
+	$path = get_template_directory_uri() . '/assets';
 	$min = VM_IS_DEV ? '' : '.vmcompiled.min';
 	$dep_css = $dep_js = array();
 
@@ -23,7 +23,7 @@ function vm_css_js_front_end () {
 	wp_enqueue_style('dashicons');
 	$dep_css []= 'dashicons';
 
-	wp_enqueue_script( 'jquery-js', "$path/js/jquery-3.4.1.min.js", array(), '3.4.1');
+	wp_enqueue_script( 'jquery-js', "$path/js/jquery-3.4.1.min.js", array(), '3.4.1', true);
 	$dep_js []= 'jquery-js';
 	wp_enqueue_script( 'bootstrap-js', "$path/bootstrap-4.3.1/bootstrap.min.js", array(), '4.3.1', true);
 	$dep_js []= 'bootstrap-js';

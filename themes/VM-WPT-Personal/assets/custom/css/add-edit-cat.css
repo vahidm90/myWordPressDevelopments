@@ -1,14 +1,33 @@
 
-.term-img-wrap img, .image img {
+.cat-img {
     max-width: 100%;
-}
-
-.term-img-wrap img {
     max-height: 10em;
 }
 
 .image img {
     max-height: 2em;
+}
+
+.has-img {
+    position: relative;
+    display: inline-block;
+}
+
+.has-img .change-cat-img {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 0;
+    padding-top: 50%;
+    box-sizing: border-box;
+    background-color: #000000a1;
+    color: #fff;
+}
+
+.has-img:hover .change-cat-img {
+    display: block;
 }
 
 #image {

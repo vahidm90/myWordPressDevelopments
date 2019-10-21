@@ -28,6 +28,7 @@ body {
 
 #scroll-down, #fp-nav-items {
     background-color: #000000;
+    z-index: 2;
 }
 
 #scroll-down a:before {
@@ -44,6 +45,19 @@ body {
 
 #scroll-down a:before {
     animation: 1s ease infinite both vmScroll;
+}
+
+.carousel {
+    height: 100vh;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item {
+    height: 100%;
+    background: #000 center/contain no-repeat;
 }
 
 @media (max-width: 575px) {

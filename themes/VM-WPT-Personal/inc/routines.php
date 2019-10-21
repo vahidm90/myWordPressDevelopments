@@ -60,6 +60,92 @@ function vm_theme_options_field_setting( array $args ) {
 }
 
 
-function vm_get_cat_img_url( int $cat_id ) {
-//	$img_url =
+function vm_get_post_cat_img_url( $size ) {
+	
+	if (
+		empty( $size ) ||
+		! in_array( $size, array( 'post-thumbnail', 'thumbnail', 'medium', 'medium_large', 'large', 'full' ), true )
+	) :
+		$size = 'thumbnail';
+	endif;
+	
+	$post_cat_id = get_the_category()[0]->term_id;
+	$img_id = (int) get_term_meta( $post_cat_id, 'category_image', true );
+	if ( ! empty( wp_get_attachment_url( $img_id ) ) ) :
+		return wp_get_attachment_image_src( $img_id, $size )[0];
+	endif;
+
+	foreach ( get_ancestors( $post_cat_id, 'category', 'taxonomy' ) as $parent_cat ) :
+		$img_id = (int) get_term_meta( $parent_cat->term_id, 'category_image', true );
+		if ( ! empty ( wp_get_attachment_url( $img_id ) ) ) :
+			return wp_get_attachment_image_src( $img_id, $size )[0];
+			break;
+		endif;
+	endforeach;
+
+	return get_template_directory_uri() . '/assets/bin/img/def_img.png'; 
+	
+}
+
+
+function vm_get_post_img_url( $size ) {
+	
+	if (
+		empty( $size ) ||
+		! in_array( $size, array( 'post-thumbnail', 'thumbnail', 'medium', 'medium_large', 'large', 'full' ), true )
+	) :
+		$size = 'thumbnail';
+	endif;
+	
+	return has_post_thumbnail() ? get_the_post_thumbnail_url( null, $size) : vm_get_post_cat_img_url( $size ); 
+	
+}
+
+
+/**
+ * Retrieves post's relative publication time.
+ *
+ * @return string Publication time
+ *
+ */
+function vm_get_post_pub_time () {
+
+	$pub = get_the_time( 'U' );
+	$now = time();
+	$l_m = strtotime( 'last min' );
+	$l_h = strtotime( 'last hour' );
+	$l_t = strtotime( 'today');
+	$l_d = strtotime( 'yesterday' );
+	$l_w = strtotime( 'last week' );
+
+	switch ( TRUE ) :
+		default :
+			$output = get_the_date( 'j M Y' );
+			break;
+		case ( strtotime( 'last year' ) < $pub && $l_w > $pub ) :
+			$output = get_the_date( 'j F' );
+			break;
+		case ( $l_w < $pub && $l_d > $pub ) :
+			$output = get_the_time( 'l, h:i A' );
+			break;
+		case ( $l_d < $pub && $l_t > $pub ) :
+			$output = _x( 'Yesterday', 'Publish time', VM_TEXT_DOMAIN ) . get_the_time( ' h:i A' );
+			break;
+		case ( $l_t < $pub && $l_h > $pub ) :
+			$hrs    = intval( ( $now - $pub ) / 3600 );
+			$output = _nx( 'About an hour ago', 'About %1$s hours ago', $hrs, 'Time text; 1: Hours', VM_TEXT_DOMAIN );
+			$output = sprintf( $output, number_format_i18n( $hrs ) );
+			break;
+		case ( $l_h < $pub && $l_m > $pub ) :
+			$min    = intval( ( $now - $pub ) / 60 );
+			$output = _nx( 'About a minute ago', 'About %1$s minutes ago', $min, 'Time text; 1: Minutes', VM_TEXT_DOMAIN );
+			$output = sprintf( $output, number_format_i18n( $min ) );
+			break;
+		case ( $l_m < $pub ) :
+			$output = _x( 'Less than a minute ago', 'Time text', VM_TEXT_DOMAIN );
+			break;
+	endswitch;
+
+	return $output;
+
 }

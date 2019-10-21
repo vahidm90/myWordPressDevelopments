@@ -11,11 +11,13 @@ foreach ( $split as &$value ) :
 endforeach;
 
 ?>
+<?php if ( ! VM_IS_DEV ) : ?>
 <div class="w-100 vh-100 bg-dark text-light position-fixed
 align-items-center justify-content-center justify-content-sm-around flex-sm-row flex-column" id="splash">
     <h1><?php echo implode( '', $split ); ?></h1>
     <p class="spinner-grow"></p>
 </div>
+<?php endif; ?>
 <header class="navbar navbar-dark position-fixed bg-dark w-100" id="fp-nav">
     <a href="<?php echo esc_url( home_url() ); ?>" class="navbar-brand"><?php echo $site_name; ?></a>
     <button class="d-xl-none" id="toggle-fp-nav" aria-controls="nav-items" aria-label="Toggle navigation">
