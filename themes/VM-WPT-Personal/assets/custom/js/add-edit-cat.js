@@ -5,7 +5,7 @@ jQuery(function ($) {
             img = $('td.image', $row).html();
         if (img && img.match(/<span class="hidden cat-img-id">\d*<\/span><img src=.+ alt="" class="cat-img">/)) {
             vmDisplayCatImg(
-                $('#edit-' + $row.attr('id').replace(/tag-(\d+)/, "$1") + ' .cat-qe-img'),
+                $('#edit-' + $row[0].id.replace(/tag-(\d+)/, "$1") + ' .cat-qe-img'),
                 img.replace(/.*<img src="([^"]+)" alt="" class="cat-img">/, "$1"),
                 img.replace(/<span class="hidden cat-img-id">(\d+)<\/span>.*/, "$1")
             );
