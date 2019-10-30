@@ -31,7 +31,6 @@
 
                 this.loadEvents();
                 this.navigate(this.current);
-                this.updateDots();
                 this.autoplay();
             },
             loadEvents: function () {
@@ -54,6 +53,16 @@
                             break;
                     }
                 });
+                this.slides.on( 'slideEnd.vmPS', '[data-vmPS-last="1"]', function () {
+                    this.navigate(++this.current);
+                });
+                this.slides.filter('[data-vmPS-domino="1"]').children(':not(:last-child)').on('animationend', function () {
+                    var $nextElement = $(this).next(),
+                        animation = $nextElement.data('vmPS-animation')?$nextElement.data('vmPS-animation'):this.settings.elementEntranceAnimation,
+                        delay = $nextElement.data('vmPS-entrance-delay')?parseInt($nextElement.data('vmPS-entrance-delay'), 10):this.settings.elementEntranceDelay;
+
+                    $nextElement.addClass('animated')
+                })
             },
             navigate: function (slide) {
             	var next;
@@ -66,53 +75,21 @@
 				} else {
             		return;
 				}
-                //Classes created from animate.css, you can add your own here.
-                var classes = 'bounce flash pulse rubberBand shake swing tada wobble bounceIn bounceInDown bounceInRight bounceInUp bounceOut bounceOutDown bounceOutLeft bounceOutRight bounceOutUp fadeIn fadeInDown fadeInDownBig fadeInLeft fadeInLeftBig fadeInRight fadeInRightBig fadeInUp fadeInUpBig fadeOut fadeOutDown fadeOutDownBig fadeOutLeft fadeOutLeftBig fadeOutRight fadeOutRightBig fadeOutUp fadeOutUpBig flipInX flipInY flipOutX flipOutY lightSpeedIn lightSpeedOut rotateIn rotateInDownLeft rotateInDownRight rotateInUpLeft rotateInUpRight rotateOut rotateOutDownLeft rotateOutDownRight rotateOutUpLeft rotateOutUpRight slideInDown slideInLeft slideInRight slideOutLeft slideOutRight slideOutUp slideInUp slideOutDown hinge rollIn rollOut fadeInUpLarge fadeInDownLarge fadeInLeftLarge fadeInRightLarge fadeInUpLeft fadeInUpLeftBig fadeInUpLeftLarge fadeInUpRight fadeInUpRightBig fadeInUpRightLarge fadeInDownLeft fadeInDownLeftBig fadeInDownLeftLarge fadeInDownRight fadeInDownRightBig fadeInDownRightLarge fadeOutUpLarge fadeOutDownLarge fadeOutLeftLarge fadeOutRightLarge fadeOutUpLeft fadeOutUpLeftBig fadeOutUpLeftLarge fadeOutUpRight fadeOutUpRightBig fadeOutUpRightLarge fadeOutDownLeft fadeOutDownLeftBig fadeOutDownLeftLarge fadeOutDownRight fadeOutDownRightBig fadeOutDownRightLarge bounceInBig bounceInLarge bounceInUpBig bounceInUpLarge bounceInDownBig bounceInDownLarge bounceInLeft bounceInLeftBig bounceInLeftLarge bounceInRightBig bounceInRightLarge bounceInUpLeft bounceInUpLeftBig bounceInUpLeftLarge bounceInUpRight bounceInUpRightBig bounceInUpRightLarge bounceInDownLeft bounceInDownLeftBig bounceInDownLeftLarge bounceInDownRight bounceInDownRightBig bounceInDownRightLarge bounceOutBig bounceOutLarge bounceOutUpBig bounceOutUpLarge bounceOutDownBig bounceOutDownLarge bounceOutLeftBig bounceOutLeftLarge bounceOutRightBig bounceOutRightLarge bounceOutUpLeft bounceOutUpLeftBig bounceOutUpLeftLarge bounceOutUpRight bounceOutUpRightBig bounceOutUpRightLarge bounceOutDownLeft bounceOutDownLeftBig bounceOutDownLeftLarge bounceOutDownRight bounceOutDownRightBig bounceOutDownRightLarge zoomIn zoomInUp zoomInUpBig zoomInUpLarge zoomInDown zoomInDownBig zoomInDownLarge zoomInLeft zoomInLeftBig zoomInLeftLarge zoomInRight zoomInRightBig zoomInRightLarge zoomInUpLeft zoomInUpLeftBig zoomInUpLeftLarge zoomInUpRight zoomInUpRightBig zoomInUpRightLarge zoomInDownLeft zoomInDownLeftBig zoomInDownLeftLarge zoomInDownRight zoomInDownRightBig zoomInDownRightLarge zoomOut zoomOutUp zoomOutUpBig zoomOutUpLarge zoomOutDown zoomOutDownBig zoomOutDownLarge zoomOutLeft zoomOutLeftBig zoomOutLeftLarge zoomOutRight zoomOutRightBig zoomOutRightLarge zoomOutUpLeft zoomOutUpLeftBig zoomOutUpLeftLarge zoomOutUpRight zoomOutUpRightBig zoomOutUpRightLarge zoomOutDownLeft zoomOutDownLeftBig zoomOutDownLeftLarge zoomOutDownRight zoomOutDownRightBig zoomOutDownRightLarge flipInTopFront flipInTopBack flipInBottomFront flipInBottomBack flipInLeftFront flipInLeftBack flipInRightFront flipInRightBack flipOutTopFront flipOutTopBack flipOutBottomFront flipOutBottomback flipOutLeftFront flipOutLeftBack flipOutRightFront flipOutRightBack strobe shakeX shakeY spin spinReverse slingshot slingshotReverse pulsate heartbeat panic jackInTheBox jello';
-                var classShow, classHide, delayShow, $next, $current, currentAnimate, nextAnimate;
-
-                $current = this.slides.eq(this.current);
-                currentAnimate = this.elemAnimate(this.current, this.config);
-                this.current = page;
-                $next = this.slides.eq(this.current);
-                nextAnimate = this.elemAnimate(this.current, this.config);
-
-                /*=========================================*/
-                $current.removeClass(" anim-slide-this " + classes);
-                $current.find("*").removeClass(classes);
-
-                //Iterate through a javascript plain object of current and next Slide
-                $.each(currentAnimate, function (index) {
-                    if (index == $current.prop("tagName").toLowerCase()) {
-                        classHide = $current.data("classHide");
-                        delayShow = $current.data("delayShow");
-                        $current.removeClass(delayShow);
-                        $current.addClass(classHide + " animated");
-                    } else {
-                        classHide = $current.find(index).data("classHide");
-                        delayShow = $current.find(index).data("delayShow");
-                        $current.find(index).removeClass(delayShow);
-                        $current.find(index).addClass(classHide + " animated");
-                    }
-                });
-                $.each(nextAnimate, function (index) {
-                    if (index == $current.prop("tagName").toLowerCase()) {
-                        classShow = $next.data("classShow");
-                        delayShow = $next.data("delayShow");
-                        $next.removeClass(classes);
-                        $next.addClass(classShow + " " + delayShow + " animated");
-                    } else {
-                        classShow = $next.find(index).data("classShow");
-                        delayShow = $next.find(index).data("delayShow");
-                        $next.find(index).removeClass(classes);
-                        $next.find(index).addClass(classShow + " " + delayShow + " animated ");
-                    }
-                });
-
-                $next.addClass(" anim-slide-this");
-                /*=========================================*/
-                this.updateDots();
+            	if (this.slides.eq(this.current).data('vmPS-domino')) {
+            	    this.slideDomino();
+                } else {
+                    this.slideAnimations(this.current);
+                }
+            	this.navigate(next);
+                this.updateIndicators();
             },
-
+            slideDomino: function () {
+                this.slides.eq(this.current).children().each(function () {
+                    if ($(this).data('vmPS-animation')) {
+                        addClass()
+                    }
+                })
+            }
         };
     $.fn.vmPerfectSlider = function (options) {
 
