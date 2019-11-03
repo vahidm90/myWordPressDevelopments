@@ -19,7 +19,12 @@
 
                 for ( var i = 0 ; this.$slides.length > i; i++ ) {
 
-                    var $theSlide = this.$slides.eq(i);
+                    var $theSlide = this.$slides.eq(i),
+                        $slideElements = $theSlide.find('.' + this.settings.elementClass);
+                    if (0 >= $slideElements.length) {
+
+                        if ($theSlide.hasClass())
+                    }
                     if (0 >= $theSlide.find('.' + this.settings.lastElementClass).length) {
                         $theSlide.find('.' + this.settings.elementClass).last().addClass(this.settings.lastElementClass);
                     } else if (1 < $theSlide.find('.' + this.settings.lastElementClass).length) {
@@ -119,14 +124,14 @@
                 {
                     slideClass: 'slide',
                     indicatorWrapClass: 'indicator',
-                    navigationClass: 'slide-nav',
-                    elementClass: 'slide-element',
-                    elementAnimationDuration: .1,
+                    navigationClass: 'nav',
+                    elementClass: 'element',
+                    elementAnimationDuration: .05,
                     elementEntranceAnimation: 'fadeIn',
                     elementEntranceDelay: 0,
                     elementExitAnimation: 'fadeOut',
                     lastElementStayTime: 2,
-                    lastElementClass: 'last-element',
+                    lastElementClass: 'last',
                 }
 
         };
