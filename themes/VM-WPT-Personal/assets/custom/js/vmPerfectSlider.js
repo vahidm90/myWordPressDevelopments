@@ -23,7 +23,8 @@
                 var $indicator = $('<div class="' + this.settings.indicatorWrapClass + '"></div>');
 
                 for ( var i = 0 ; this.$slides.length > i; i++ ) {
-
+//TODO: check selfAnimate for each slide before playing the animations.
+                    //TODO: check for delay values.
                     var that = this,
                         $slide = this.$slides.eq(i),
                         $elements = $slide.find('.' + this.settings.elemClass),
@@ -123,9 +124,13 @@
 
             slideDomino: function () {
 
-                var that = this, $elements = this.$slides.eq(this.curSlide).find('.' + this.settings.elemClass);
-                $elements.each( function () {
+                var that = this,
+                    $elements = that.$slides.eq(that.curSlide).find('.' + that.settings.elemClass);
+                $elements.filter('not(.' + that.settings.lastElemClass + ')').on('animationend.vmPS', function () {
+                    $(this).next().addClass('animated ' + $(this).data('enter'));
                 })
+                $elements.each(function () {
+                });
                 $elements.first().hasClass()
                 this.$slides.on('slideEnd.vmPS', '[data-vmPS-last="1"]', function () {
                     this.navigate(++this.curSlide);
