@@ -19,12 +19,12 @@
                 this.slideStayTime = this.settings.lastElemTime * 1000;
                 this.$slides = this.$slider.children('.' + this.settings.slideClass);
                 if (0 >= this.$slides.length) {
-                    throw new Error('No elements with the CSS class "' + this.settings.slideClass + '" found!' );
+                    throw new Error('No elements with the CSS class "' + this.settings.slideClass + '" found!');
                 }
                 this.curSlide = 0;
                 var $indicator = $('<div class="' + this.settings.indicatorWrapClass + '"></div>');
 
-                for ( var i = 0 ; this.$slides.length > i; i++ ) {
+                for (var i = 0; this.$slides.length > i; i++) {
 //TODO: check selfAnimate for each slide before playing the animations.
                     //TODO: check for delay values.
                     //TODO: convert delay values to classes.
@@ -36,34 +36,34 @@
                     if (0 >= $elements.length) {
                         $slide.data('animateSelf', 1);
                         var slideHasEnterAnim = this.allEnterAnimsArr.some(function (anim) {
-                            return anim===$slide.data('enter');
-                        }),
-                        slideHasExitAnim = this.allExitAnimsArr.some(function (anim) {
-                            return anim===$slide.data('exit');
-                        });
-                        if(!slideHasEnterAnim) {
+                                return anim === $slide.data('enter');
+                            }),
+                            slideHasExitAnim = this.allExitAnimsArr.some(function (anim) {
+                                return anim === $slide.data('exit');
+                            });
+                        if (!slideHasEnterAnim) {
                             $slide.data('enter', this.settings.elemEnterAnim);
                         }
-                        if(!slideHasExitAnim) {
+                        if (!slideHasExitAnim) {
                             $slide.data('exit', this.settings.elemExitAnim);
                         }
                     } else {
                         $slide.data('animateSelf', 0);
                         $elements.each(function () {
                             var elemHasEnterAnim = that.allEnterAnimsArr.some(function (anim) {
-                                return anim===$(this).data('enter');
-                            }),
-                            elemHasExitAnim = that.allExitAnimsArr.some(function (anim) {
-                                return anim===$(this).data('exit');
-                            });
-                            if(!elemHasEnterAnim) {
-                                $(this).data('enter',that.settings.elemEnterAnim);
+                                    return anim === $(this).data('enter');
+                                }),
+                                elemHasExitAnim = that.allExitAnimsArr.some(function (anim) {
+                                    return anim === $(this).data('exit');
+                                });
+                            if (!elemHasEnterAnim) {
+                                $(this).data('enter', that.settings.elemEnterAnim);
                             }
-                            if(!elemHasExitAnim) {
+                            if (!elemHasExitAnim) {
                                 $(this).data('exit', that.settings.elemExitAnim);
                             }
                         });
-                        if($slide.data('domino')) {
+                        if ($slide.data('domino')) {
                             if (0 >= $firstElem.length) {
                                 $elements.first().addClass(this.settings.firstElemClass);
                             } else if (1 < $firstElem.length) {
@@ -79,7 +79,7 @@
                         } else {
                             $elements.each(function () {
                                 var delay = $(this).data('delay');
-                                $(this).addClass(delay?'delay-'+delay:'delay-0');
+                                $(this).addClass(delay ? 'delay-' + delay : 'delay-0');
                             });
                         }
                     }
@@ -88,13 +88,12 @@
                 $indicator.appendTo(this.$slider);
                 this.$nav = this.$slider.find('.' + this.settings.navClass);
                 //TODO: make next/previous buttons dynamic too.
-                this.loadEvents();
+                this.loadEvents(this);
                 this.playSlide(this.curSlide);
 
             },
 
-            loadEvents: function () {
-                var that = this;
+            loadEvents: function (that) {
                 //TODO: don't forget relevant data on arrows/indicators.
                 this.$nav.on('click', function (e) {
                     if (!$(this).data('goToSlide')) {
@@ -131,58 +130,56 @@
                 this.$slides.eq(this.curSlide).removeClass('rolling');
                 this.curSlide = next;
                 var $nextSlide = this.$slides.eq(this.curSlide).addClass('rolling');
-                if($nextSlide.data('animateSelf')) {
-                    this.slideSelfAnimate();
+                if ($nextSlide.data('animateSelf')) {
+                    this.slideSelfAnimate(this, $nextSlide );
                 }
                 if ($nextSlide.data('domino')) {
-                    this.slideDomino();
+                    this.slideDomino(this, $nextSlide);
                 } else {
                     //TODO:the function to play elements' animations
-                    this.slideAnimate();
+                    this.slideAnimate(this, $nextSlide);
                 }
             },
 
-            slideSelfAnimate: function () {
-                var that = this,
-                    $theSlide = this.$slides.eq(this.curSlide),
-                    enter = $theSlide.data('enter'),
-                    exit = $theSlide.data('exit');
+            slideSelfAnimate: function (that, $theSlide) {
+                var enter = $theSlide.data('enter');
                 $theSlide.addClass('animated ' + enter);
                 this.slideTime = setTimeout(function () {
-                    $theSlide.removeClass(enter).addClass(exit);
-                    this.playSlide(that.curSlide+1);
-                }, this.slideStayTime * 1000 );
+                    $theSlide.removeClass(enter).addClass($theSlide.data('exit'));
+                    this.playSlide(that.curSlide + 1);
+                }, this.slideStayTime * 1000);
             },
 
-            slideDomino: function () {
+            slideDomino: function (that, $theSlide) {
+                var $elements = $theSlide.find('.' + this.settings.elemClass),
+                    $first = $elements.filter('.' + this.settings.firstElemClass),
+                    $last = $elements.filter('.' + this.settings.lastElemClass);
+                $elements.not('.' + this.settings.lastElemClass).on('animationend', function () {
+                    var $nextElem = $(this).next();
+                    $nextElem.addClass('animated ' + $nextElem.data('enter'));
+                });
+                $last.on('animationend', function () {
+                    that.slideDominoEnd($elements);
+                });
+                $first.addClass('animated ' + $first.data('enter'));
+            },
 
-                var that = this,
-                    $theSlide = this.$slides.eq(this.curSlide),
-                $elements = $theSlide.find('.' + this.settings.elemClass),
-                        $first = $elements.filter('.' + this.settings.firstElemClass),
-                        $last = $elements.filter('.' + this.settings.lastElemClass);
-                    $elements.filter(':not(.' + this.settings.lastElemClass + ')').on('animationend', function () {
-                        var $nextElem = $(this).next();
-                        $nextElem.addClass('animated ' + $nextElem.data('enter'));
-                    });
-                    $last.on('animationend', function () {
-                        that.slideDominoEnd($elements);
-                    });
-                    $first.addClass('animated ' + $first.data('enter'));
+            slideAnimate: function (that, $theSlide) {
+
             },
 
             slideDominoEnd: function ($elements) {
                 $elements.off('animationend');
-                $elements.removeClass(this.allDelays); 
-                this.slideTime = setTimeout( function () {
+                $elements.removeClass(this.allDelays);
+                this.slideTime = setTimeout(function () {
                     $elements.each(function () {
                         $(this).removeClass($(this).data('enter')).addClass($(this).data('exit'));
                     });
-                    this.playSlide(this.curSlide+1);
-                }, this.slideStayTime );
+                    this.playSlide(this.curSlide + 1);
+                }, this.slideStayTime);
             },
 
-            defaults :
+            defaults:
                 {
                     slideClass: 'slide',
                     slideEnterAnim: 'slideInLeft',
@@ -203,12 +200,10 @@
 
     $.fn.vmPerfectSlider = function (options) {
 
-        return this.each(function()
-        {
-            var instance	=	$.data(this,"vmPerfectSlider");
-            if (!instance)
-            {
-                $.data(this,"vmPerfectSlider",new vmPerfectSlider(this,options).init());
+        return this.each(function () {
+            var instance = $.data(this, "vmPerfectSlider");
+            if (!instance) {
+                $.data(this, "vmPerfectSlider", new vmPerfectSlider(this, options).init());
             }
         });
 
