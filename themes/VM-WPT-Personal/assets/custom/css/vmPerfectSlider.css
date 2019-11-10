@@ -247,7 +247,7 @@ nav.anim-arrows>span.anim-arrows-prev:hover:after {
     border-radius: 100%;
     margin: 3px;
     cursor: pointer;
-    box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset, 1px 1px 1px rgba(255,255,255,0.1);
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset, 1px 1px 1px rgba(255, 255, 255, 0.5);
 }
 
 .indicator span.rolling:after {

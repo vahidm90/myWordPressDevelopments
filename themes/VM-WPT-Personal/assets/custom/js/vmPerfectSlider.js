@@ -4,7 +4,8 @@
         this.$slider = $(element);
         this.options = options;
     };
-
+//TODO: make CSS dynamic
+    //TODO: add slider container class dynamically. 
     vmPerfectSlider.prototype =
         {
 
@@ -16,10 +17,11 @@
                 this.allDelays = 'delay-0 delay-0-1 delay-0-2 delay-0-3 delay-0-4 delay-0-5 delay-0-6 delay-0-7 delay-0-8 delay-0-9 delay-1 delay-1-1 delay-1-2 delay-1-3 delay-1-4 delay-1-5 delay-1-6 delay-1-7 delay-1-8 delay-1-9 delay-2 delay-2-1 delay-2-2 delay-2-3 delay-2-4 delay-2-5 delay-2-6 delay-2-7 delay-2-8 delay-2-9 delay-3 delay-3-1 delay-3-2 delay-3-3 delay-3-4 delay-3-5 delay-3-6 delay-3-7 delay-3-8 delay-3-9 delay-4 delay-4-1 delay-4-2 delay-4-3 delay-4-4 delay-4-5 delay-4-6 delay-4-7 delay-4-8 delay-4-9 delay-5 delay-5-1 delay-5-2 delay-5-3 delay-5-4 delay-5-5 delay-5-6 delay-5-7 delay-5-8 delay-5-9 delay-6 delay-6-1 delay-6-2 delay-6-3 delay-6-4 delay-6-5 delay-6-6 delay-6-7 delay-6-8 delay-6-9 delay-7 delay-7-1 delay-7-2 delay-7-3 delay-7-4 delay-7-5 delay-7-6 delay-7-7 delay-7-8 delay-7-9 delay-8 delay-8-1 delay-8-2 delay-8-3 delay-8-4 delay-8-5 delay-8-6 delay-8-7 delay-8-8 delay-8-9 delay-9 delay-9-1 delay-9-2 delay-9-3 delay-9-4 delay-9-5 delay-9-6 delay-9-7 delay-9-8 delay-9-9 delay-10';
                 this.allEnterAnimsArr = this.allEnterAnims.split(' ');
                 this.allExitAnimsArr = this.allExitAnims.split(' ');
-                this.slideStayTime = this.settings.lastElemTime * 1000;
+                this.lastElemDelay = this.settings.slideDuration * (('s' === this.settings.timeUnit)?1000:1);
+                this.nextSlideDelay = (this.settings.animationDuration + 0.5) * (('s' === this.settings.timeUnit)?1000:1);
                 this.$slides = this.$slider.children('.' + this.settings.slideClass);
                 if (0 >= this.$slides.length) {
-                    throw new Error('No elements with the CSS class "' + this.settings.slideClass + '" found!');
+                    throw new Error('No elements with the class "' + this.settings.slideClass + '" found!');
                 }
                 this.curSlide = 0;
                 var $indicator = $('<div class="' + this.settings.indicatorWrapClass + '"></div>');
@@ -27,11 +29,13 @@
                 for (var i = 0; this.$slides.length > i; i++) {
                     var that = this,
                         $slide = this.$slides.eq(i),
-                        $elements = $slide.find('.' + this.settings.elemClass),
-                        $firstElem = $elements.filter('.' + this.settings.firstElemClass),
-                        $lastElem = $elements.filter('.' + this.settings.lastElemClass);
+                        $elements = $slide.find('.' + this.settings.elementClass),
+                        $firstElem = $elements.filter('.' + this.settings.firstElementClass),
+                        $lastElem = $elements.filter('.' + this.settings.lastElementClass);
                     if (0 >= $elements.length) {
+                        var animDur = $slide.data('duration'); 
                         $slide.data('animateSelf', 1);
+                        $slide.css('animationDuration', (animDur ? animDur : this.settings.animationDuration) + this.settings.timeUnit); 
                         var slideHasEnterAnim = this.allEnterAnimsArr.some(function (anim) {
                                 return anim === $slide.data('enter');
                             }),
@@ -39,10 +43,10 @@
                                 return anim === $slide.data('exit');
                             });
                         if (!slideHasEnterAnim) {
-                            $slide.data('enter', this.settings.elemEnterAnim);
+                            $slide.data('enter', this.settings.slideEntranceAnimation);
                         }
                         if (!slideHasExitAnim) {
-                            $slide.data('exit', this.settings.elemExitAnim);
+                            $slide.data('exit', this.settings.slideExitAnimation);
                         }
                     } else {
                         $slide.data('animateSelf', 0);
@@ -52,69 +56,67 @@
                                 }),
                                 elemHasExitAnim = that.allExitAnimsArr.some(function (anim) {
                                     return anim === $(this).data('exit');
-                                });
+                                }),
+                                animDur = $(this).data('duration');
+                            $(this).css('animationDuration', (animDur ? animDur : that.settings.animationDuration) + that.settings.timeUnit);
                             if (!elemHasEnterAnim) {
-                                $(this).data('enter', that.settings.elemEnterAnim);
+                                $(this).data('enter', that.settings.elementEntranceAnimation);
                             }
                             if (!elemHasExitAnim) {
-                                $(this).data('exit', that.settings.elemExitAnim);
+                                $(this).data('exit', that.settings.elementExitAnimation);
                             }
                         });
                         if ($slide.data('domino')) {
                             if (0 >= $firstElem.length) {
-                                $elements.first().addClass(this.settings.firstElemClass);
+                                $elements.first().addClass(this.settings.firstElementClass);
                             } else if (1 < $firstElem.length) {
-                                $firstElem.removeClass(this.settings.firstElemClass);
-                                $elements.first().addClass(this.settings.firstElemClass);
+                                $firstElem.removeClass(this.settings.firstElementClass);
+                                $elements.first().addClass(this.settings.firstElementClass);
                             }
                             if (0 >= $lastElem.length) {
-                                $elements.last().addClass(this.settings.lastElemClass);
+                                $elements.last().addClass(this.settings.lastElementClass);
                             } else if (1 < $lastElem.length) {
-                                $lastElem.removeClass(this.settings.lastElemClass);
-                                $elements.last().addClass(this.settings.lastElemClass);
+                                $lastElem.removeClass(this.settings.lastElementClass);
+                                $elements.last().addClass(this.settings.lastElementClass);
                             }
-                        } else {
-                            $elements.each(function () {
-                                var delay = $(this).data('delay');
-                                $(this).addClass(delay ? 'delay-' + delay : 'delay-0');
-                            });
                         }
                     }
-                    $indicator.append('<span class="' + this.settings.navClass + '" data-go-to-slide="' + i + '"></span>');
+                    $indicator.append('<span data-go-to-slide="' + i + '"></span>');
                 }
                 $indicator.appendTo(this.$slider);
+                //TODO: add navigation arrows.
                 this.$nav = this.$slider.find('.' + this.settings.navClass);
+                this.$dot = this.$slider.find('.' + this.settings.indicatorWrapClass + ' span'); 
                 //TODO: make next/previous buttons dynamic too.
-                this.loadEvents(this);
-                this.playSlide(this.curSlide);
+                this.loadEvents();
+                this.playSlide(0);
 
             },
 
-            loadEvents: function (that) {
+            loadEvents: function () {
+                var that = this;
                 //TODO: don't forget relevant data on arrows/indicators.
                 this.$nav.on('click', function (e) {
-                    if (!$(this).data('goToSlide')) {
-                        return;
-                    }
+                    clearTimeout(that.slideTimeout);
                     e.preventDefault();
-                    clearTimeout(that.slideTime);
-                    switch ($(this).data('goToSlide')) {
-                        default:
-                            that.playSlide($(this).data('goToSlide'));
-                            break;
-                        case 'N' :
-                            that.playSlide(that.curSlide - 1);
-                            break;
-                        case 'P' :
-                            that.playSlide(that.curSlide + 1);
-                            break;
+                    if ('next' === $(this).data('goToSlide')) {
+                        that.playSlide(that.curSlide + 1);
+                    } else {
+                        that.playSlide(that.curSlide - 1);
                     }
+                });
+                this.$dot.on('click', function (e) {
+                    clearTimeout(that.slideTimeout);
+                    clearTimeout(that.nextSlideTimeout);
+                    //TODO: add a function that immediately does what the timeouts were supposed to do.
+                    e.preventDefault();
+                    that.playSlide($(this).data('goToSlide'));
                 });
             },
 
             playSlide: function (index) {
                 //TODO:update indicators.
-                var next;
+                var that = this, next;
                 if (-1 === index && 0 === this.curSlide) {
                     next = this.$slides.length - 1;
                 } else if (this.$slides.length === index && (this.$slides.length - 1) === this.curSlide) {
@@ -124,87 +126,96 @@
                 } else {
                     return;
                 }
-                this.$slides.eq(this.curSlide).removeClass('rolling');
-                this.curSlide = next;
-                var $nextSlide = this.$slides.eq(next).addClass('rolling'),
-                    isDomino = $nextSlide.data('domino');
-                if ($nextSlide.data('animateSelf')) {
-                    this.slideSelfAnimate(this, $nextSlide );
-                }
-                else if (isDomino) {
-                    this.slideDomino(this, $nextSlide, isDomino);
-                } else {
-                    this.slideAnimate(this, $nextSlide, isDomino);
-                }
-                this.$nav.removeClass('rolling');
-                this.$nav.filter('span').eq(next).addClass('rolling');
+                this.$dot.eq(this.curSlide).removeClass('rolling');
+                var $nextSlide = this.$slides.eq(next), $curSlide = this.$slides.eq(this.curSlide);
+                this.nextSlideTimeout = setTimeout(function () {
+                    if ($curSlide.data('animateSelf')) {
+                        $curSlide.removeClass('animated ' + $curSlide.data('exit'));
+                    }
+                    $curSlide.removeClass('rolling');
+                    $nextSlide.addClass('rolling');
+                    if ($nextSlide.data('animateSelf')) {
+                        that.slideSelfAnimate($nextSlide );
+                    }
+                    else if ($nextSlide.data('domino')) {
+                        that.slideDomino($nextSlide);
+                    } else {
+                        that.slideAnimate($nextSlide);
+                    }
+                    that.curSlide = next;
+                    that.$dot.eq(next).addClass('rolling');
+                }, this.nextSlideDelay)
             },
 
-            slideSelfAnimate: function (that, $theSlide) {
-                var enter = $theSlide.data('enter');
+            slideSelfAnimate: function ($theSlide) {
+                var that = this,
+                    enter = $theSlide.data('enter');
                 $theSlide.addClass('animated ' + enter);
-                this.slideTime = setTimeout(function () {
+                this.slideTimeout = setTimeout(function () {
                     $theSlide.removeClass(enter).addClass($theSlide.data('exit'));
                     that.playSlide(that.curSlide + 1);
-                }, this.slideStayTime * 1000);
+                }, this.lastElemDelay);
             },
 
-            slideDomino: function (that, $theSlide, isDomino) {
-                var $elements = $theSlide.find('.' + this.settings.elemClass),
-                    $first = $elements.filter('.' + this.settings.firstElemClass),
-                    $last = $elements.filter('.' + this.settings.lastElemClass);
-                $elements.not('.' + this.settings.lastElemClass).on('animationend', function () {
+            slideDomino: function ($theSlide) {
+                var that = this,
+                    $elements = $theSlide.find('.' + this.settings.elementClass),
+                    $first = $elements.filter('.' + this.settings.firstElementClass),
+                    $last = $elements.filter('.' + this.settings.lastElementClass);
+                $elements.not('.' + this.settings.lastElementClass).on('animationend', function () {
                     var $nextElem = $(this).next();
                     $nextElem.addClass('animated ' + $nextElem.data('enter'));
                 });
                 $last.on('animationend', function () {
-                    that.slideEnd(that, isDomino, $elements);
+                    $elements.off('animationend');
+                    that.setSlideTimeout($elements);
                 });
                 $first.addClass('animated ' + $first.data('enter'));
             },
 
-            slideAnimate: function (that, $theSlide, isDomino) {
-                var $elements = $theSlide.find('.' + this.settings.elemClass),
+            slideAnimate: function ($theSlide) {
+                var that = this,
+                    $elements = $theSlide.find('.' + this.settings.elementClass),
                 count = 0;
                 $theSlide.on('animationend', function () {
                     count++;
                     if($elements.length === count) {
-                        that.slideEnd(that, isDomino, $elements);
+                        $theSlide.off('animationend');
+                        $elements.removeClass(that.allDelays);
+                        that.setSlideTimeout($elements);
                     }
                 });
                 $elements.each(function () {
-                    $(this).addClass($(this).data('enter') + ' animated ' + $(this).data('delay'));
+                    var delay = $(this).data('delay');
+                    $(this).addClass($(this).data('enter') + ' animated ' + (delay ? 'delay-' + delay : 'delay-0'));
                 });
             },
 
-            slideEnd: function (that, isDomino, $elements) {
-                $elements.off('animationend');
-                if(!isDomino) {
-                    $elements.removeClass(this.allDelays);
-                }
-                this.slideTime = setTimeout(function () {
+            setSlideTimeout: function($elements) {
+                this.slideTimeout = setTimeout(function () {
                     $elements.each(function () {
                         $(this).removeClass($(this).data('enter')).addClass($(this).data('exit'));
                     });
-                    that.playSlide(this.curSlide + 1);
-                }, this.slideStayTime);
+                    this.playSlide(this.curSlide + 1);
+                }, this.lastElemDelay);
             },
 
             defaults:
                 {
+                    timeUnit: 's',
                     slideClass: 'slide',
-                    slideEnterAnim: 'slideInLeft',
-                    slideExitAnim: 'slideOutRight',
+                    slideEntranceAnimation: 'slideInLeft',
+                    slideExitAnimation: 'slideOutRight',
+                    slideDuration: 5,
                     indicatorWrapClass: 'indicator',
                     navClass: 'nav',
-                    elemClass: 'element',
-                    elementAnimationDuration: .05,
-                    elemEnterAnim: 'fadeIn',
+                    animationDuration: .5,
+                    elementClass: 'element',
+                    elementEntranceAnimation: 'fadeIn',
                     elementEntranceDelay: 0,
-                    elemExitAnim: 'fadeOut',
-                    firstElemClass: 'first',
-                    lastElemClass: 'last',
-                    lastElemTime: 2,
+                    elementExitAnimation: 'fadeOut',
+                    firstElementClass: 'first',
+                    lastElementClass: 'last',
                 }
 
         };
