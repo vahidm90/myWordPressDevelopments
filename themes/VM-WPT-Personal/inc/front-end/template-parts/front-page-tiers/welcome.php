@@ -14,11 +14,10 @@ if ( have_posts() ) :
 		$post_title = get_the_title();
 		$post_time  = vm_get_post_pub_time();
 		$post_link  = get_the_permalink();
-		$caro_act   = ( 0 === $wp_query->current_post ) ? ' active' : '';
 		$posts_html .= <<<html
-<div class='carousel-item$caro_act' style='background-image: url($post_img)'>
+<div class='slide'>
     <a href="$post_link">
-        <div class="carousel-caption">
+        <div>
             <h3>$post_title</h3>
             <p>$post_cat</p>
         </div>
@@ -28,11 +27,7 @@ html;
 
 	endwhile;
 
-	$posts_html = <<<html
-<div class='carousel slide carousel-fade' id="fp-tier-1-carousel" data-ride='carousel'>
-    <div class='carousel-inner'>$posts_html</div>
-</div>
-html;
+	$posts_html = "<div class='vmPS'>$posts_html</div>";
 
 endif;
 

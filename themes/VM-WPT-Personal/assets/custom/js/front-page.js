@@ -10,3 +10,4 @@ $('.letter:last-child').on('animationend', function () {
 $(document).ready(function () {
     $('.letter:first-child').addClass('animated zoomIn');
 });
+$('.vmPS').vmPerfectSlider();

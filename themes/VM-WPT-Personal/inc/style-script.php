@@ -32,7 +32,11 @@ function vm_css_js_front_end () {
 
 	if ( is_front_page() ) :
 
+		wp_enqueue_style( 'slider', "$path/custom/css/vmPerfectSlider$min.css", $dep_css, '1.0' );
 		wp_enqueue_style( 'front-page', "$path/custom/css/front-page$min.css", $dep_css, '1.0' );
+
+		wp_enqueue_script( 'slider-js', "$path/custom/js/vmPerfectSlider$min.js", $dep_js, '1.0', true );
+		$dep_js[] = 'slider-js';
 
 		wp_enqueue_script( 'front-page-js', "$path/custom/js/front-page$min.js", $dep_js, '1.0', true );
 
