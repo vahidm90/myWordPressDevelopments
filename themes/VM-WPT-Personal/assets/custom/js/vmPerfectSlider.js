@@ -90,7 +90,19 @@
                 //TODO: make next/previous buttons dynamic too.
                 this.loadEvents();
                 this.playSlide(0);
+            },
 
+            unifyDominoEnds: function() {
+                ['first', 'last'].forEach(function (end) {
+                    var prop = end + 'ElementClass',
+                        $element = $elements.filter('.' + this.settings[prop]);
+                    if (0 >= $element.length) {
+                        $elements.first().addClass(this.settings[prop]);
+                    } else if (1 < $element.length) {
+                        $element.removeClass(this.settings[prop]);
+                        $elements.first().addClass(this.settings[prop]);
+                    }
+                })
             },
 
             loadEvents: function () {
