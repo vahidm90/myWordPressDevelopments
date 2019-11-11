@@ -167,7 +167,7 @@
                     });
                 }
                 this.nextSlideTimeout = setTimeout(function () {
-                    that.nextSlide(next);
+                    that.nextSlide(index);
                 }, this.nextSlideDelay)
             },
 
