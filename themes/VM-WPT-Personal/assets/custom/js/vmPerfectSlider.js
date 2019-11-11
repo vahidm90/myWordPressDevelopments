@@ -97,8 +97,8 @@
                 var that = this;
                 //TODO: don't forget relevant data on arrows/indicators.
                 this.$nav.on('click', function (e) {
-                    clearTimeout(that.slideTimeout);
                     e.preventDefault();
+                    clearTimeout(that.slideTimeout);
                     if ('next' === $(this).data('goToSlide')) {
                         that.playSlide(that.curSlide + 1);
                     } else {
@@ -106,11 +106,15 @@
                     }
                 });
                 this.$dot.on('click', function (e) {
+                    e.preventDefault();
                     clearTimeout(that.slideTimeout);
                     clearTimeout(that.nextSlideTimeout);
+                    var next = $(this).data('goToSlide'),
+                        $curSlide = that.$slides.eq(that.curSlide);
+                    that.killSlide($curSlide,next);
+                    that.nextSlide(next);
                     //TODO: add a function that immediately does what the timeouts were supposed to do.
-                    e.preventDefault();
-                    that.playSlide($(this).data('goToSlide'));
+                    that.playSlide(next);
                 });
             },
 
@@ -127,23 +131,43 @@
                     return;
                 }
                 this.$dot.eq(this.curSlide).removeClass('rolling');
-                var $nextSlide = this.$slides.eq(next), $curSlide = this.$slides.eq(this.curSlide);
                 this.nextSlideTimeout = setTimeout(function () {
-                    if ($curSlide.data('animateSelf')) {
-                        $curSlide.removeClass('animated ' + $curSlide.data('exit'));
-                    }
-                    $curSlide.removeClass('rolling');
-                    $nextSlide.addClass('rolling');
-                    if ($nextSlide.data('animateSelf')) {
-                        that.slideSelfAnimate($nextSlide );
-                    }
-                    else if ($nextSlide.data('domino')) {
-                        that.slideDomino($nextSlide);
-                    } else {
-                        that.slideAnimate($nextSlide);
-                    }
-                    that.curSlide = next;
-                    that.$dot.eq(next).addClass('rolling');
+                    that.nextSlide(next);
+                }, this.nextSlideDelay)
+            },
+
+            nextSlide: function(index) {
+                var $nextSlide = this.$slides.eq(index),
+                    $curSlide = this.$slides.eq(this.curSlide);
+                if ($curSlide.data('animateSelf')) {
+                    $curSlide.removeClass('animated ' + $curSlide.data('exit'));
+                }
+                $curSlide.removeClass('rolling');
+                $nextSlide.addClass('rolling');
+                if ($nextSlide.data('animateSelf')) {
+                    this.slideSelfAnimate($nextSlide );
+                }
+                else if ($nextSlide.data('domino')) {
+                    this.slideDomino($nextSlide);
+                } else {
+                    this.slideAnimate($nextSlide);
+                }
+                this.curSlide = index;
+                this.$dot.eq(index).addClass('rolling');
+            },
+
+            killSlide: function($theSlide, index) {
+                var that = this;
+                if($theSlide.data('animateSelf')) {
+                    $theSlide.removeClass($theSlide.data('enter')).addClass($theSlide.data('exit'));
+                } else {
+                    var $elements = $theSlide.find('.' + this.settings.elementClass);
+                    $elements.each(function () {
+                        $(this).removeClass($(this).data('enter')).addClass($(this).data('exit'));
+                    });
+                }
+                this.nextSlideTimeout = setTimeout(function () {
+                    that.nextSlide(next);
                 }, this.nextSlideDelay)
             },
 
@@ -152,8 +176,7 @@
                     enter = $theSlide.data('enter');
                 $theSlide.addClass('animated ' + enter);
                 this.slideTimeout = setTimeout(function () {
-                    $theSlide.removeClass(enter).addClass($theSlide.data('exit'));
-                    that.playSlide(that.curSlide + 1);
+                    that.killSlide($theSlide, that.curSlide + 1)
                 }, this.lastElemDelay);
             },
 
@@ -168,7 +191,7 @@
                 });
                 $last.on('animationend', function () {
                     $elements.off('animationend');
-                    that.setSlideTimeout($elements);
+                    that.setSlideTimeout($theSlide);
                 });
                 $first.addClass('animated ' + $first.data('enter'));
             },
@@ -182,7 +205,7 @@
                     if($elements.length === count) {
                         $theSlide.off('animationend');
                         $elements.removeClass(that.allDelays);
-                        that.setSlideTimeout($elements);
+                        that.setSlideTimeout($theSlide);
                     }
                 });
                 $elements.each(function () {
@@ -191,12 +214,10 @@
                 });
             },
 
-            setSlideTimeout: function($elements) {
+            setSlideTimeout: function($theSlide) {
+                var that = this;
                 this.slideTimeout = setTimeout(function () {
-                    $elements.each(function () {
-                        $(this).removeClass($(this).data('enter')).addClass($(this).data('exit'));
-                    });
-                    this.playSlide(this.curSlide + 1);
+                    that.killSlide($theSlide, that.curSlide+1);
                 }, this.lastElemDelay);
             },
 
@@ -209,6 +230,7 @@
                     slideDuration: 5,
                     indicatorWrapClass: 'indicator',
                     navClass: 'nav',
+                    userPauseDuration: 10,
                     animationDuration: .5,
                     elementClass: 'element',
                     elementEntranceAnimation: 'fadeIn',
