@@ -34,32 +34,33 @@ function vm_theme_options() {
 		'vm-theme-options'
 	);
 
-	$args = array(
+	$num_args = array(
 		'field_id'           => 'vm-front-page-tiers-count',
-		'field_title'        => _x( 'Tiers (allowed: 1-99)', 'Tiers count field text', VM_TEXT_DOMAIN ),
-		'field_markup'       => 'vm_front_page_tiers_count_markup',
 		'page_slug'          => 'vm-theme-options',
-		'section_id'         => 'vm-theme-options-front-page-section',
 		'option_name'        => 'vm_theme_options_front_page_tiers_count',
+		'option_group'       => 'vm_theme_options',
+		'field_title'        => _x( 'Tiers (allowed: 1-99)', 'Tiers count field text', VM_TEXT_DOMAIN ),
+		'field_markup'       => 'vm_number_option_field_markup',
+		'section_id'         => 'vm-theme-options-front-page-section',
 		'option_type'        => 'number',
 		'option_description' => __( 'Number of front-page tiers', VM_TEXT_DOMAIN ),
 		'option_default'     => 1,
-		'option_group'       => 'vm_theme_options'
+		'extra_args'         => array( 'max' => 99, 'min' => 1 ),
 	);
 
-	vm_theme_options_field_setting( $args );
+	vm_theme_options_field_setting( $num_args );
 
-	$args = array(
+	$text_args = array(
 		'field_id'           => 'vm-front-page-tiers-common-classes',
-		'field_title'        => __( 'Class(es) shared among all tiers (separated by space)', VM_TEXT_DOMAIN ),
 		'page_slug'          => 'vm-theme-options',
-		'section_id'         => 'vm-theme-options-front-page-section',
 		'option_name'        => 'vm_theme_options_front_page_tiers_common_classes',
+		'option_group'       => 'vm_theme_options',
+		'field_title'        => __( 'Class(es) shared among all tiers (separated by space)', VM_TEXT_DOMAIN ),
+		'section_id'         => 'vm-theme-options-front-page-section',
 		'option_description' => __( 'Class(es) to use for all front-page tiers', VM_TEXT_DOMAIN ),
-		'option_group'       => 'vm_theme_options'
 	);
 
-	vm_theme_options_field_setting( $args );
+	vm_theme_options_field_setting( $text_args );
 
 	for ( $i = 1; (int) get_option( 'vm_theme_options_front_page_tiers_count' ) >= $i; $i ++ ) :
 
@@ -71,83 +72,90 @@ function vm_theme_options() {
 		);
 //TODO: Create separate fields for each piece of data.
 
-		$args = array(
-			'field_id'           => "vm-front-page-tier-$i-enable-title",
-			'field_title'        => _x( 'Appear on tiers navigation menu', 'Tier option field text', VM_TEXT_DOMAIN ),
-			'field_markup'       => 'vm_options_checkbox_markup',
+		$text_args = array(
+			'field_id'           => "vm-front-page-tier-$i-template",
 			'page_slug'          => 'vm-front-page-tiers-options',
-			'section_id'         => "vm-front-page-tiers-options-tier-$i-section",
-			'option_name'        => "vm_theme_options_front_page_tier_{$i}_enable_title",
-			'option_type'        => 'boolean',
+			'option_name'        => "vm_theme_options_front_page_tier_{$i}_template",
 			'option_group'       => 'vm_front_page_tiers_options',
-			'option_description' =>
-				sprintf(
-					_x(
-						'Enable/disable front-page tier %d on tiers navigation menu',
-						'Tier option description; %d: Tier number',
-						VM_TEXT_DOMAIN
-					),
-					$i
-				)
-		);
-
-		vm_theme_options_field_setting( $args );
-
-		$args['field_id']           = "vm-front-page-tier-$i-title";
-		$args['field_title']        = _x( 'Title on tiers navigation menu', 'Tier option field text', VM_TEXT_DOMAIN );
-		$args['field_markup']       = 'vm_front_page_tier_title_option_markup';
-		$args['option_name']        = "vm_theme_options_front_page_tier_{$i}_title";
-		$args['option_description'] =
-			sprintf(
-				_x(
-					'Front-page tier %d title on tiers navigation menu',
-					'Tier option description; %d: Tier number',
-					VM_TEXT_DOMAIN
-				),
-				$i
-		);
-		$args['extra_args']         = array( 'enabled' => get_option( "vm_theme_options_front_page_tier_{$i}_enable_title" ) );
-		unset( $args['option_type'] );
-
-		vm_theme_options_field_setting( $args );
-
-		$args['field_id']           = "vm-front-page-tier-$i-classes";
-		$args['field_title']        = _x( 'Class(es)', 'Tier option field text', VM_TEXT_DOMAIN );
-		$args['option_name']        = "vm_theme_options_front_page_tier_{$i}_classes";
-		$args['option_description'] =
-			sprintf(
-				_x( 'Front-page tier %d class(es)', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
-				$i
-		);
-		unset( $args['field_markup'] );
-
-		vm_theme_options_field_setting( $args );
-
-		$args['field_id']           = "vm-front-page-tier-$i-stripped-classes";
-		$args['field_title']        = _x( 'Excluded common class(es)', 'Tier option field text', VM_TEXT_DOMAIN );
-		$args['option_name']        = "vm_theme_options_front_page_tier_{$i}_stripped_classes";
-		$args['option_description'] =
-			sprintf(
-				_x(
-					'Front-page tier %d class(es) excluded from common class(es)',
-					'Tier option description; %d: Tier number',
-					VM_TEXT_DOMAIN
-				),
-				$i
-		);
-
-		vm_theme_options_field_setting( $args );
-
-		$args['field_id']           = "vm-front-page-tier-$i-template";
-		$args['field_title']        = _x( 'Template', 'Tier option field text', VM_TEXT_DOMAIN );
-		$args['option_name']        = "vm_theme_options_front_page_tier_{$i}_template";
-		$args['option_description'] =
-			sprintf(
+			'field_title'        => _x( 'Template', 'Tier option field text', VM_TEXT_DOMAIN ),
+			'section_id'         => "vm-front-page-tiers-options-tier-$i-section",
+			'option_description' => sprintf(
 				_x( 'Front-page tier %d template file', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
 				$i
+			),
 		);
 
-		vm_theme_options_field_setting( $args );
+		vm_theme_options_field_setting( $text_args );
+
+		$text_args['field_id']           = "vm-front-page-tier-$i-classes";
+		$text_args['field_title']        = _x( 'Exclusive class(es)', 'Tier option field text', VM_TEXT_DOMAIN );
+		$text_args['option_name']        = "vm_theme_options_front_page_tier_{$i}_classes";
+		$text_args['option_description'] = sprintf(
+			_x( 'Front-page tier %d exclusive class(es)', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
+			$i
+		);
+
+		vm_theme_options_field_setting( $text_args );
+
+		$text_args['field_id']           = "vm-front-page-tier-$i-stripped-classes";
+		$text_args['field_title']        = _x( 'Excluded common class(es)', 'Tier option field text', VM_TEXT_DOMAIN );
+		$text_args['option_name']        = "vm_theme_options_front_page_tier_{$i}_stripped_classes";
+		$text_args['option_description'] = sprintf(
+			_x( 'Front-page tier %d excluded class(es)', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
+			$i
+		);
+
+		vm_theme_options_field_setting( $text_args );
+
+		$bool_args = array(
+			'field_id'           => "vm-front-page-tier-$i-enable-title",
+			'page_slug'          => 'vm-front-page-tiers-options',
+			'option_name'        => "vm_theme_options_front_page_tier_{$i}_enable_title",
+			'option_group'       => 'vm_front_page_tiers_options',
+			'field_title'        => _x( 'Include in tiers navigation menu', 'Tier option field text', VM_TEXT_DOMAIN ),
+			'field_markup'       => 'vm_checkbox_option_field_markup',
+			'section_id'         => "vm-front-page-tiers-options-tier-$i-section",
+			'option_type'        => 'boolean',
+			'option_description' => sprintf(
+				_x( 'Front-page tier %d menu inclusion', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
+				$i
+			),
+			'option_default'     => false
+		);
+
+		vm_theme_options_field_setting( $bool_args );
+
+		$text_args['field_id']           = "vm-front-page-tier-$i-title";
+		$text_args['field_title']        = _x( 'Menu title', 'Tier option field text', VM_TEXT_DOMAIN );
+		$text_args['field_markup']       = 'vm_front_page_tier_title_option_field_markup';
+		$text_args['option_name']        = "vm_theme_options_front_page_tier_{$i}_title";
+		$text_args['option_description'] = sprintf(
+			_x( 'Front-page tier %d menu title', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
+			$i
+		);
+		$text_args['extra_args']         = array(
+			'enabled' => get_option( "vm_theme_options_front_page_tier_{$i}_enable_title" )
+		);
+
+		vm_theme_options_field_setting( $text_args );
+
+		$hide_args = array(
+			'field_id'           => "vm-front-page-tier-$i-title",
+			'page_slug'          => 'vm-front-page-tiers-options',
+			'option_name'        => "vm_theme_options_front_page_tier_{$i}_background",
+			'option_group'       => 'vm_front_page_tiers_options',
+			'field_title'        => _x( 'Background', 'Tier option field text', VM_TEXT_DOMAIN ),
+			'field_markup'       => 'vm_front_page_tier_background_image_option_field_markup',
+			'section_id'         => "vm-front-page-tiers-options-tier-$i-section",
+			'option_type'        => 'number',
+			'option_description' => sprintf(
+				_x( 'Front-page iter %d background', 'Tier option description; %d: Tier number', VM_TEXT_DOMAIN ),
+				$i
+			),
+			'option_default'     => 0,
+		);
+
+		vm_theme_options_field_setting( $hide_args );
 
 	endfor;
 

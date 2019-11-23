@@ -1,10 +1,10 @@
 <?php
 
-// Consonants and Globals
 define( 'VM_LIVE_ADDRESS', 'vahidsays.com' );
 define( 'VM_DEV_ADDRESS', 'mywebsite.test' );
 define( 'VM_IS_DEV', ( false === strpos( $_SERVER['SERVER_NAME'], VM_DEV_ADDRESS ) ? false : true ) );
 define( 'VM_TEXT_DOMAIN', 'VM-WPT-Personal' );
+define( 'VM_DEF_IMG', get_template_directory_uri() . '/assets/bin/img/def_img.png');
 define(
 	'VM_LANGUAGES',
 	array(
@@ -22,7 +22,6 @@ define(
 		)
 	)
 );
-$vm_def_img = ''; //TODO: Set default image url.
 $vm_1_2   = '%1$s %2$s';
 $vm_2_1   = '%2$s %1$s';
 $vm_12    = '%1$s%2$s';

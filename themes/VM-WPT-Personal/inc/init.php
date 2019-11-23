@@ -1,14 +1,15 @@
 <?php
 
-// Make theme ready for translation
 load_theme_textdomain( VM_TEXT_DOMAIN, get_template_directory() . '/languages' );
 
+
 /**
- * Prepare theme's language-based constants.
+ * Prepare theme's language variable.
  *
- * @param $locale string WP locale
+ * @param  $locale string WP locale
  *
- * @return        string WP locale
+ * @return         string WP locale
+ *
  */
 function vm_set_lang( $locale ) {
 	global $vm_lang;
@@ -38,8 +39,10 @@ function vm_set_lang( $locale ) {
 
 add_filter( 'locale', 'vm_set_lang' );
 
+
 /**
  * Activate theme features.
+ *
  */
 function vm_theme_features() {
 	add_theme_support( 'title-tag' );

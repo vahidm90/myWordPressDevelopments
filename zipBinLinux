@@ -1,4 +1,5 @@
 #!/bin/bash
 WORKDIR=${1:-/var/www/html/wordpress-5.2.2/wp-content/}
+rm ~/Desktop/bin.zip
 zip ~/Desktop/bin.zip $(find ${WORKDIR} -path "*/bin/*" -o -path "*/uploads/*" -o -name "*.jpg" -o -name "*.JPG" -o -name "*.png" -o -name "*.PNG" -o -name "*.ttf" -o -name "*.eot" -o -name "*.woff" -o -name "*.woff2" -o -name "*.otf" -o -name "*.svg" -o -name "*.gif")
 chown vahid:vahid ~/Desktop/bin.zip

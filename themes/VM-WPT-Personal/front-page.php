@@ -26,6 +26,7 @@ align-items-center justify-content-center justify-content-sm-around flex-sm-row 
 </header>
 <div data-spy="scroll" data-target="#fp-nav-items" data-offset="0">
 	<?php
+
 	if ( ! empty( $tiers ) ) :
 		foreach ( $tiers as $content ) :
 			echo $content['open'];
@@ -36,6 +37,7 @@ align-items-center justify-content-center justify-content-sm-around flex-sm-row 
 			echo $content['close'];
 		endforeach;
 	endif;
+
 	?>
 </div>
 <?php get_footer(); ?>

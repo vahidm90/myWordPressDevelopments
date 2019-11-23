@@ -22,7 +22,7 @@ function vm_get_front_page_cat_collapsible_markup() {
 
 
 /**
- * Print theme options page
+ * Print theme options page.
  *
  */
 function vm_theme_options_markup() {
@@ -48,7 +48,7 @@ function vm_theme_options_markup() {
 
 
 /**
- * Print front-page tiers options page
+ * Print front-page tiers options page.
  *
  */
 function vm_front_page_tiers_options_markup() {
@@ -74,67 +74,30 @@ function vm_front_page_tiers_options_markup() {
 
 
 /**
- * Print categories options page
- *
- */
-function vm_categories_options_markup() {
-
-	if ( ! current_user_can( 'edit_theme_options' ) ) :
-		return;
-	endif;
-
-	?>
-    <h1><?php _e( 'Categories options', VM_TEXT_DOMAIN ); ?></h1>
-    <form action="options.php" method="POST">
-		<?php
-
-		settings_fields( 'vm_categories_options' );
-		do_settings_sections( 'vm-categories-options' );
-		submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
-
-		?>
-    </form>
-	<?php
-
-}
-
-
-/**
- * Print front-page options section on theme options page
+ * Print front-page options section on theme options page.
  *
  */
 function vm_theme_options_front_page_section_markup() {
-    _e( 'Customize the front-page', VM_TEXT_DOMAIN );
+	_e( 'Customize the front-page', VM_TEXT_DOMAIN );
 }
 
 
 /**
- * Print categories options section on theme options page
- *
- */
-function vm_theme_options_categories_section_markup() {
-    _e( 'Modify categories options', VM_TEXT_DOMAIN );
-}
-
-
-/**
- * Print front-page tiers options section
+ * Print front-page tiers options section.
  *
  * @param $args {
- *      Additional markup parameters.
+ *     Additional markup parameters
  *
- * @type string $id Settings section ID attribute
- * @type string $title Settings section title
- * @type callable $callback Function to print fields
+ * @type string $id (Required) Settings section ID attribute
  * }
  *
  */
 function vm_front_page_tiers_options_section_markup( $args ) {
 
-    preg_match( '/\d+/', $args['id'], $tier_id );
+	preg_match( '/\d+/', $args['id'], $tier_id );
 
-    if ( empty( $tier_id ) ) :
-        return;
+	if ( empty( $tier_id ) ) :
+		return;
 	endif;
 
 	printf(
@@ -143,68 +106,108 @@ function vm_front_page_tiers_options_section_markup( $args ) {
 	);
 }
 
+
 /**
- * Print front-page tiers count field.
+ * Print number option field.
  *
- * @param $args {
- *      Form field values
+ * @param array $args {
+ *     Form field values
  *
- * @type string $label_for Used as attribute for input field label to refer to field ID
- * @type string $name Used as input field name
+ * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
+ * @type string $name (Required) Used as input field name
  * }
  *
  */
-function vm_front_page_tiers_count_markup( $args ) {
+function vm_number_option_field_markup( $args ) {
 
 	?>
-    <input type="number" value="<?php echo get_option( $args['name'] ); ?>" name="<?php echo $args['name']; ?>"
-           id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>" min="1" max="99"/>
+    <input
+            type="number" value="<?php echo get_option( $args['name'] ); ?>" name="<?php echo $args['name']; ?>"
+            id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"
+            min="<?php echo $args['min']; ?>" max="<?php echo $args['max']; ?>"
+    />
 	<?php
 
 }
 
 
 /**
- * Print front-page tier enable on tier navigation menu option field.
+ * Print checkbox option field.
  *
  * @param array $args {
- *      Form field values
+ *     Form field values
  *
- * @type string $label_for Used as attribute for input field label to refer to field ID
- * @type string $name Used as input field name
+ * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
+ * @type string $name (Required) Used as input field name
  * }
  *
  */
-function vm_options_checkbox_markup( $args ) {
+function vm_checkbox_option_field_markup( $args ) {
 
 	$current = get_option( $args['name'] );
 
 	?>
-    <input type="checkbox" name="<?php echo $args['name']; ?>" id="<?php echo $args['label_for']; ?>"
-           title="<?php echo $args['label_for']; ?>" value="1" <?php checked( 1, $current ); ?> />
+    <input
+            type="checkbox" name="<?php echo $args['name']; ?>" id="<?php echo $args['label_for']; ?>"
+            title="<?php echo $args['label_for']; ?>" value="1" <?php checked( 1, $current ); ?>
+    />
 	<?php
 
 }
 
 
 /**
- * Print front-page tiers options text field.
+ * Print text option field.
  *
  * @param array $args {
- *      Form field values
+ *     Form field values
  *
- * @type string $label_for Used as attribute for input field label to refer to field ID
- * @type string $name Used as input field name
+ * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
+ * @type string $name (Required) Used as input field name
  * }
  *
  */
-function vm_options_text_field_markup( $args ) {
+function vm_text_option_field_markup( $args ) {
 
 	$current = empty( get_option( $args['name'] ) ) ? '' : get_option( $args['name'] );
 
 	?>
-    <input type="text" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
-           id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"/>
+    <input
+            type="text" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
+            id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"
+    />
+	<?php
+
+}
+
+
+/**
+ * Print text option field.
+ *
+ * @param array $args {
+ *     Form field values
+ *
+ * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
+ * @type string $name (Required) Used as input field name
+ * }
+ *
+ */
+function vm_front_page_tier_background_image_option_field_markup( $args ) {
+
+	$current = empty( get_option( $args['name'] ) ) ? 0 : get_option( $args['name'] );
+
+	if ( $current ) :
+		$img = wp_get_attachment_image_src( $current );
+	endif;
+
+	$html = empty( $img ) ? '' : "<img src='{$img[0]}' />";
+
+	?>
+    <div class="tier-bg-img"><?php echo $html; ?></div>
+    <input
+            type="hidden" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
+            id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"
+    />
 	<?php
 
 }
@@ -214,22 +217,24 @@ function vm_options_text_field_markup( $args ) {
  * Print front-page tier title option text field.
  *
  * @param array $args {
- *      Form field values
+ *     Form field values
  *
- * @type string $label_for Used as attribute for input field label to refer to field ID
- * @type string $name Used as input field name
- * @type boolean $enabled checks if option is enabled
+ * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
+ * @type string $name (Required) Used as input field name
+ * @type boolean $enabled (Required) checks if option is enabled
  * }
  *
  */
-function vm_front_page_tier_title_option_markup( $args ) {
+function vm_front_page_tier_title_option_field_markup( $args ) {
 
 	$current = empty( get_option( $args['name'] ) ) ? '' : get_option( $args['name'] );
 
 	?>
-    <input type="text" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
-           id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"
-		<?php disabled( 1, ! $args['enabled'] ); ?> />
+    <input
+            type="text" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
+            id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"
+		<?php disabled( 1, ! $args['enabled'] ); ?>
+    />
 	<?php
 
 }
@@ -238,12 +243,7 @@ function vm_front_page_tier_title_option_markup( $args ) {
 /**
  * Retrieve front-page tiers markup.
  *
- * @return array|bool {
- *      False if no tiers ( 0 >= $count ), otherwise the markup array
- * @type string $open Opening HTML tag
- * @type string $close Closing HTML tag
- * @type string $template Path parameter for WordPress 'get_template_part' function
- * }
+ * @return array|bool False if no tiers ( 0 >= $count ), otherwise the markup array
  *
  */
 function vm_get_front_page_tier_markup() {
@@ -296,10 +296,7 @@ function vm_get_front_page_tier_markup() {
 /**
  * Retrieve front-page tiers navigation menu markup.
  *
- * @return array|bool {
- *      False if no tiers ( 0 >= $count ), otherwise the markup array
- * @type string HTML markup for menu entry
- * }
+ * @return array|bool False if no tiers ( 0 >= $count ), otherwise the markup array
  *
  */
 function vm_get_front_page_tier_menu_markup() {

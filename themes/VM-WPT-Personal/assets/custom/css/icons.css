@@ -1,19 +1,19 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: vm-categories;
-    src: url(../../bin/font/vm-categories.eot);
-    src: url(../../bin/font/vm-categories.eot?#iefix) format('embedded-opentype'),
-    url(../../bin/font/vm-categories.woff2) format('woff2'),
-    url(../../bin/font/vm-categories.woff) format('woff'),
-    url(../../bin/font/vm-categories.ttf)  format('truetype'),
-    url(../../bin/font/vm-categories.svg#svgvm-categories) format('svg');
+    font-family: vm-icons;
+    src: url(../../bin/font/vm-icons.eot);
+    src: url(../../bin/font/vm-icons.eot?#iefix) format('embedded-opentype'),
+    url(../../bin/font/vm-icons.woff2) format('woff2'),
+    url(../../bin/font/vm-icons.woff) format('woff'),
+    url(../../bin/font/vm-icons.ttf)  format('truetype'),
+    url(../../bin/font/vm-icons.svg#svgvm-icons) format('svg');
     font-display: block;
 }
 
-[class^="vmi-"], [class*=" vmi-"] {
+.vm-icon {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: vm-categories !important;
+    font-family: vm-icons !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -26,16 +26,26 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.vmi-share:before {
+.share:before {
     content: "\e900";
 }
-.vmi-guide:before {
+
+.guide:before {
     content: "\e901";
 }
-.vmi-idea:before {
+
+.idea:before {
     content: "\e902";
 }
-.vmi-make:before {
+
+.make:before {
     content: "\e903";
 }
 
+.caret-left:before {
+    content: "\e904";
+}
+
+.caret-right:before {
+    content: "\e905";
+}
