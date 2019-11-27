@@ -200,14 +200,23 @@ function vm_front_page_tier_background_image_option_field_markup( $args ) {
 		$img = wp_get_attachment_image_src( $current );
 	endif;
 
-	$html = empty( $img ) ? '' : "<img src='{$img[0]}' />";
+	$lnk        = esc_url( get_upload_iframe_src( 'image' ) );
+	$html       = empty( $img ) ? '' : "<img src='{$img[0]}' class='bg-img' />";
+	$change_txt = _x( 'Change', 'Background image option', VM_TEXT_DOMAIN );
+	$add_txt    = _x( 'Add', 'Background image option', VM_TEXT_DOMAIN );
+
+	echo <<< html
+<div id="{$args['label_for']}-div" class="tier-bg-img-option">
+    <div class="bg-img-div">$html</div>
+    <a href="$lnk" class="change">$change_txt</a><a href="$lnk" class="add">$add_txt</a>
+    <input 
+        type="hidden" value="$current" name="{$args['name']}" id="{$args['label_for']}" title="{$args['label_for']}" 
+    />
+</div>
+html;
+
 
 	?>
-    <div class="tier-bg-img"><?php echo $html; ?></div>
-    <input
-            type="hidden" value="<?php echo $current; ?>" name="<?php echo $args['name']; ?>"
-            id="<?php echo $args['label_for']; ?>" title="<?php echo $args['label_for']; ?>"
-    />
 	<?php
 
 }
