@@ -70,8 +70,8 @@ function vm_css_js_back_end( $hook ) {
 				return;
 			endif;
 			wp_enqueue_media();
-			wp_enqueue_style( 'add-edit-cat', "$path/custom/css/add-edit-cat$min.css", array(), '1.0' );
-			wp_enqueue_script( 'add-edit-cat-js', "$path/custom/js/add-edit-cat$min.js", array(), '1.0', true );
+			wp_enqueue_style( 'admin-add-edit-category', "$path/custom/css/admin-add-edit-category$min.css", array(), '1.0' );
+			wp_enqueue_script( 'admin-add-edit-category-js', "$path/custom/js/admin-add-edit-category$min.js", array(), '1.0', true );
 			break;
 		case 'appearance_page_vm-front-page-tiers-options' :
 			wp_enqueue_media();

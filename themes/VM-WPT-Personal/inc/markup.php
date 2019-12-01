@@ -115,6 +115,7 @@ function vm_front_page_tiers_options_section_markup( $args ) {
  *
  * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
  * @type string $name (Required) Used as input field name
+ *
  * }
  *
  */
@@ -139,6 +140,7 @@ function vm_number_option_field_markup( $args ) {
  *
  * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
  * @type string $name (Required) Used as input field name
+ *
  * }
  *
  */
@@ -164,6 +166,7 @@ function vm_checkbox_option_field_markup( $args ) {
  *
  * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
  * @type string $name (Required) Used as input field name
+ *
  * }
  *
  */
@@ -189,26 +192,36 @@ function vm_text_option_field_markup( $args ) {
  *
  * @type string $label_for (Required) Used as attribute for input field label to refer to field ID
  * @type string $name (Required) Used as input field name
+ *
  * }
  *
  */
 function vm_front_page_tier_background_image_option_field_markup( $args ) {
 
 	$current = empty( get_option( $args['name'] ) ) ? 0 : get_option( $args['name'] );
+    $with_bg = ' hidden';
+    $sans_bg = '';
 
 	if ( $current ) :
-		$img = wp_get_attachment_image_src( $current );
+		$img = wp_get_attachment_image_src( $current, 'medium' );
+	$bg_0 = '';
+	$bg_1 = ' hidden';
 	endif;
+
+	preg_match( '/\d+/', $args['label_for'], $tier_id );
 
 	$lnk        = esc_url( get_upload_iframe_src( 'image' ) );
 	$html       = empty( $img ) ? '' : "<img src='{$img[0]}' class='bg-img' />";
-	$change_txt = _x( 'Change', 'Background image option', VM_TEXT_DOMAIN );
-	$add_txt    = _x( 'Add', 'Background image option', VM_TEXT_DOMAIN );
+	$change = _x( 'Change', 'Background image option', VM_TEXT_DOMAIN );
+	$remove    = _x( 'Remove', 'Background image option', VM_TEXT_DOMAIN );
+	$add    = _x( 'Add', 'Background image option', VM_TEXT_DOMAIN );
 
 	echo <<< html
-<div id="{$args['label_for']}-div" class="tier-bg-img-option">
+<div class="tier-bg-img-option" data-tier-number="{$tier_id[0]}">
     <div class="bg-img-div">$html</div>
-    <a href="$lnk" class="change">$change_txt</a><a href="$lnk" class="add">$add_txt</a>
+    <a href="$lnk" class="change" data-tier-number="{$tier_id[0]}">$change</a>
+    <a href="$lnk" class="remove" data-tier-number="{$tier_id[0]}">$remove</a>
+    <a href="$lnk" class="add" data-tier-number="{$tier_id[0]}">$add</a>
     <input 
         type="hidden" value="$current" name="{$args['name']}" id="{$args['label_for']}" title="{$args['label_for']}" 
     />

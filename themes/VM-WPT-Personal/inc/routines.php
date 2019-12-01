@@ -18,6 +18,7 @@
  * @type string $option_description (Optional) Default: null; A description of the option
  * @type string $option_default (Optional) Default: null; Value for get_option()
  * @type array $extra_args (Optional) Default: null
+ *
  * }
  *
  */
