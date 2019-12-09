@@ -15,7 +15,7 @@
 
 	    else :
 		    ?>
-            <div class="col-12"><p class="text-center"><?php _e('No posts to display!', VM_TEXT_DOMAIN ); ?></p></div>
+            <div class="col-12"><p class="text-center"><?php _e('No posts to display!', VM_TD ); ?></p></div>
 	    <?php
 
 	    endif;

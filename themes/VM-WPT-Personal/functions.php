@@ -3,7 +3,7 @@
 define( 'VM_LIVE_ADDRESS', 'vahidsays.com' );
 define( 'VM_DEV_ADDRESS', 'mywebsite.test' );
 define( 'VM_IS_DEV', ( false === strpos( $_SERVER['SERVER_NAME'], VM_DEV_ADDRESS ) ? false : true ) );
-define( 'VM_TEXT_DOMAIN', 'VM-WPT-Personal' );
+define( 'VM_TD', 'VM-WPT-Personal' );
 define( 'VM_DEF_IMG', get_template_directory_uri() . '/assets/bin/img/def_img.png');
 define(
 	'VM_LANGUAGES',
@@ -12,13 +12,13 @@ define(
 			'direction'  => 'ltr',
 			'prefix'     => '',
 			'native'     => 'English',
-			'translated' => __( 'English', VM_TEXT_DOMAIN ),
+			'translated' => __( 'English', VM_TD ),
 		),
 		'Persian' => array(
 			'direction'  => 'rtl',
 			'prefix'     => 'fa',
 			'native'     => 'فارسی',
-			'translated' => __( 'Persian', VM_TEXT_DOMAIN ),
+			'translated' => __( 'Persian', VM_TD ),
 		)
 	)
 );
@@ -32,9 +32,9 @@ if ( is_rtl() ) :
 	$vm_12    = '%2$s%1$s';
 	$vm_21    = '%1$s%2$s';
 endif;
-$vm_comma = _x( ',', 'Comma', 'snt-en' );
-$vm_qo = _x( '"', 'Quotation mark opening', VM_TEXT_DOMAIN );
-$vm_qc = _x( '"', 'Quotation mark closing', VM_TEXT_DOMAIN );
+$vm_comma = _x( ',', 'Comma', VM_TD );
+$vm_qo = _x( '"', 'Quotation mark opening', VM_TD );
+$vm_qc = _x( '"', 'Quotation mark closing', VM_TD );
 $vm_lang = '';
 
 // Files

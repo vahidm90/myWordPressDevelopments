@@ -13,11 +13,11 @@ function vm_add_category_form_custom_fields( $tax ) {
 
 	?>
     <div class="form-field term-img-wrap">
-        <label><?php _ex( 'Image', 'Category image text', VM_TEXT_DOMAIN ); ?></label>
+        <label><?php _ex( 'Image', 'Category image text', VM_TD ); ?></label>
         <div class="cat-img-box"></div>
         <p class="hide-if-no-js">
             <a href="<?php echo $lnk; ?>" class="add-cat-img">
-				<?php _ex( 'Add', 'Add category image', VM_TEXT_DOMAIN ); ?>
+				<?php _ex( 'Add', 'Add category image', VM_TD ); ?>
             </a>
         </p>
 		<?php
@@ -57,10 +57,10 @@ function vm_edit_category_form_custom_fields( $term ) {
 
 	?>
     <tr class="form-field term-img-wrap hide-if-no-js">
-        <th scope="row"><?php _e( 'Image', VM_TEXT_DOMAIN ); ?></th>
+        <th scope="row"><?php _e( 'Image', VM_TD ); ?></th>
         <td>
             <p class="description<?php echo $wo_img; ?>">
-				<?php _e( 'No image set', VM_TEXT_DOMAIN ); ?>
+				<?php _e( 'No image set', VM_TD ); ?>
             </p>
             <div class="cat-img-container<?php echo $has_img; ?>">
                 <div class="cat-img-box">
@@ -68,10 +68,10 @@ function vm_edit_category_form_custom_fields( $term ) {
                 </div>
                 <div class="cat-img-lnk">
                     <a href="<?php echo $lnk; ?>" class="add-cat-img<?php echo $wo_img; ?>">
-						<?php _ex( 'Add', 'Category image text', VM_TEXT_DOMAIN ); ?>
+						<?php _ex( 'Add', 'Category image text', VM_TD ); ?>
                     </a>
                     <a href="<?php echo $lnk; ?>" class="change-cat-img<?php echo $w_img; ?>">
-						<?php _ex( 'Change', 'Category image text', VM_TEXT_DOMAIN ); ?>
+						<?php _ex( 'Change', 'Category image text', VM_TD ); ?>
                     </a>
                 </div>
             </div>
@@ -83,7 +83,7 @@ function vm_edit_category_form_custom_fields( $term ) {
 			?>
             <input name="cat_img" type="hidden" value="<?php echo $img; ?>" class="cat-img-input"/>
             <a href="#" class="remove-cat-img<?php echo $w_img; ?>">
-				<?php _e( 'Remove image', VM_TEXT_DOMAIN ); ?>
+				<?php _e( 'Remove image', VM_TD ); ?>
             </a>
         </td>
     </tr>
@@ -111,15 +111,15 @@ function vm_category_quick_edit_custom_fields( $col, $page, $tax ) {
     <fieldset>
         <div class="inline-edit-col cat-qe-img">
             <label>
-                <span class="title"><?php _ex( 'Image', 'Category image text', VM_TEXT_DOMAIN ); ?></span>
-                <p class="description"><?php _ex( 'None', 'Category image text', VM_TEXT_DOMAIN ); ?></p>
+                <span class="title"><?php _ex( 'Image', 'Category image text', VM_TD ); ?></span>
+                <p class="description"><?php _ex( 'None', 'Category image text', VM_TD ); ?></p>
                 <div class="cat-img-container">
                     <div class="cat-img-box"></div>
                     <div class="cat-img-lnk">
                         <a href="<?php echo $lnk; ?>" class="add-cat-img">
-							<?php _ex( 'Add', 'Category image text', VM_TEXT_DOMAIN ); ?></a>
+							<?php _ex( 'Add', 'Category image text', VM_TD ); ?></a>
                         <a href="<?php echo $lnk; ?>" class="change-cat-img">
-							<?php _ex( 'Change', 'Category image text', VM_TEXT_DOMAIN ); ?>
+							<?php _ex( 'Change', 'Category image text', VM_TD ); ?>
                         </a>
                     </div>
                 </div>
@@ -131,7 +131,7 @@ function vm_category_quick_edit_custom_fields( $col, $page, $tax ) {
 				?>
                 <input name="cat_img" type="hidden" class="cat-img-input"/>
                 <a href="#" class="remove-cat-img">
-					<?php _e( 'Remove image', VM_TEXT_DOMAIN ); ?>
+					<?php _e( 'Remove image', VM_TD ); ?>
                 </a>
             </label>
         </div>
@@ -148,11 +148,11 @@ function vm_category_table_custom_columns() {
 
 	return array(
 		'cb'          => '<input type="checkbox" />',
-		'name'        => _x( 'Name', 'Category table column name', VM_TEXT_DOMAIN ),
-		'description' => _x( 'Description', 'Category table column name', VM_TEXT_DOMAIN ),
-		'slug'        => _x( 'Slug', 'Category table column name', VM_TEXT_DOMAIN ),
-		'image'       => _x( 'Image', 'Category table column name', VM_TEXT_DOMAIN ),
-		'posts'       => _x( 'Count', 'Category table column name', VM_TEXT_DOMAIN )
+		'name'        => _x( 'Name', 'Category table column name', VM_TD ),
+		'description' => _x( 'Description', 'Category table column name', VM_TD ),
+		'slug'        => _x( 'Slug', 'Category table column name', VM_TD ),
+		'image'       => _x( 'Image', 'Category table column name', VM_TD ),
+		'posts'       => _x( 'Count', 'Category table column name', VM_TD )
 	);
 
 }

@@ -32,13 +32,13 @@ function vm_theme_options_markup() {
 	endif;
 
 	?>
-    <h1><?php _e( 'Theme options', VM_TEXT_DOMAIN ); ?></h1>
+    <h1><?php _e( 'Theme options', VM_TD ); ?></h1>
     <form action="options.php" method="POST">
 		<?php
 
 		settings_fields( 'vm_theme_options' );
 		do_settings_sections( 'vm-theme-options' );
-		submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
+		submit_button( _x( 'Save', 'Button text', VM_TD ) );
 
 		?>
     </form>
@@ -58,13 +58,13 @@ function vm_front_page_tiers_options_markup() {
 	endif;
 
 	?>
-    <h1><?php _e( 'Front-page tiers options', VM_TEXT_DOMAIN ); ?></h1>
+    <h1><?php _e( 'Front-page tiers options', VM_TD ); ?></h1>
     <form action="options.php" method="POST">
 		<?php
 
 		settings_fields( 'vm_front_page_tiers_options' );
 		do_settings_sections( 'vm-front-page-tiers-options' );
-		submit_button( _x( 'Save', 'Button text', VM_TEXT_DOMAIN ) );
+		submit_button( _x( 'Save', 'Button text', VM_TD ) );
 
 		?>
     </form>
@@ -78,7 +78,7 @@ function vm_front_page_tiers_options_markup() {
  *
  */
 function vm_theme_options_front_page_section_markup() {
-	_e( 'Customize the front-page', VM_TEXT_DOMAIN );
+	_e( 'Customize the front-page', VM_TD );
 }
 
 
@@ -101,7 +101,7 @@ function vm_front_page_tiers_options_section_markup( $args ) {
 	endif;
 
 	printf(
-		_x( 'Customize tier %d', 'Setting section text; %d: Tier number', VM_TEXT_DOMAIN ),
+		_x( 'Customize tier %d', 'Setting section text; %d: Tier number', VM_TD ),
 		(int) $tier_id[0]
 	);
 }
@@ -212,9 +212,9 @@ function vm_front_page_tier_background_image_option_field_markup( $args ) {
 
 	$lnk        = esc_url( get_upload_iframe_src( 'image' ) );
 	$html       = empty( $img ) ? '' : "<img src='{$img[0]}' class='bg-img' />";
-	$change = _x( 'Change', 'Background image option', VM_TEXT_DOMAIN );
-	$remove    = _x( 'Remove', 'Background image option', VM_TEXT_DOMAIN );
-	$add    = _x( 'Add', 'Background image option', VM_TEXT_DOMAIN );
+	$change = _x( 'Change', 'Background image option', VM_TD );
+	$remove    = _x( 'Remove', 'Background image option', VM_TD );
+	$add    = _x( 'Add', 'Background image option', VM_TD );
 
 	echo <<< html
 <div class="tier-bg-img-option" data-tier-number="{$tier_id[0]}">

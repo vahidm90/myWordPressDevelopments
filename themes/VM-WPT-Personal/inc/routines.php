@@ -164,20 +164,20 @@ function vm_get_post_pub_time() {
 			$output = get_the_time( 'l, h:i A' );
 			break;
 		case ( $l_d < $pub && $l_t > $pub ) :
-			$output = _x( 'Yesterday', 'Publish time', VM_TEXT_DOMAIN ) . get_the_time( ' h:i A' );
+			$output = _x( 'Yesterday', 'Publish time', VM_TD ) . get_the_time( ' h:i A' );
 			break;
 		case ( $l_t < $pub && $l_h > $pub ) :
 			$hrs    = intval( ( $now - $pub ) / 3600 );
-			$output = _nx( 'About an hour ago', 'About %1$s hours ago', $hrs, 'Time text; 1: Hours', VM_TEXT_DOMAIN );
+			$output = _nx( 'About an hour ago', 'About %1$s hours ago', $hrs, 'Time text; 1: Hours', VM_TD );
 			$output = sprintf( $output, number_format_i18n( $hrs ) );
 			break;
 		case ( $l_h < $pub && $l_m > $pub ) :
 			$min    = intval( ( $now - $pub ) / 60 );
-			$output = _nx( 'About a minute ago', 'About %1$s minutes ago', $min, 'Time text; 1: Minutes', VM_TEXT_DOMAIN );
+			$output = _nx( 'About a minute ago', 'About %1$s minutes ago', $min, 'Time text; 1: Minutes', VM_TD );
 			$output = sprintf( $output, number_format_i18n( $min ) );
 			break;
 		case ( $l_m < $pub ) :
-			$output = _x( 'Less than a minute ago', 'Time text', VM_TEXT_DOMAIN );
+			$output = _x( 'Less than a minute ago', 'Time text', VM_TD );
 			break;
 	endswitch;
 
