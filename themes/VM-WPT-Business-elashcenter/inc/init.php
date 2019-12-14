@@ -16,8 +16,9 @@ function vm_theme_features() {
 	add_theme_support( 'html5', array( 'caption', 'gallery', 'comment-list', 'comment-form', 'search-form' ) );
 	add_theme_support(
 		'post-formats',
-		array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
+		array( 'aside', 'gallery', 'link', 'video', 'audio', 'chat')
 	);
+	register_nav_menu( 'vm-fp-top-menu', __( 'Front-page top menu', VM_TD ) );
 }
 
 add_action( 'after_setup_theme', 'vm_theme_features' );

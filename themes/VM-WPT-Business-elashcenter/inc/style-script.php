@@ -12,11 +12,20 @@ function vm_load_dev_css_js() {
 	$path    = get_template_directory_uri() . '/assets';
 	$dep_css = $dep_js = array();
 
-	wp_enqueue_style( 'bootstrap', "$path/bootstrap-4.3.1/bootstrap.min.css", array(), '4.3.1' );
-	$dep_css [] = 'bootstrap';
-
 	wp_enqueue_script( 'jquery-js', "$path/js/jquery-3.4.1.min.js", array(), '3.4.1', true );
 	$dep_js [] = 'jquery-js';
+
+	wp_enqueue_style( 'bootstrap', "$path/bootstrap-4.2.1-rtl/bootstrap.min.css", array(), '4.2.1' );
+	$dep_css [] = 'bootstrap';
+	wp_enqueue_script( 'bootstrap-js', "$path/bootstrap-4.2.1-rtl/bootstrap.min.js", $dep_js, '4.2.1', true );
+	$dep_js [] = 'bootstrap-js';
+
+	wp_enqueue_style( 'basic', "$path/css/basic.css", $dep_css, '1.0' );
+	$dep_css [] = 'basic';
+
+	if ( is_front_page() ) :
+		wp_enqueue_style( 'front-page', "$path/css/front-page.css", $dep_css, '1.0' );
+	endif;
 
 }
 
@@ -24,14 +33,14 @@ function vm_load_dev_css_js() {
 
 
 /**
- * Load CSS and JS files for development environment.
+ * Load CSS and JS files for production environment.
  *
  */
 function vm_load_production_css_js() {
 
 	$dep_css = $dep_js = array();
 
-//	wp_enqueue_style( 'bootstrap', "/bootstrap-4.3.1/bootstrap.min.css", array(), '4.3.1' );
+//	wp_enqueue_style( 'bootstrap', "/bootstrap-4.2.1-rtl/bootstrap.min.css", array(), '4.3.1' );
 //	$dep_css [] = 'bootstrap';
 //
 //	wp_enqueue_script( 'jquery-js', "$path//js/generic.js", array(), '1.0', true );

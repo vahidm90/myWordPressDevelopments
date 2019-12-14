@@ -1,0 +1,54 @@
+
+@font-face {
+    font-family: YekanBold;
+    src: url("../bin/font/YekanBold.eot");
+    src: url("../bin/font/YekanBold.eot?#iefix") format("embedded-opentype"),
+    url("../bin/font/YekanBold.otf") format("opentype"),
+    url("../bin/font/YekanBold.svg") format("svg"),
+    url("../bin/font/YekanBold.ttf") format("truetype"),
+    url("../bin/font/YekanBold.woff") format("woff"),
+    url("../bin/font/YekanBold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Yekan;
+    src: url("../bin/font/Yekan.eot");
+    src: url("../bin/font/Yekan.eot?#iefix") format("embedded-opentype"),
+    url("../bin/font/Yekan.otf") format("opentype"),
+    url("../bin/font/Yekan.svg") format("svg"),
+    url("../bin/font/Yekan.ttf") format("truetype"),
+    url("../bin/font/Yekan.woff") format("woff"),
+    url("../bin/font/Yekan.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: IranianSans;
+    src: url("../bin/font/IranianSans.eot");
+    src: url("../bin/font/IranianSans.eot?#iefix") format("embedded-opentype"),
+    url("../bin/font/IranianSans.otf") format("opentype"),
+    url("../bin/font/IranianSans.svg") format("svg"),
+    url("../bin/font/IranianSans.ttf") format("truetype"),
+    url("../bin/font/IranianSans.woff") format("woff"),
+    url("../bin/font/IranianSans.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: YekanBold !important;
+    font-weight: 900;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: Yekan !important;
+    font-weight: 700;
+}
+
+body {
+    font-family: IranianSans !important;
+    font-weight: 400;
+}
