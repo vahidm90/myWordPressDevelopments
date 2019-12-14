@@ -22,7 +22,7 @@ function vm_menu_anchor_attributes( $attrib, $item, $args ) {
 		return $attrib;
 	endif;
 
-	if ( empty($attrib['class'] ) ) :
+	if ( empty( $attrib['class'] ) ) :
 		$attrib['class'] = 'nav-link';
 	else :
 		$attrib['class'] .= ' nav-link';
@@ -41,13 +41,13 @@ function vm_menu_list_item_class( $class, $item, $args ) {
 		return $class;
 	endif;
 
-	$class []= 'nav-item';
+	$class [] = 'nav-item';
 
 	return $class;
 
 }
 
-add_filter( 'nav_menu_css_class', 'vm_menu_list_item_class', 10 , 3 );
+add_filter( 'nav_menu_css_class', 'vm_menu_list_item_class', 10, 3 );
 
 
 function vm_menu_items( $items, $args ) {
@@ -65,3 +65,8 @@ function vm_menu_items( $items, $args ) {
 }
 
 add_filter( 'wp_nav_menu_items', 'vm_menu_items', 10, 2 );
+
+
+add_filter( 'excerpt_length', function ( $length ) {
+	return 20;
+} );

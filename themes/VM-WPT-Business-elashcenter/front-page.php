@@ -28,7 +28,5 @@ $menu = wp_nav_menu(
 		<?php echo $menu; ?>
 	</nav>
 </header>
-<section id="4-cards">
-    
-</section>
+<section id="4-cards"><?php get_template_part( '/inc/template-parts/fp-four-cards' ); ?></section>
 <?php get_footer( 'front-page' );

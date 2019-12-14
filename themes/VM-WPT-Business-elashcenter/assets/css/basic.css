@@ -38,6 +38,36 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: vmIcons;
+    src: url("../bin/icon/vmIcons.eot");
+    src: url("../bin/icon/vmIcons.eot?#iefix") format("embedded-opentype"),
+    url("../bin/icon/vmIcons.otf") format("opentype"),
+    url("../bin/icon/vmIcons.svg") format("svg"),
+    url("../bin/icon/vmIcons.ttf") format("truetype"),
+    url("../bin/icon/vmIcons.woff") format("woff"),
+    url("../bin/icon/vmIcons.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.vm-icon {
+    font-family: vmIcons !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.vmi-random:before {
+    content: "\e900";
+}
+
 h1 {
     font-family: YekanBold !important;
     font-weight: 900;
