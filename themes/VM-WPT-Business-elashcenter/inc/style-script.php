@@ -25,6 +25,7 @@ function vm_load_dev_css_js() {
 
 	if ( is_front_page() ) :
 		wp_enqueue_style( 'front-page', "$path/css/front-page.css", $dep_css, '1.0' );
+		wp_enqueue_script( 'front-page-js', "$path/js/front-page.js", $dep_js, '1.0' );
 	endif;
 
 }
