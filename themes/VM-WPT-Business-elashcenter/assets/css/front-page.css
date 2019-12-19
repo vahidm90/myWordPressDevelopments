@@ -14,6 +14,7 @@ header {
     color: #fff;
 }
 
+/* Section 1 */
 #four-cards .card-img-top {
     font-size: 8em;
     text-align: center;
@@ -38,6 +39,18 @@ header {
 
 #four-cards .post:hover .card-img-top {
     color: #b726b7;
+}
+
+/* Section 2 */
+#scroll-text {
+    height: 95vh;
+    box-sizing: content-box;
+}
+
+#scroll-text .bg-img {
+    background: url("../bin/img/sample-fp-top.jpg") center center/cover no-repeat fixed border-box;
+    filter: blur(5px);
+    box-shadow: inset 0 0 0em 20em #0000006b;
 }
 
 /* Conditionals */

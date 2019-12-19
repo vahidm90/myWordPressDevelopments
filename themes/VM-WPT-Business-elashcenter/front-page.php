@@ -29,4 +29,5 @@ $menu = wp_nav_menu(
 	</nav>
 </header>
 <section class="py-lg-5" id="four-cards"><?php get_template_part( '/inc/template-parts/fp-four-cards' ); ?></section>
+<section class="my-5" id="scroll-text"><?php get_template_part( '/inc/template-parts/fp-scroll-text' ); ?></section>
 <?php get_footer( 'front-page' );
