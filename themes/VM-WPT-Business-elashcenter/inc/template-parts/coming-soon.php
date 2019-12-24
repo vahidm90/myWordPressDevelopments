@@ -20,7 +20,7 @@
 			width: 100%;
 			height: 100vh;
 			background:
-				url("<?php echo get_template_directory_uri() . '/assets/bin/img/sample-coming-soon.jpg'; ?>")
+				url("<?php echo get_template_directory_uri(); ?>/assets/bin/img/sample-coming-soon.jpg")
 				center center/cover no-repeat;
 		}
 	</style>
