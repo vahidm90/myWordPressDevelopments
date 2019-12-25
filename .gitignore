@@ -1,7 +1,9 @@
+# Exclusive Folders #
+/languages/**
+
 # Folders #
 **/bin/**
 **/uploads/**
-/languages/**
 
 # Compiled source #
 *.vmcompiled.*
