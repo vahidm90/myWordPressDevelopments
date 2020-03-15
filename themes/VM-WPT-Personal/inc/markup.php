@@ -277,7 +277,7 @@ function vm_get_front_page_tier_markup() {
 	endif;
 
 	$tiers     = array();
-	$path_rest = '/inc/front-end/template-parts/front-page-tiers/';
+	$path_rest = '/inc/front/template-parts/front-page-tiers/';
 	$path      = get_template_directory() . $path_rest;
 	$com_cls   = get_option( 'vm_theme_options_front_page_tiers_common_classes' );
 	$com_arr   = empty( $com_cls ) ? array() : explode( ' ', esc_attr__( $com_cls ) );
@@ -323,7 +323,7 @@ function vm_get_front_page_tier_markup() {
  */
 function vm_get_front_page_tier_menu_markup() {
 
-	$count = (int) get_option( 'vm_theme_options_front_page_tiers_count' );
+	$count = get_option( 'vm_theme_options_front_page_tiers_count' );
 
 	if ( empty( $count ) ) :
 		return false;

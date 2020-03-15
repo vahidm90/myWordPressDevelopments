@@ -1,43 +1,20 @@
 <?php
 
 get_header( 'front-page' );
-
-$site_name = get_bloginfo();
-$split     = str_split( $site_name );
-$tiers     = vm_get_front_page_tier_markup();
-
-foreach ( $split as &$value ) :
-	$value = "<span class='letter d-inline-block fastest'>$value</span>";
-endforeach;
+//TODO: Get tiers from the theme customizer.
+//TODO: Complete the navigation bar items/markup.
 
 ?>
-<?php if ( ! VM_IS_DEV ) : ?>
-<div class="w-100 vh-100 bg-dark text-light position-fixed
-align-items-center justify-content-center justify-content-sm-around flex-sm-row flex-column" id="splash">
-    <h1><?php echo implode( '', $split ); ?></h1>
-    <p class="spinner-grow"></p>
-</div>
-<?php endif; ?>
-<header class="navbar navbar-dark position-fixed bg-dark w-100" id="fp-nav">
-    <a href="<?php echo esc_url( home_url() ); ?>" class="navbar-brand"><?php echo $site_name; ?></a>
-    <button class="d-xl-none" id="toggle-fp-nav" aria-controls="nav-items" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-</header>
-<div data-spy="scroll" data-target="#fp-nav-items" data-offset="0">
-	<?php
-
-	if ( ! empty( $tiers ) ) :
-		foreach ( $tiers as $content ) :
-			echo $content['open'];
-			get_template_part(
-				empty( $content['template'] ) ?
-					'/inc/front-end/template-parts/front-page-tiers/default' : $content['template']
-			);
-			echo $content['close'];
-		endforeach;
-	endif;
-
-	?>
-</div>
+<section class="fp-tier position-relative text-white vh-100 w-100" id="fp-tier-0" data-tier-no="0">
+	<?php get_template_part( 'inc/front/template-parts/front-page-tiers/tier', '0' ); ?>
+</section>
+<section class="fp-tier position-relative vh-100 w-100" id="fp-tier-1" data-tier-no="1">
+	<?php get_template_part( 'inc/front/template-parts/front-page-tiers/tier', '1' ); ?>
+</section>
+<section class="fp-tier position-relative w-100" id="fp-tier-2" data-tier-no="2">
+	<?php get_template_part( 'inc/front/template-parts/front-page-tiers/tier', '2' ); ?>
+</section>
+<section class="fp-tier position-relative w-100" id="fp-tier-3" data-tier-no="3">
+	<?php get_template_part( 'inc/front/template-parts/front-page-tiers/tier', '3' ); ?>
+</section>
 <?php get_footer(); ?>

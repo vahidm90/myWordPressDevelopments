@@ -24,10 +24,7 @@
  */
 function vm_theme_options_field_setting( array $args ) {
 
-	if (
-		empty( $args['option_type'] ) ||
-		! in_array( $args['option_type'], array( 'string', 'boolean', 'integer', 'number' ), true )
-	) :
+	if ( ! in_array( @$args['option_type'], array( 'string', 'boolean', 'integer', 'number' ), true ) ) :
 		$args['option_type'] = 'string';
 	endif;
 	$defaults = array(
@@ -70,24 +67,15 @@ function vm_theme_options_field_setting( array $args ) {
 /**
  * Retrieve post's category (or its parent categories) image URL, may also retrieve a default theme image.
  *
- * @param string $size (Optional)  Default: 'thumbnail';
- *                                 One of WordPress default image sizes;
- *                                 Possible values are 'post-thumbnail','thumbnail','medium','medium_large','large',
- *                                 and 'full'
+ * @param int $id (Required) $post id
+ * @param string $size (Optional) Image size; default: 'thumbnail'
  *
- * @return string                  URL of the post category image, or a default theme image
+ * @return string      URL of the post category image, or a default theme image
  *
  */
-function vm_get_post_cat_img_url( $size = 'thumbnail' ) {
+function vm_get_post_cat_img_url( int $id, $size = 'thumbnail' ) {
 
-	if (
-		empty( $size ) ||
-		! in_array( $size, array( 'post-thumbnail', 'thumbnail', 'medium', 'medium_large', 'large', 'full' ), true )
-	) :
-		$size = 'thumbnail';
-	endif;
-
-	$post_cat_id = get_the_category()[0]->term_id;
+	$post_cat_id = get_the_category( $id )[0]->term_id;
 	$img_id      = (int) get_term_meta( $post_cat_id, 'category_image', true );
 	if ( ! empty( wp_get_attachment_url( $img_id ) ) ) :
 		return wp_get_attachment_image_src( $img_id, $size )[0];
@@ -101,8 +89,6 @@ function vm_get_post_cat_img_url( $size = 'thumbnail' ) {
 		endif;
 	endforeach;
 
-	//TODO: set path for default image as constant.
-
 	return VM_DEF_IMG;
 
 }
@@ -111,27 +97,19 @@ function vm_get_post_cat_img_url( $size = 'thumbnail' ) {
 /**
  * Retrieve post's thumbnail URL, may also retrieve post's category image or a default theme image.
  *
- * @param string $size (Optional) One of WordPress default image sizes
- * @param boolean $cat (Optional) If true, post category image will also be tried
+ * @param int $id (Required) $post id
+ * @param string $size (Optional) Image size; default: 'thumbnail'
+ * @param bool $cat (Optional) If true, post category image will also be tried
  *
- * @return string                   URL of the post image, its category image, or a default theme image
+ * @return false|string       URL of the post image, its category image, or a default theme image
  *
  */
-function vm_get_post_img_url( $size = 'thumbnail', $cat = false ) {
-
-	if (
-		empty( $size ) ||
-		! in_array( $size, array( 'post-thumbnail', 'thumbnail', 'medium', 'medium_large', 'large', 'full' ), true )
-	) :
-		$size = 'thumbnail';
-	endif;
-
-	$cat = empty( $cat ) ? false : true;
+function vm_get_post_img_url( int $id, $size = 'thumbnail', $cat = false ) {
 
 	if ( has_post_thumbnail() ) :
 		return get_the_post_thumbnail_url( null, $size );
 	else :
-		return $cat ? vm_get_post_cat_img_url( $size ) : VM_DEF_IMG;
+		return $cat ? vm_get_post_cat_img_url( $id, $size ) : VM_DEF_IMG;
 	endif;
 
 }
@@ -140,12 +118,14 @@ function vm_get_post_img_url( $size = 'thumbnail', $cat = false ) {
 /**
  * Retrieve post's relative publication time.
  *
- * @return string Post's relative publication time
+ * @param int $id (Required) $post id
+ *
+ * @return false|string      Relative publication time of the post; false on failure
  *
  */
-function vm_get_post_pub_time() {
+function vm_get_post_relative_time( int $id ) {
 
-	$pub = get_the_time( 'U' );
+	$pub = get_the_time( 'U', $id );
 	$now = time();
 	$l_m = strtotime( 'last min' );
 	$l_h = strtotime( 'last hour' );
@@ -155,16 +135,16 @@ function vm_get_post_pub_time() {
 
 	switch ( true ) :
 		default :
-			$output = get_the_date( 'j M Y' );
+			$output = get_the_date( 'j M Y', $id );
 			break;
 		case ( strtotime( 'last year' ) < $pub && $l_w > $pub ) :
-			$output = get_the_date( 'j F' );
+			$output = get_the_date( 'j F', $id );
 			break;
 		case ( $l_w < $pub && $l_d > $pub ) :
-			$output = get_the_time( 'l, h:i A' );
+			$output = get_the_time( 'l, h:i A', $id );
 			break;
 		case ( $l_d < $pub && $l_t > $pub ) :
-			$output = _x( 'Yesterday', 'Publish time', VM_TD ) . get_the_time( ' h:i A' );
+			$output = __( 'Yesterday', VM_TD ) . get_the_time( ' h:i A', $id );
 			break;
 		case ( $l_t < $pub && $l_h > $pub ) :
 			$hrs    = intval( ( $now - $pub ) / 3600 );
@@ -183,4 +163,98 @@ function vm_get_post_pub_time() {
 
 	return $output;
 
+}
+
+
+/**
+ * Retrieve HTML markup material for the post.
+ *
+ * @param $id
+ * @param array $args {
+ *      (Optional) Output settings
+ *
+ * @type bool $force_img If true, will resort to post category image, and then theme's default image; default: false
+ * @type string $img_size Image size; default: 'thumbnail'
+ *
+ * }
+ *
+ * @return array    Array of HTML markup material for the post
+ *
+ */
+function vm_get_post_markup_array( int $id, $args = array() ) {
+
+	$defaults = array(
+		'force_img' => false,
+		'img_size'  => 'thumbnail',
+	);
+
+	$args = wp_parse_args( $args, $defaults );
+
+	$html_arr = array();
+
+	$html_arr['link']       = get_the_permalink();
+	$html_arr['title']      = get_the_title();
+	$html_arr['rel_time']   = vm_get_post_relative_time( $id );
+	$html_arr['iso_time']   = get_the_date( 'c' );
+	$html_arr['excerpt']    = get_the_excerpt();
+	$html_arr['classes']    = implode( ' ', get_post_class() );
+	$html_arr['category']   = wp_get_post_terms( $id, 'category', array( 'childless' => true ) )[0]->name;
+	$html_arr['tags']       = implode( ' ', wp_get_post_terms( $id, 'post_tag', array( 'fields' => 'names' ) ) );
+	$html_arr['title_attr'] = esc_attr( $html_arr['title'] );
+	$html_arr['img_url']    =
+		$args['force_img'] ?
+			vm_get_post_img_url( $id, $args['img_size'], true ) : get_the_post_thumbnail_url( $id, $args['img_size'] );
+
+	return $html_arr;
+
+}
+
+
+/**
+ * Fetch a random text from Web APIs.
+ *
+ * @param int $resource (Required) API resource to send the request to
+ *
+ * @return string       Generated random text
+ *
+ */
+function vm_get_lorem( int $resource ) {
+//TODO: add options array for each resource
+	$response = '';
+
+	switch ( $resource ) :
+		case 1 :
+			$curl = curl_init();
+
+			curl_setopt_array( $curl, array(
+				CURLOPT_URL            => "https://montanaflynn-lorem-text-generator.p.rapidapi.com/word?count=20",
+				CURLOPT_RETURNTRANSFER => true,
+				CURLOPT_FOLLOWLOCATION => true,
+				CURLOPT_ENCODING       => "",
+				CURLOPT_MAXREDIRS      => 10,
+				CURLOPT_TIMEOUT        => 30,
+				CURLOPT_HTTP_VERSION   => CURL_HTTP_VERSION_1_1,
+				CURLOPT_CUSTOMREQUEST  => "GET",
+				CURLOPT_HTTPHEADER     => array(
+					"x-rapidapi-host: montanaflynn-lorem-text-generator.p.rapidapi.com",
+					"x-rapidapi-key: 927a33289fmsh1afcf28496c1de5p175bcbjsn9ccf85fcdbdc"
+				),
+			) );
+
+			$err = curl_error( $curl );
+
+			$response = $err ? ( 'cURL Error #:' . $err ) : curl_exec( $curl );
+
+			curl_close( $curl );
+
+			break;
+		case 2 :
+			$response = file_get_contents( 'http://loripsum.net/api/1/medium/plaintext' );
+			break;
+		case 3 :
+			$response = json_decode( file_get_contents( 'http://asdfast.beobit.net/api/?type=paragraph&length=3' ) )->text;
+			break;
+	endswitch;
+
+	return $response;
 }

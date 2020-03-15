@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: vmIcons;
+    src: url(../bin/font/icons.eot);
+    src: url(../bin/font/icons.eot?#iefix) format("embedded-opentype"),
+    url(../bin/font/icons.otf) format("opentype"),
+    url(../bin/font/icons.svg) format("svg"),
+    url(../bin/font/icons.ttf) format("truetype"),
+    url(../bin/font/icons.woff) format("woff"),
+    url(../bin/font/icons.woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+.vm-icon {
+    font-family: vmIcons !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.vmi-random:before {
+    content: "\e900";
+}

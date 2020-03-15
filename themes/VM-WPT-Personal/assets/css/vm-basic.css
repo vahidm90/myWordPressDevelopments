@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+
+/*
+    Init
+ */
+
+/* Reset (for old browsers) */
+article, aside, footer, header, nav, section {
+    display: block;
+}
+
+/* Animations */
+@keyframes vmWobble {
+
+    0%, 97%, 100% {
+        transform: scale(1);
+    }
+
+    20% {
+        transform: scaleY(0.95) scaleX(1.05);
+    }
+
+    48% {
+        transform: scaleY(1.1) scaleX(0.9);
+    }
+
+    68% {
+        transform: scaleY(0.98) scaleX(1.02);
+    }
+
+    80% {
+        transform: scaleY(1.02) scaleX(0.98);
+    }
+
+}
+
+@keyframes vmScroll {
+
+    0%, 100% {
+        transform: translateY(0) scale(3);
+    }
+
+    50% {
+        transform: translateY(50%) scale(3);
+    }
+
+}
+
+
+/*
+    Global styles
+ */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+}
+
+#wrap {
+    background-color: #fff;
+}
+
+.site-title {
+    user-select: none;
+}
+
+#splash {
+    z-index: 9;
+    background-color: #000000c9;
+    display: flex;
+    cursor: wait;
+}

@@ -26,10 +26,10 @@ function vm_set_lang( $locale ) {
 		case 'en_ZA' :
 		case 'en_GB' :
 		case 'en_US' :
-			$vm_lang = 'English';
+			$vm_lang = 'en';
 			break;
 		case 'fa_IR' :
-			$vm_lang = 'Persian';
+			$vm_lang = 'fa';
 			break;
 	endswitch;
 
