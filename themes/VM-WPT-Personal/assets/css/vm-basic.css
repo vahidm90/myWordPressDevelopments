@@ -56,14 +56,6 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: #000;
-}
-
-#wrap {
-    background-color: #fff;
-}
-
 .site-title {
     user-select: none;
 }

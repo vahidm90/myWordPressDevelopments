@@ -1,132 +1,149 @@
 /*
     Variables
  */
-// Store '.menu-toggle' fade timeout.
-var menuTTimeOut;
-
+var tnToggleUnHighlightTimer;
 
 /*
     Functions
  */
 
-
 /**
- * Toggles menu open and closed.
+ * Sets timeout to remove tier navigation toggle 'highlighted' class.
  *
- * @param action A string ('s'/'o') determining the action to be carried out
+ * @param wait The amount of time in milliseconds to wait before removing the class
  *
- * @returns {$}     The menu jQuery object
+ * @returns {number}    Timeout ID, can be used later to cancel the timeout
  *
  */
-$.fn.menuToggle = function (action) {
-    var $menuT = $('.menu-toggle');
-    switch (action) {
-        default :
-            return;
-            break;
-        case 'o' :
-            this.addClass('open');
-            $menuT.animate({right: this.width()}, 300).addClass('highlighted open');
-            clearTimeout(menuTTimeOut);
-            return this;
-            break;
-        case 'c' :
-            this.removeClass('open');
-            $menuT.animate({right: 0}, 300).removeClass('highlighted open');
-            return this;
-            break;
-    }
-};
+function setTnToggleUnHighlightTimer(wait) {
+
+    wait = (('number' !== typeof wait) || (0 > wait)) ? 5000 : wait;
+
+    return setTimeout(function () {
+        $('#tier-nav-toggle').removeClass('highlighted');
+    }, wait);
+
+}
 
 
 /*
     Init
  */
-$('body').scrollspy({target: '#fp-nav-items'});
+
+$('body').scrollspy({target: '#tier-nav'});
 $(document).ready(function () {
-    $('#fp-tier-1 .post-roll').overlayScrollbars({
+    var $tnToggle = $('#tier-nav-toggle'), $tnDiv = $('#tier-nav');
+    var $tnLinks = $tnDiv.find('.nav-link');
+    $('#tier-1 .post-roll').overlayScrollbars({
         className: "os-theme-round-dark",
         scrollbars: {autoHide: "move"},
     });
-    $('.menu-toggle').on('click', function () {
-        if ($(this).hasClass('open')) {
-            $(this).removeClass('open');
-            $('#fp-nav-items').menuToggle('c');
-        } else {
-            $(this).addClass('open');
-            $('#fp-nav-items').menuToggle('o');
-        }
+    $tnLinks.filter('.active').parent().addClass('active');
+    $tnLinks.on('click', function () {
+        $tnDiv.menuToggle('c');
+        tnToggleUnHighlightTimer = setTnToggleUnHighlightTimer();
+        return true;
     });
-    $('#fp-nav-items .nav-link').on('click', function () {
-        $('#fp-nav-items').menuToggle('c');
-    })
+    $tnToggle.on('click', function () {
+        clearTimeout(tnToggleUnHighlightTimer);
+    });
 });
 
 
 /*
     Scroll effects
  */
+
 $(window).on('activate.bs.scrollspy', function () {
-    var $links = $('#fp-nav-items .nav-link');
-    $links.removeClass('disabled').parent().removeClass('active');
-    $links.filter('.active').addClass('disabled').parent().addClass('active');
+    var $tnLinks = $('#tier-nav').find('.nav-link');
+    $tnLinks.removeClass('disabled').parent().removeClass('active');
+    $tnLinks.filter('.active').addClass('disabled').parent().addClass('active');
 });
 $(window).on('scroll', function (e) {
+
+    var $tnToggle = $('#tier-nav-toggle'), $tnDiv = $('#tier-nav');
+
     if (992 > e.currentTarget.innerWidth) {
-        var $menuT = $('.menu-toggle');
-        if ($menuT.hasClass('highlighted')) {
-            return;
+        if ($tnToggle.hasClass('highlighted')) {
+            clearTimeout(tnToggleUnHighlightTimer);
+        } else {
+            $tnToggle.addClass('highlighted');
         }
-        $menuT.addClass('highlighted', 100, function () {
-            menuTTimeOut = setTimeout(function () {
-                $menuT.removeClass('highlighted', 300);
-            }, 10000);
-        });
+        tnToggleUnHighlightTimer = setTnToggleUnHighlightTimer();
     } else {
-        var $bar = $('#fp-nav-items');
         if (e.currentTarget.innerHeight < e.currentTarget.scrollY)
-            $bar.addClass('fixed');
+            $tnDiv.addClass('fixed');
         else
-            $bar.removeClass('fixed');
+            $tnDiv.removeClass('fixed');
     }
-});
+
+    return true;
+
+})
+;
 
 
 /*
-    Swipe events
+    Swipe effects
  */
+
 var xDown, yDown, xUp, yUp;
 $(window).on('mousedown touchstart', function (e) {
+
     if ('undefined' === typeof e.originalEvent.touches) {
-        return;
+        return true;
     }
+
     // console.log('startX', e.originalEvent.touches[0].pageX);
     xDown = e.originalEvent.touches[0].pageX;
     // console.log('startY', e.originalEvent.touches[0].pageY);
     yDown = e.originalEvent.touches[0].pageY;
+
 }).on('mouseup touchend', function (e) {
+
     if ('undefined' === typeof e.originalEvent.changedTouches) {
-        return;
+        return true;
     }
+
     // console.log('endX', e.originalEvent.changedTouches[0].pageX);
     xUp = e.originalEvent.changedTouches[0].pageX;
+
     // console.log('endY', e.originalEvent.changedTouches[0].pageY);
     yUp = e.originalEvent.changedTouches[0].pageY;
+
+    // Swipe up/down threshold
     if ((30 < Math.max(yUp - yDown, yDown - yUp))) {
-        return;
+        return true;
     }
-    var $menu = $('#fp-nav-items');
+
+    var $tnToggle = $('#tier-nav-toggle'), $tnDiv = $('#tier-nav');
+
     if (((e.currentTarget.innerWidth / 4) < (xDown - xUp))) {
+
         // console.log('swipe left!');
-        if ($menu.hasClass('open')) {
-            return;
+        if ($tnDiv.hasClass('open')) {
+            return true;
         }
-        $menu.menuToggle('o');
+
+        $tnDiv.menuToggle('o');
+        clearTimeout(tnToggleUnHighlightTimer);
+
+        return false;
+
     } else if (((e.currentTarget.innerWidth / 4) < (xUp - xDown))) {
+
         // console.log('swipe right!');
-        if (!$menu.hasClass('open')) {
-            return;
+        if (!$tnDiv.hasClass('open')) {
+            return true;
         }
-        $menu.menuToggle('c');
+
+        $tnDiv.menuToggle('c');
+        clearTimeout(tnToggleUnHighlightTimer);
+
+        return false;
+
     }
+
+    return true;
+
 });
