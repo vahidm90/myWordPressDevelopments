@@ -45,6 +45,8 @@ add_filter( 'locale', 'vm_set_lang' );
  *
  */
 function vm_theme_features() {
+
+	//TODO: make these settings dynamic
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'custom-logo' );
@@ -53,8 +55,19 @@ function vm_theme_features() {
 	add_theme_support( 'html5', array( 'caption', 'gallery', 'comment-list', 'comment-form', 'search-form' ) );
 	add_theme_support(
 		'post-formats',
-		array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat')
+		array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' )
 	);
+
+	//TODO: dynamically fetch items available to add to menus.
+	register_nav_menus(
+		array(
+			'home_footer'    => __( 'front-page footer navigation menu', VM_TD ),
+			'home_tier'      => __( 'front-page tiers navigation menu', VM_TD ),
+			'global_footer'  => __( 'global footer navigation menu', VM_TD ),
+			'global_nav_bar' => __( 'global navigation bar', VM_TD )
+		)
+	);
+
 }
 
 add_action( 'after_setup_theme', 'vm_theme_features' );

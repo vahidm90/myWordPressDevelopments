@@ -56,3 +56,4 @@ require_once get_template_directory() . '/inc/admin/custom-term-meta.php';
 //TODO: create custom post type 'podcast' and add 'season', 'episode' meta.
 //TODO: create custom post type 'media details', add taxonomy 'media type'; possible terms could be 'podcast', 'Video', etc., and add meta 'Described media ID'.
 //TODO: create custom post type for every broad category needing extra items.
+//TODO: customize 'Post via email' feature and make it dynamic.

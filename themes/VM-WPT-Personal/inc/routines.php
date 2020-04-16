@@ -258,3 +258,10 @@ function vm_get_lorem( int $resource ) {
 
 	return $response;
 }
+
+
+function vm_shc_site_url() {
+	return home_url();
+}
+
+add_shortcode( 'site_url', 'vm_shc_site_url' );
