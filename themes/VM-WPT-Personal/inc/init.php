@@ -6,12 +6,13 @@ load_theme_textdomain( VM_TD, get_template_directory() . '/languages' );
 /**
  * Prepare theme's language variable.
  *
- * @param  $locale string WP locale
+ * @param  $locale string Wordpress locale ID
  *
- * @return         string WP locale
+ * @return         string Wordpress locale ID
  *
  */
 function vm_set_lang( $locale ) {
+
 	global $vm_lang;
 
 	if ( ! empty( VM_LANGUAGES[ $vm_lang ] ) ) :

@@ -48,7 +48,7 @@ require_once get_template_directory() . '/inc/mod/customize.php';
 
 //require_once get_template_directory() . '/inc/admin/settings/theme-options.php';
 require_once get_template_directory() . '/inc/admin/custom-term-meta.php';
-//TODO: add admin settings after initial launch.
+//TODO: add admin settings after initial launch of the website.
 //TODO: add a taxonomy which determines progress level for posts; done, ever-evolving, work in progress, etc. could be the possible terms.
 //TODO: customize ready to publish page on Gutenberg.
 //TODO: customize category meta box on post edit page.
@@ -57,3 +57,5 @@ require_once get_template_directory() . '/inc/admin/custom-term-meta.php';
 //TODO: create custom post type 'media details', add taxonomy 'media type'; possible terms could be 'podcast', 'Video', etc., and add meta 'Described media ID'.
 //TODO: create custom post type for every broad category needing extra items.
 //TODO: customize 'Post via email' feature and make it dynamic.
+//TODO: add theme 'visual' settings in 'Theme Customizer'.
+//TODO: add a global swipe menu widget in responsive mode.

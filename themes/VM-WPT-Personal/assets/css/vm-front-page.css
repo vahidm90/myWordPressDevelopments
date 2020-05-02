@@ -5,12 +5,12 @@
     Global
  */
 
-body {
-    background-color: #000;
+html {
+    scroll-snap-type: y mandatory;
 }
 
-#wrap {
-    background-color: #fff;
+html .scroll-snap {
+    scroll-snap-align: start;
 }
 
 
@@ -22,9 +22,18 @@ body {
     min-height: 100vh;
 }
 
+.tier .content-roll {
+    border-top: 4px inset #00000008;
+    padding-right: 10px;
+}
+
 #tier-nav {
     z-index: 8;
     background-color: #fffc;
+}
+
+#tier-nav .navbar-brand {
+    font-size: 110%;
 }
 
 #tier-nav div {
@@ -40,11 +49,17 @@ body {
     color: #000000;
 }
 
+#tier-nav .active .nav-link {
+    color: #fff;
+}
+
 #tier-nav .nav-link.active {
     color: #ffffff;
 }
 
+
 /* Tier 0 */
+
 #tier-0 {
     background: url(../bin/img/top-front-page.jpg) center/cover no-repeat fixed;
     overflow-y: visible;
@@ -66,7 +81,7 @@ body {
     bottom: 3vh;
     right: 1vw;
     height: 9vh;
-    width: 12vw;
+    width: 14vw;
 }
 
 #scroll-down a:before {
@@ -75,11 +90,8 @@ body {
     animation: 1s ease infinite both vmScroll;
 }
 
+
 /* Tier 1 */
-#tier-1 .post-roll {
-    border-top: 4px inset #00000008;
-    padding-right: 10px;
-}
 
 #tier-1 article {
     border-bottom: 1px solid #e0e0e0;
@@ -93,7 +105,9 @@ body {
     box-shadow: inset #000 4px 0 0, inset #000 -4px 0 0;
 }
 
+
 /* Tier 2 */
+
 #tier-2 .post-title {
     font-size: 120%;
 }
@@ -104,10 +118,11 @@ body {
  */
 
 /* Greater than 'md' */
+
 @media (min-width: 992px) {
 
     .tier {
-        padding-right: 13vw;
+        padding-right: 15vw;
     }
 
     #tier-nav {
@@ -115,7 +130,7 @@ body {
         position: absolute;
         top: 100%;
         right: 1vw;
-        width: 12vw;
+        width: 14vw;
     }
 
     #tier-nav.fixed {
@@ -133,7 +148,9 @@ body {
 
 }
 
+
 /* Smaller than 'lg' */
+
 @media (max-width: 991px) {
 
     #tier-nav-toggle {
@@ -143,6 +160,9 @@ body {
         opacity: .1;
         transform: translate(50%, -50%);
         transition: opacity .3s ease-in-out;
+        clip-path: ellipse(40% 50% at 50% 50%);
+        width: 50px;
+        height: 80px;
     }
 
     #tier-nav-toggle.highlighted {
@@ -150,14 +170,14 @@ body {
     }
 
     #tier-nav-toggle .dashicons {
-        height: auto;
-        width: auto;
+        height: 100%;
+        width: 51%;
         background-color: #cccccc;
         color: #000;
-        font-size: 450%;
-        clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
-        transform: translateX(1px);
+        font-size: 250%;
     }
+
+    #tier-nav-toggle .dashicons:after {/* content: ""; */position: absolute;width: 55px;height: 30px;background-color: #ffffff;z-index: 4;display: block;border-radius: 50%;top: 0px;right: 94%;}
 
     #tier-nav-toggle button:focus {
         outline: 0;
@@ -165,7 +185,7 @@ body {
 
     #tier-nav-toggle .dashicons:before {
         position: relative;
-        right: 35%;
+        right: 85%;
         transition: content .3s ease-in-out;
     }
 
@@ -184,6 +204,10 @@ body {
         display: block;
     }
 
+    #tier-nav .navbar-brand {
+        padding: 0.5rem 1rem;
+    }
+
     #tier-nav.open {
         transform: translate3d(0, 0, 0);
     }
@@ -200,15 +224,21 @@ body {
 
 }
 
+
 /* 'sm' and 'md' */
+
 @media (min-width: 576px) and (max-width: 991px) {
 }
 
+
 /* Smaller than 'md' */
+
 @media (max-width: 767px) {
 }
 
+
 /* Smaller than 'sm' */
+
 @media (max-width: 575px) {
 
     #tier-0 .site-title {
@@ -217,11 +247,15 @@ body {
 
 }
 
+
 /* 'md' */
+
 @media (min-width: 768px) and (max-width: 991px) {
 }
 
+
 /* Portrait orientation ( if ( height > width ) ) */
+
 @media (orientation: portrait) {
 
     #tier-0 {

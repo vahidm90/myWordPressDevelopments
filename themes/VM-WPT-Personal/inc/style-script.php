@@ -65,6 +65,11 @@ function vm_front_dev_css_js() {
 		wp_enqueue_style( 'front-page', "$path/css/vm-front-page.css", $dep_css, '1.0' );
 		wp_enqueue_script( 'front-page-js', "$path/js/vm-front-page.js", $dep_js, '1.0', true );
 
+	elseif ( is_singular() ) :
+
+		wp_enqueue_style( 'singular', "$path/css/vm-singular.css", $dep_css, '1.0' );
+		wp_enqueue_script( 'singular-js', "$path/js/vm-singular.js", $dep_js, '1.0', true );
+
 	endif;
 
 }
@@ -165,6 +170,36 @@ function vm_admin_dev_css_js( $hook ) {
 			wp_enqueue_media();
 			wp_enqueue_style( 'admin-add-edit-category', "$path/css/vm-admin-add-edit-category.css", array(), '1.0' );
 			wp_enqueue_script( 'admin-add-edit-category-js', "$path/js/vm-admin-add-edit-category.js", array(), '1.0', true );
+			break;
+		case 'appearance_page_vm-front-page-tiers-options' :
+			wp_enqueue_media();
+			break;
+		default :
+			break;
+
+	endswitch;
+}
+
+
+/**
+ * Load dashboard CSS and JS files.
+ *
+ * @param string $hook Current screen identifier
+ *
+ */
+function vm_admin_pro_css_js( $hook ) {
+	$path = get_template_directory_uri() . '/assets';
+
+	switch ( $hook ) :
+
+		case 'edit-tags.php' :
+		case 'term.php' :
+			if ( empty( $_REQUEST['taxonomy'] ) || 'category' !== $_REQUEST['taxonomy'] ) :
+				return;
+			endif;
+			wp_enqueue_media();
+			wp_enqueue_style( 'admin-add-edit-category', "$path/css/vm-admin-add-edit-category.min.css", array(), '1.0' );
+			wp_enqueue_script( 'admin-add-edit-category-js', "$path/js/vm-admin-add-edit-category.min.js", array(), '1.0', true );
 			break;
 		case 'appearance_page_vm-front-page-tiers-options' :
 			wp_enqueue_media();

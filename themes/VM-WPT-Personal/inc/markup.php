@@ -199,21 +199,21 @@ function vm_text_option_field_markup( $args ) {
 function vm_front_page_tier_background_image_option_field_markup( $args ) {
 
 	$current = empty( get_option( $args['name'] ) ) ? 0 : get_option( $args['name'] );
-    $with_bg = ' hidden';
-    $sans_bg = '';
+	$with_bg = ' hidden';
+	$sans_bg = '';
 
 	if ( $current ) :
-		$img = wp_get_attachment_image_src( $current, 'medium' );
-	$bg_0 = '';
-	$bg_1 = ' hidden';
+		$img  = wp_get_attachment_image_src( $current, 'medium' );
+		$bg_0 = '';
+		$bg_1 = ' hidden';
 	endif;
 
 	preg_match( '/\d+/', $args['label_for'], $tier_id );
 
-	$lnk        = esc_url( get_upload_iframe_src( 'image' ) );
-	$html       = empty( $img ) ? '' : "<img src='{$img[0]}' class='bg-img' />";
+	$lnk    = esc_url( get_upload_iframe_src( 'image' ) );
+	$html   = empty( $img ) ? '' : "<img src='{$img[0]}' class='bg-img' />";
 	$change = _x( 'Change', 'Background image option', VM_TD );
-	$remove    = _x( 'Remove', 'Background image option', VM_TD );
+	$remove = _x( 'Remove', 'Background image option', VM_TD );
 	$add    = _x( 'Add', 'Background image option', VM_TD );
 
 	echo <<< html
@@ -342,3 +342,98 @@ function vm_get_front_page_tier_menu_markup() {
 	return $menu;
 
 }
+
+
+/**
+ * Add site name and toggle button to the top navigation bar.
+ *
+ * @param string $html HTML content for the navigation menu
+ * @param stdClass $args Object containing wp_nav_menu() arguments
+ *
+ * @return string
+ *
+ */
+function vm_top_nav_add_brand_toggle( $html, $args ) {
+
+	if ( empty( $args->theme_location ) || 'global_nav_bar' !== $args->theme_location ) :
+		return $html;
+	endif;
+
+	$add = '<a href="/" class="navbar-brand">' . get_bloginfo() . '</a>';
+	$add .= <<<html
+<button class="menu-toggle btn d-lg-none" id="global-top-nav-toggle" data-ctrl-menu="#tb-parent">
+    <span class="navbar-toggler-icon"></span>
+</button>
+html;
+
+	return preg_replace( '/(\<nav[^\>]*\>)(\<ul[^\>]*\>)/', '\1' . $add . '\2', $html );
+
+}
+
+add_filter( 'wp_nav_menu', 'vm_top_nav_add_brand_toggle', 10, 2 );
+
+
+/**
+ * Add bootstrap classes to the top navigation bar `<ul>` elements.
+ *
+ * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element
+ * @param stdClass $args Object of `wp_nav_menu()` arguments
+ * @param int $depth Depth of menu item. Used for padding
+ *
+ * @return string[] Array of the CSS classes that are applied to the menu `<ul>` element
+ *
+ */
+function vm_top_nav_ul_class( $classes, $args, $depth ) {
+
+	if ( empty( $args->theme_location ) || 'global_nav_bar' !== $args->theme_location ) :
+		return $classes;
+	endif;
+
+	array_push($classes, 'l-' . $depth, 'nav', 'flex-lg-column');
+
+	return $classes;
+
+}
+
+add_filter( 'nav_menu_submenu_css_class', 'vm_top_nav_ul_class', 10, 3 );
+
+
+/**
+ * Add bootstrap classes to the top navigation bar `<li>` elements.
+ *
+ * @param string[] $classes Array of the CSS classes that are applied to the menu item's `<li>` element
+ * @param WP_Post  $item    Current menu item
+ * @param stdClass $args    An object of wp_nav_menu() arguments
+ *
+ *
+ * @return string[] Array of the CSS classes that are applied to the menu item's `<li>` element
+ *
+ */
+function vm_top_nav_li_class( $classes, $item, $args ) {
+
+	if ( empty( $args->theme_location ) || 'global_nav_bar' !== $args->theme_location ) :
+		return $classes;
+	endif;
+
+	$classes []= 'nav-item';
+
+	return $classes;
+
+}
+
+add_filter( 'nav_menu_css_class', 'vm_top_nav_li_class', 10, 3);
+
+
+function vm_top_nav_anchor_class( $att, $item, $args ) {
+
+	if ( empty( $args->theme_location ) || 'global_nav_bar' !== $args->theme_location ) :
+		return $att;
+	endif;
+
+    $att = array_merge( $att, array('class'=>'nav-link'));
+
+    return $att;
+
+}
+
+add_filter( 'nav_menu_link_attributes', 'vm_top_nav_anchor_class', 10, 3 );

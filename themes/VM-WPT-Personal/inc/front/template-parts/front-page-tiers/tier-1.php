@@ -80,7 +80,7 @@ endif;
 			</div>
 		</div>
 	</div>
-	<div class="post-roll flex-grow-1 ml-3 ml-lg-0">
+	<div class="content-roll flex-grow-1 ml-3 ml-lg-0">
 		<div class="container">
 			<div class="row">
 				<div class="col-12"><?php echo $posts_roll; ?></div>

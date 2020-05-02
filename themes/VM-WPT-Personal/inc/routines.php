@@ -178,7 +178,21 @@ function vm_get_post_relative_time( int $id ) {
  *
  * }
  *
- * @return array    Array of HTML markup material for the post
+ * @return array {
+ *    Array of HTML markup material for the post
+ *
+ * @type string $link Post permalink
+ * @type string $title Post title
+ * @type string $rel_time Post publish time (relative format)
+ * @type string $iso_time Post publish time (standard format)
+ * @type string $excerpt Post excerpt
+ * @type string $classes Post CSS classes
+ * @type string $category Post category
+ * @type string $tags Post tags
+ * @type string $title_attr Post title (escaped for attribute)
+ * @type string $img_url Post image URL
+ *
+ * }
  *
  */
 function vm_get_post_markup_array( int $id, $args = array() ) {

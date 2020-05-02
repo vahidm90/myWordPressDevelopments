@@ -52,11 +52,17 @@ html;
 endif;
 
 ?>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h2 class="tier-title display-4"><?php _e( 'Podcasts', VM_TD ); ?></h2>
+<div class="tier-wrap d-flex flex-column h-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="tier-title display-4"><?php _e( 'Podcasts', VM_TD ); ?></h2>
+            </div>
         </div>
     </div>
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3"><?php echo $posts_roll; ?></div>
+    <div class="content-roll flex-grow-1 ml-3 ml-lg-0">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3"><?php echo $posts_roll; ?></div>
+        </div>
+    </div>
 </div>
